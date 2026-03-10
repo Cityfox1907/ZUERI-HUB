@@ -1,0 +1,4092 @@
+{
+  "meta": {
+    "erstellt_am": "2026-03-01",
+    "region": "Kanton Zürich",
+    "keywords": [
+      "Sehenswürdigkeit",
+      "Historische Sehenswürdigkeit",
+      "Aussichtsplattform",
+      "Landschaftlich schöner Ort",
+      "Wandern",
+      "Berggipfel",
+      "Park",
+      "Botanischer Garten",
+      "Garten",
+      "Naturschutzgebiet",
+      "Landschaftsschutzgebiet",
+      "Monument",
+      "Denkmal",
+      "Skulptur",
+      "Kulturelles Denkmal",
+      "Kriegsdenkmal",
+      "Barbecuebereich",
+      "Höhle",
+      "Fluss",
+      "Spielplatz",
+      "Vergnügungspark",
+      "Picknickstellen",
+      "Campingplatz",
+      "Zoo",
+      "Tierzoo",
+      "Kinderzoo",
+      "Wildpark",
+      "Vogelbeobachtungsgebiet"
+    ],
+    "quellen": [
+      "zuerich_sehenswuerdigkeiten.json",
+      "zuerich_monumente_freizeit.json"
+    ],
+    "statistik": {
+      "sehenswuerdigkeiten": 123,
+      "monumente_freizeit": 137,
+      "duplikate_zusammengefuehrt": 12,
+      "finale_eintraege": 248
+    }
+  },
+  "orte": [
+    {
+      "name": "Pfäffikersee Naturschutzgebiet",
+      "adresse": "Pfäffikersee, 8620 Wetzikon, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 12,
+      "place_id": "ChIJi-LSWXm7mkcR0gPjNSuz4Fo",
+      "gefunden_via_keyword": "Naturschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.338331,
+        "lng": 8.788487
+      }
+    },
+    {
+      "name": "Gattikerweiher",
+      "adresse": "Gattikerweiher, 8136 Gattikon, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 8,
+      "place_id": "ChIJYdS0vFSpmkcR1f27lxnKlzc",
+      "gefunden_via_keyword": "Landschaftsschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2841674,
+        "lng": 8.5531274
+      }
+    },
+    {
+      "name": "Hardwaldturm",
+      "adresse": "CJP2+F4, 8305 Dietlikon, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 878,
+      "place_id": "ChIJG_IRxOuhmkcRymHdAUUn2k8",
+      "gefunden_via_keyword": "Aussichtsplattform",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.4361367,
+        "lng": 8.6002578
+      }
+    },
+    {
+      "name": "Rennweg",
+      "adresse": "Rennweg, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 23,
+      "place_id": "ChIJUQ-KWe4LkEcROKyspXuxVFQ",
+      "gefunden_via_keyword": "Sehenswürdigkeit",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.37232100000001,
+        "lng": 8.5402185
+      }
+    },
+    {
+      "name": "Wehrenbach",
+      "adresse": "Burgwies, 8032 Zürich, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 7,
+      "place_id": "ChIJMS3Bx46nmkcRakv7UuYTv4g",
+      "gefunden_via_keyword": "Wandern",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3573023,
+        "lng": 8.574181099999999
+      }
+    },
+    {
+      "name": "Grösstes Auenland des Schweizer Mittellands",
+      "adresse": "Hofhaldenweg, 8416 Kleinandelfingen, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 7,
+      "place_id": "ChIJxd1J4LF3kEcRyQHuxxhkJuE",
+      "gefunden_via_keyword": "Landschaftsschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5958474,
+        "lng": 8.606657799999999
+      }
+    },
+    {
+      "name": "Uetliberg",
+      "adresse": "Uetliberg, 8143 Stallikon, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 2529,
+      "place_id": "ChIJzVWL8qEJkEcRILng_v2ccPg",
+      "gefunden_via_keyword": "Berggipfel",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.3495,
+        "lng": 8.492049999999999
+      }
+    },
+    {
+      "name": "Sukkulenten-Sammlung Zürich",
+      "adresse": "Mythenquai 88, 8002 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 1657,
+      "place_id": "ChIJyZu-3eIJkEcRXOZQuFz-O9Y",
+      "gefunden_via_keyword": "Botanischer Garten",
+      "types": [
+        "establishment",
+        "museum",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.356099,
+        "lng": 8.535093999999999
+      }
+    },
+    {
+      "name": "Polyterrasse",
+      "adresse": "ETH Zurich Building, Leonhardstrasse 34, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 386,
+      "place_id": "ChIJGab6P3WhmkcRSM8sTcjmugI",
+      "gefunden_via_keyword": "Aussichtsplattform",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3761164,
+        "lng": 8.5466166
+      }
+    },
+    {
+      "name": "Aussichtsturm Albis-Hochwacht",
+      "adresse": "Hochwart, 8135 Langnau am Albis, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 313,
+      "place_id": "ChIJsRAhBz-omkcRxzUbtUjeGzI",
+      "gefunden_via_keyword": "Aussichtsplattform",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.2663467,
+        "lng": 8.5316233
+      }
+    },
+    {
+      "name": "Aussichtspunkt Flughafen Zürich",
+      "adresse": "Oberglatt ZH, Pistenende, 8154 Oberglatt, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 253,
+      "place_id": "ChIJc-_NQCR1kEcRymO21KgnlqE",
+      "gefunden_via_keyword": "Aussichtsplattform",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4850916,
+        "lng": 8.5286938
+      }
+    },
+    {
+      "name": "Aussichtspunkt Waid",
+      "adresse": "Obere Waidstrasse, 8037 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 243,
+      "place_id": "ChIJ6RqabqMLkEcRVrDTjmzYpUE",
+      "gefunden_via_keyword": "Aussichtsplattform, Landschaftlich schöner Ort",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3995913,
+        "lng": 8.514325099999999
+      }
+    },
+    {
+      "name": "Tropenhäuser im Botanischen Garten der Universität Zürich",
+      "adresse": "Zollikerstrasse 107, 8008 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 234,
+      "place_id": "ChIJYdfgRuanmkcRX7RrkQklJzI",
+      "gefunden_via_keyword": "Botanischer Garten",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3579128,
+        "lng": 8.5618258
+      }
+    },
+    {
+      "name": "Rechberggarten",
+      "adresse": "Hochschulen, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 193,
+      "place_id": "ChIJH75AK6mgmkcRHsnlG5UzQEs",
+      "gefunden_via_keyword": "Park",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3732639,
+        "lng": 8.548411399999999
+      }
+    },
+    {
+      "name": "Waid Aussicht über die Stadt Zürich",
+      "adresse": "Waidbadstrasse 51, 8037 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 183,
+      "place_id": "ChIJYZF-EA0LkEcRstNUwdeimds",
+      "gefunden_via_keyword": "Aussichtsplattform",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3996467,
+        "lng": 8.5146182
+      }
+    },
+    {
+      "name": "Aussichtspunkt Sonnenberg",
+      "adresse": "Hitzigweg 13, 8032 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 92,
+      "place_id": "ChIJuWP3NfShmkcRxPuQ6-kJY7Q",
+      "gefunden_via_keyword": "Historische Sehenswürdigkeit, Aussichtsplattform",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3667477,
+        "lng": 8.5682637
+      }
+    },
+    {
+      "name": "Gattiker Waldweiher",
+      "adresse": "8136 Thalwil, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 91,
+      "place_id": "ChIJk6OAPsOpmkcRIiqmLaV5daM",
+      "gefunden_via_keyword": "Naturschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2804238,
+        "lng": 8.555682200000001
+      }
+    },
+    {
+      "name": "Aussichtspunkt",
+      "adresse": "Lindenhof, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 86,
+      "place_id": "ChIJx0YwJQALkEcR2GX0zSltpDI",
+      "gefunden_via_keyword": "Sehenswürdigkeit",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3730351,
+        "lng": 8.5413521
+      }
+    },
+    {
+      "name": "Schnebelhorn",
+      "adresse": "Schnebelhorn, 8496 Fischenthal, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 86,
+      "place_id": "ChIJEZwuK87GmkcR3f_QGspI0Io",
+      "gefunden_via_keyword": "Berggipfel",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.32559999999999,
+        "lng": 8.97965
+      }
+    },
+    {
+      "name": "Wasserfall Buri",
+      "adresse": "8496 Fischenthal, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 82,
+      "place_id": "ChIJid1hSjbHmkcRbe0r_bfaUVo",
+      "gefunden_via_keyword": "Landschaftlich schöner Ort",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.328444,
+        "lng": 8.945187299999999
+      }
+    },
+    {
+      "name": "Erlenbacher Tobel",
+      "adresse": "Unnamed Road 8703, 8703 Erlenbach, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 81,
+      "place_id": "ChIJf8tnzBSmmkcRyJ6J9xk1Grc",
+      "gefunden_via_keyword": "Historische Sehenswürdigkeit, Landschaftlich schöner Ort, Wandern",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3030499,
+        "lng": 8.59823
+      }
+    },
+    {
+      "name": "Aussichtsturm Pfannenstiel",
+      "adresse": "8132 Egg, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 75,
+      "place_id": "ChIJdeNgsHGlmkcRHz5Xp9rO9ns",
+      "gefunden_via_keyword": "Aussichtsplattform",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2907106,
+        "lng": 8.6733946
+      }
+    },
+    {
+      "name": "Wasserfall Küsnachter Dorfbach",
+      "adresse": "8127 Küsnacht, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 60,
+      "place_id": "ChIJrz99jYammkcRD1Kd0iU1N-Y",
+      "gefunden_via_keyword": "Sehenswürdigkeit, Historische Sehenswürdigkeit",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3253476,
+        "lng": 8.616860299999999
+      }
+    },
+    {
+      "name": "Sagenraintobel",
+      "adresse": "Oberholzstrasse 2, 8636 Wald, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 54,
+      "place_id": "ChIJu8YB487HmkcRJERxW06_a5o",
+      "gefunden_via_keyword": "Wandern",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2909076,
+        "lng": 8.942048699999999
+      }
+    },
+    {
+      "name": "Schauenberg Gipfel 892 m ü.M., Hausberg vom Tösstal",
+      "adresse": "8354 Hofstetten, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 26,
+      "place_id": "ChIJkfihI3qVmkcRBJuVAxQmyTs",
+      "gefunden_via_keyword": "Berggipfel",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4600667,
+        "lng": 8.8665833
+      }
+    },
+    {
+      "name": "Altberg",
+      "adresse": "Altberg, 8108 Dällikon, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 24,
+      "place_id": "ChIJZ69xNecMkEcRsHH2zbWlpKA",
+      "gefunden_via_keyword": "Berggipfel",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.4335,
+        "lng": 8.42071
+      }
+    },
+    {
+      "name": "David Brunnen",
+      "adresse": "Weinpl. 8001, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 20,
+      "place_id": "ChIJb0ND3vgLkEcROPKiiIBAJzc",
+      "gefunden_via_keyword": "Historische Sehenswürdigkeit, Monument, Skulptur",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3713482,
+        "lng": 8.541791
+      }
+    },
+    {
+      "name": "Elefantenbachweg",
+      "adresse": "Witikonerstr. 143, 8053 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 15,
+      "place_id": "ChIJz6GEFG6nmkcRp1mAd65Xgmk",
+      "gefunden_via_keyword": "Wandern",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3638509,
+        "lng": 8.5755312
+      }
+    },
+    {
+      "name": "Naturschutzgebiet Andresenweiher",
+      "adresse": "Maienbrunnenstrasse 18, 8908 Hedingen, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 5,
+      "place_id": "ChIJaeYZgj8JkEcRe9KvjvwAfSE",
+      "gefunden_via_keyword": "Naturschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3049578,
+        "lng": 8.441545399999999
+      }
+    },
+    {
+      "name": "Lindenhof Zürich",
+      "adresse": "Lindenhof, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 12973,
+      "place_id": "ChIJRactawcKkEcR-xqkb5ysLMc",
+      "gefunden_via_keyword": "Sehenswürdigkeit, Historische Sehenswürdigkeit, Park, Monument",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.37303370000001,
+        "lng": 8.540788599999999
+      }
+    },
+    {
+      "name": "Kunsthaus Zürich",
+      "adresse": "Heimpl. 1/5, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 8848,
+      "place_id": "ChIJw12aEaygmkcRowvgojyyzdk",
+      "gefunden_via_keyword": "Sehenswürdigkeit",
+      "types": [
+        "establishment",
+        "museum",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3710978,
+        "lng": 8.5490786
+      }
+    },
+    {
+      "name": "Botanischer Garten",
+      "adresse": "Zollikerstrasse 107, 8008 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 4064,
+      "place_id": "ChIJIcbpokmnmkcR8SNcHESyFQs",
+      "gefunden_via_keyword": "Botanischer Garten",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3580049,
+        "lng": 8.561606099999999
+      }
+    },
+    {
+      "name": "Arboretum Zürich",
+      "adresse": "Mythenquai 9, 8002 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 3031,
+      "place_id": "ChIJKW0zYf4JkEcRB2uRpxAoh6U",
+      "gefunden_via_keyword": "Sehenswürdigkeit, Landschaftlich schöner Ort, Park",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3627548,
+        "lng": 8.5362546
+      }
+    },
+    {
+      "name": "Irchelpark",
+      "adresse": "Hirschwiesenstrasse 10, 8057 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 2436,
+      "place_id": "ChIJNbQ_gXkKkEcRJpuSwpXYHgY",
+      "gefunden_via_keyword": "Landschaftlich schöner Ort, Park",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3982409,
+        "lng": 8.544124199999999
+      }
+    },
+    {
+      "name": "Rieterpark",
+      "adresse": "Gablerstrasse 15, 8002 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 1434,
+      "place_id": "ChIJx9VzS_sJkEcRImyC8Qx5u0I",
+      "gefunden_via_keyword": "Sehenswürdigkeit, Historische Sehenswürdigkeit, Landschaftlich schöner Ort, Park",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3576933,
+        "lng": 8.5309958
+      }
+    },
+    {
+      "name": "Stadtgärtnerei",
+      "adresse": "Sackzelg 25, 8047 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 908,
+      "place_id": "ChIJS-HeaiwKkEcROPpG_Fjd9dY",
+      "gefunden_via_keyword": "Park",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3756517,
+        "lng": 8.4990633
+      }
+    },
+    {
+      "name": "Loorenkopf",
+      "adresse": "8053 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 778,
+      "place_id": "ChIJZRkoAC-hmkcRq1dfZvt7Uss",
+      "gefunden_via_keyword": "Sehenswürdigkeit, Historische Sehenswürdigkeit, Aussichtsplattform, Wandern, Berggipfel",
+      "types": [
+        "establishment",
+        "landmark",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.36982039999999,
+        "lng": 8.5989335
+      }
+    },
+    {
+      "name": "Aussichtsturm Altberg",
+      "adresse": "8114 Dänikon, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 617,
+      "place_id": "ChIJS5n_DSINkEcR10rJ6y_9laI",
+      "gefunden_via_keyword": "Aussichtsplattform, Landschaftlich schöner Ort",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.43631000000001,
+        "lng": 8.4080809
+      }
+    },
+    {
+      "name": "Bachtel",
+      "adresse": "Bachtel, 8342 Hinwil, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 290,
+      "place_id": "ChIJMUJ7Fme4mkcRPuXlSV6maOs",
+      "gefunden_via_keyword": "Berggipfel",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.2946,
+        "lng": 8.88595
+      }
+    },
+    {
+      "name": "Belvoirpark",
+      "adresse": "Seestrasse 125, 8002 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 285,
+      "place_id": "ChIJWR6gWwgJkEcR3BQK-FObz1M",
+      "gefunden_via_keyword": "Park",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3581933,
+        "lng": 8.533752699999999
+      }
+    },
+    {
+      "name": "Felsenegg",
+      "adresse": "Felsenegg, 8143 Stallikon, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 260,
+      "place_id": "ChIJATe5lBcIkEcRMcmNLH7wUU0",
+      "gefunden_via_keyword": "Berggipfel",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.308597,
+        "lng": 8.509583
+      }
+    },
+    {
+      "name": "Monte Diggelmann",
+      "adresse": "Langensteinenstrasse 71, 8057 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 182,
+      "place_id": "ChIJj7rYdZ2gmkcRwy9lqpWftyw",
+      "gefunden_via_keyword": "Landschaftlich schöner Ort, Wandern",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.39323599999999,
+        "lng": 8.5495729
+      }
+    },
+    {
+      "name": "Käferberg",
+      "adresse": "Käferberg, 8049 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 158,
+      "place_id": "ChIJo28alVgKkEcRrLeyeBdgyCM",
+      "gefunden_via_keyword": "Berggipfel",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.40652590000001,
+        "lng": 8.520326599999999
+      }
+    },
+    {
+      "name": "Etzel",
+      "adresse": "Etzel, 8847 Einsiedeln, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 147,
+      "place_id": "ChIJdSLOVvGzmkcRjllcimee4gk",
+      "gefunden_via_keyword": "Berggipfel",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.1774817,
+        "lng": 8.7677996
+      }
+    },
+    {
+      "name": "The Higher Self Tower - Pfannenstiel Tower",
+      "adresse": "8132 Egg, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 141,
+      "place_id": "ChIJmwhisHGlmkcRcZgPHwBiJc0",
+      "gefunden_via_keyword": "Landschaftlich schöner Ort",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2907223,
+        "lng": 8.6734127
+      }
+    },
+    {
+      "name": "Aussichtspunkt Zürich",
+      "adresse": "8044 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 127,
+      "place_id": "ChIJoU_P1SqhmkcRSiYeemMcUog",
+      "gefunden_via_keyword": "Historische Sehenswürdigkeit, Aussichtsplattform, Landschaftlich schöner Ort",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3847827,
+        "lng": 8.5629379
+      }
+    },
+    {
+      "name": "Flughafenpark",
+      "adresse": "Flughafen Zürich, Walter-Mittelholzer-Weg, 8302 Kloten, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 85,
+      "place_id": "ChIJoaX3aJafmkcRhiQwfI5WKcY",
+      "gefunden_via_keyword": "Park",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4504471,
+        "lng": 8.5680049
+      }
+    },
+    {
+      "name": "Moosholzweiher",
+      "adresse": "8006 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 82,
+      "place_id": "ChIJRVoeMJegmkcRiPkaazBsJRU",
+      "gefunden_via_keyword": "Wandern, Naturschutzgebiet",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3892129,
+        "lng": 8.561662499999999
+      }
+    },
+    {
+      "name": "Finnenbahn",
+      "adresse": "8048 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 69,
+      "place_id": "ChIJK031COgLkEcRjrRUM8M3g1o",
+      "gefunden_via_keyword": "Park",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3818793,
+        "lng": 8.4711778
+      }
+    },
+    {
+      "name": "Grindel Naturschutz Gebiet",
+      "adresse": "Naturschutz Grindel, 8304 Wallisellen, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 68,
+      "place_id": "ChIJIa6E2P2hmkcRTxOKWMm17QY",
+      "gefunden_via_keyword": "Naturschutzgebiet, Landschaftsschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.41009649999999,
+        "lng": 8.586262399999999
+      }
+    },
+    {
+      "name": "Haumüli",
+      "adresse": "Haumühlestrasse 231, 8424 Embrach, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 60,
+      "place_id": "ChIJaXfb4wGemkcR3N7W8XpvMbA",
+      "gefunden_via_keyword": "Naturschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5197985,
+        "lng": 8.582950799999999
+      }
+    },
+    {
+      "name": "Fallätsche",
+      "adresse": "8041 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 56,
+      "place_id": "ChIJH2nMfbYJkEcRUXL4HJxZTU8",
+      "gefunden_via_keyword": "Wandern",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3353672,
+        "lng": 8.5039791
+      }
+    },
+    {
+      "name": "Aussichtspunkt Käferberg",
+      "adresse": "Obere Waidstrasse, 8037 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 55,
+      "place_id": "ChIJ6-up9QoLkEcRBAYBUy5l-p0",
+      "gefunden_via_keyword": "Aussichtsplattform",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3984889,
+        "lng": 8.5301926
+      }
+    },
+    {
+      "name": "Alter-Grat-Trampelpfad",
+      "adresse": "Unnamed Road, 8055 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 53,
+      "place_id": "ChIJewbvhZ0JkEcRKKfa0_HEw2I",
+      "gefunden_via_keyword": "Wandern",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.35795969999999,
+        "lng": 8.491235699999999
+      }
+    },
+    {
+      "name": "Chlostergumpen",
+      "adresse": "Chlostergumpenweg 8424, 8424 Embrach, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 53,
+      "place_id": "ChIJUQogKzmemkcRM-A-QpZk-Xg",
+      "gefunden_via_keyword": "Naturschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.49539009999999,
+        "lng": 8.600504899999999
+      }
+    },
+    {
+      "name": "Adlisberg",
+      "adresse": "Adlisberg, 8053 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 49,
+      "place_id": "ChIJsRQt4iihmkcRPUl185Y_IH4",
+      "gefunden_via_keyword": "Berggipfel",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.3701999,
+        "lng": 8.59431
+      }
+    },
+    {
+      "name": "Lake Zurich boardwalk",
+      "adresse": "8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 18,
+      "place_id": "ChIJKXjwGQALkEcR8SM27mJ6c2U",
+      "gefunden_via_keyword": "Sehenswürdigkeit",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3768866,
+        "lng": 8.541694
+      }
+    },
+    {
+      "name": "Wildkatzenhaus",
+      "adresse": "Wildparkstrasse 8135, 8135 Langnau am Albis, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 17,
+      "place_id": "ChIJ1_47XvunmkcRlHWM7DRib1s",
+      "gefunden_via_keyword": "Park, Tierzoo, Wildpark",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.2938609,
+        "lng": 8.5291921
+      }
+    },
+    {
+      "name": "Aahorn-Steg",
+      "adresse": "Obersee, 8853 Lachen, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 15,
+      "place_id": "ChIJnbofto-3mkcRQiHfMt4WAI8",
+      "gefunden_via_keyword": "Landschaftsschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.20137099999999,
+        "lng": 8.8535445
+      }
+    },
+    {
+      "name": "Leilöcher",
+      "adresse": "Leilöcherstrasse, 8803 Rüschlikon, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 10,
+      "place_id": "ChIJTwKv1emnmkcRRojQ0k_11T4",
+      "gefunden_via_keyword": "Landschaftsschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3000707,
+        "lng": 8.544493899999999
+      }
+    },
+    {
+      "name": "Entlisberg",
+      "adresse": "Entlisberg, Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 9,
+      "place_id": "ChIJB4fX4tAJkEcRbtol2SllsLg",
+      "gefunden_via_keyword": "Berggipfel",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.3299092,
+        "lng": 8.521839199999999
+      }
+    },
+    {
+      "name": "Weiher Langnau am Albis",
+      "adresse": "Gartendörfliweg 8, 8803 Langnau am Albis, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 7,
+      "place_id": "ChIJtVQfSZOnmkcRxme8r5TSuik",
+      "gefunden_via_keyword": "Landschaftsschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.29927559999999,
+        "lng": 8.533875499999999
+      }
+    },
+    {
+      "name": "Landesmuseum Zürich",
+      "adresse": "Museumstrasse 2, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 9719,
+      "place_id": "ChIJLYUQHAkKkEcRzA4gWFr1Hf8",
+      "gefunden_via_keyword": "Historische Sehenswürdigkeit",
+      "types": [
+        "establishment",
+        "museum",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3791037,
+        "lng": 8.540542799999999
+      }
+    },
+    {
+      "name": "Aussichtsturm Uetliberg",
+      "adresse": "Gratstrasse, 8143 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 5073,
+      "place_id": "ChIJabHY66EJkEcRadSsINDm6T0",
+      "gefunden_via_keyword": "Sehenswürdigkeit, Historische Sehenswürdigkeit, Aussichtsplattform, Landschaftlich schöner Ort",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.34953609999999,
+        "lng": 8.491453
+      }
+    },
+    {
+      "name": "Wildnispark Zürich Langenberg",
+      "adresse": "Wildparkstrasse, 8135 Langnau am Albis, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 4888,
+      "place_id": "ChIJfcIjUfynmkcRSgUlSs5rKCU",
+      "gefunden_via_keyword": "Park, Zoo, Tierzoo, Wildpark",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.2913799,
+        "lng": 8.5277585
+      }
+    },
+    {
+      "name": "MFO-Park",
+      "adresse": "8050 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 1616,
+      "place_id": "ChIJeeYhP48KkEcRYztrJfme3wg",
+      "gefunden_via_keyword": "Park",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.412184,
+        "lng": 8.540205
+      }
+    },
+    {
+      "name": "Wildnispark Zürich Sihlwald",
+      "adresse": "Alte Sihltalstrasse 13, 8135 Sihlwald, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 1449,
+      "place_id": "ChIJi3T9ifiomkcRLAMzzJFNT78",
+      "gefunden_via_keyword": "Landschaftlich schöner Ort, Wandern, Park, Naturschutzgebiet, Landschaftsschutzgebiet, Tierzoo, Wildpark",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.2519769,
+        "lng": 8.559870799999999
+      }
+    },
+    {
+      "name": "Seilpark Zürich",
+      "adresse": "Schluefweg 16, 8302 Kloten, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 678,
+      "place_id": "ChIJs4Ms3_WfmkcRC2XlyxD87CU",
+      "gefunden_via_keyword": "Park, Vergnügungspark",
+      "types": [
+        "establishment",
+        "health",
+        "park",
+        "point_of_interest",
+        "store",
+        "travel_agency"
+      ],
+      "koordinaten": {
+        "lat": 47.4425965,
+        "lng": 8.5838809
+      }
+    },
+    {
+      "name": "BirdLife-Naturzentrum Neeracherried",
+      "adresse": "Dielsdorferstrasse 13, 8173 Neerach, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 647,
+      "place_id": "ChIJ6XwJHPNzkEcRZOputx1Kaoc",
+      "gefunden_via_keyword": "Naturschutzgebiet, Vogelbeobachtungsgebiet",
+      "types": [
+        "establishment",
+        "museum",
+        "park",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.4997701,
+        "lng": 8.4789709
+      }
+    },
+    {
+      "name": "Geiserbrunnen von Brüllmann",
+      "adresse": "Bürklipl., 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 566,
+      "place_id": "ChIJd2AfsaqgmkcRasHYmUgY1i8",
+      "gefunden_via_keyword": "Sehenswürdigkeit, Historische Sehenswürdigkeit, Monument, Denkmal, Skulptur",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.36706299999999,
+        "lng": 8.5415808
+      }
+    },
+    {
+      "name": "Freizeitanlage Chrüzacher",
+      "adresse": "Holzmattstrasse 6, 8953 Dietikon, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 435,
+      "place_id": "ChIJK8QNU7QNkEcR2Nxq1aUbSxk",
+      "gefunden_via_keyword": "Park",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3993711,
+        "lng": 8.4008218
+      }
+    },
+    {
+      "name": "Blatterwiese",
+      "adresse": "Bellerivestrasse 138, 8008 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 394,
+      "place_id": "ChIJH0plEUWnmkcREOk3yI9P4tA",
+      "gefunden_via_keyword": "Park",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3547155,
+        "lng": 8.5512015
+      }
+    },
+    {
+      "name": "Aussichtsturm Petersboden",
+      "adresse": "8427 Rorbas, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 281,
+      "place_id": "ChIJsX1eOWZ2kEcRl-YX1vcaI2Y",
+      "gefunden_via_keyword": "Aussichtsplattform",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.5402236,
+        "lng": 8.5548181
+      }
+    },
+    {
+      "name": "Naturzentrum Pfäffikersee",
+      "adresse": "Usterstrasse 31, 8330 Pfäffikon, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 281,
+      "place_id": "ChIJ8Y30-La9mkcRZoiWh3MyXxs",
+      "gefunden_via_keyword": "Naturschutzgebiet",
+      "types": [
+        "establishment",
+        "museum",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3644619,
+        "lng": 8.7785642
+      }
+    },
+    {
+      "name": "Albispass",
+      "adresse": "8135 Albis, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 209,
+      "place_id": "ChIJs7tflRuomkcRhUabQqyNOns",
+      "gefunden_via_keyword": "Landschaftlich schöner Ort",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2759,
+        "lng": 8.52068
+      }
+    },
+    {
+      "name": "Planetenweg Uetliberg",
+      "adresse": "Uetliberg, 8143 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 164,
+      "place_id": "ChIJ1-UJKqAJkEcRmpIxpUBPijQ",
+      "gefunden_via_keyword": "Wandern, Vogelbeobachtungsgebiet",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.35076610000001,
+        "lng": 8.4897455
+      }
+    },
+    {
+      "name": "Lägern",
+      "adresse": "Lägern, 8112 Otelfingen, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 150,
+      "place_id": "ChIJackoN2FtkEcRbRmVGgp0QJo",
+      "gefunden_via_keyword": "Berggipfel",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.4811111,
+        "lng": 8.3744444
+      }
+    },
+    {
+      "name": "Springbrunnen Aquaretum",
+      "adresse": "Mythenquai 9, 8002 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 133,
+      "place_id": "ChIJBRWiXqoJkEcRSJWSZUoAql0",
+      "gefunden_via_keyword": "Historische Sehenswürdigkeit",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.360446,
+        "lng": 8.5376523
+      }
+    },
+    {
+      "name": "Resi-Weiher",
+      "adresse": "8006 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 114,
+      "place_id": "ChIJJWpgaJygmkcRpwqedoCYq-c",
+      "gefunden_via_keyword": "Historische Sehenswürdigkeit, Landschaftlich schöner Ort",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3922013,
+        "lng": 8.552864399999999
+      }
+    },
+    {
+      "name": "Sihlwald Horgen",
+      "adresse": "8135 Horgen, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 112,
+      "place_id": "ChIJoQtFXV6omkcRLgZadT00L1M",
+      "gefunden_via_keyword": "Park, Landschaftsschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.2653014,
+        "lng": 8.553938400000002
+      }
+    },
+    {
+      "name": "Fischerweg Zürich",
+      "adresse": "Kirchweg 35, 8102 Oberengstringen, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 91,
+      "place_id": "ChIJkX6mVk4LkEcROjZV6bBH9cw",
+      "gefunden_via_keyword": "Wandern, Fluss",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4035081,
+        "lng": 8.4784419
+      }
+    },
+    {
+      "name": "Örmis",
+      "adresse": "Bisikonerstrasse, 8308 Illnau-Effretikon, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 79,
+      "place_id": "ChIJU1-09POimkcRyY7-W8KaVBc",
+      "gefunden_via_keyword": "Naturschutzgebiet, Landschaftsschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.4093007,
+        "lng": 8.7069266
+      }
+    },
+    {
+      "name": "Waldweiher Maas",
+      "adresse": "8152 Opfikon, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 62,
+      "place_id": "ChIJUchP2vGhmkcRyns_h_MvDQM",
+      "gefunden_via_keyword": "Naturschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4384194,
+        "lng": 8.5829374
+      }
+    },
+    {
+      "name": "Zürichberg",
+      "adresse": "Zürichberg, 8044 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 45,
+      "place_id": "ChIJwU6bopWgmkcRkmbyCDPGrVw",
+      "gefunden_via_keyword": "Berggipfel",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.3857,
+        "lng": 8.5668399
+      }
+    },
+    {
+      "name": "Geodätischer Mittelpunkt des Kantons Zürich",
+      "adresse": "Hintergässli 9, 8311 Brütten, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 36,
+      "place_id": "ChIJ7zEp8CyZmkcRRgSJZA_cB88",
+      "gefunden_via_keyword": "Historische Sehenswürdigkeit",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.4746608,
+        "lng": 8.6729296
+      }
+    },
+    {
+      "name": "Zürichsee Kreisel",
+      "adresse": "Zürichsee, 8008 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 36,
+      "place_id": "ChIJP2XClEanmkcRZq5DPyFw80I",
+      "gefunden_via_keyword": "Aussichtsplattform",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.352205,
+        "lng": 8.5557273
+      }
+    },
+    {
+      "name": "Küsnachter Tobel (Tobelweg)",
+      "adresse": "Weinmanngasse 90, 8700 Küsnacht, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 30,
+      "place_id": "ChIJD2DKgHinmkcRnmuAa763Xoo",
+      "gefunden_via_keyword": "Wandern",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3193125,
+        "lng": 8.596934
+      }
+    },
+    {
+      "name": "Münzplatz",
+      "adresse": "Augustinergasse 15, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 25,
+      "place_id": "ChIJtUD0IK8LkEcR-pZHcGNCPK4",
+      "gefunden_via_keyword": "Sehenswürdigkeit",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3720952,
+        "lng": 8.53932
+      }
+    },
+    {
+      "name": "Niederdorfstrasse",
+      "adresse": "Niederdorfstrasse, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 25,
+      "place_id": "ChIJa_KYpcehmkcRVVB0V5iYUCk",
+      "gefunden_via_keyword": "Sehenswürdigkeit",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3743962,
+        "lng": 8.5437437
+      }
+    },
+    {
+      "name": "Sagiweiher",
+      "adresse": "Tobelweg, 8308 Illnau-Effretikon, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 20,
+      "place_id": "ChIJZ57YsJWimkcRlw4tP7Gfstc",
+      "gefunden_via_keyword": "Landschaftsschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.415413,
+        "lng": 8.7234829
+      }
+    },
+    {
+      "name": "Eschenberg",
+      "adresse": "Eschenberg, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 13,
+      "place_id": "ChIJzVd7OLCZmkcR5Lc2tkpgyq8",
+      "gefunden_via_keyword": "Berggipfel",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.478611,
+        "lng": 8.734722
+      }
+    },
+    {
+      "name": "Gedenkstein",
+      "adresse": "Central 8, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 11,
+      "place_id": "ChIJH3_ZPQALkEcR4--4ZRLifcg",
+      "gefunden_via_keyword": "Sehenswürdigkeit",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3766638,
+        "lng": 8.5432556
+      }
+    },
+    {
+      "name": "Sihltal",
+      "adresse": "8041 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 9,
+      "place_id": "ChIJi0HlvsAJkEcR6Y0vk8QF1IQ",
+      "gefunden_via_keyword": "Naturschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3465734,
+        "lng": 8.517064999999999
+      }
+    },
+    {
+      "name": "Aussichtsplattform Frankental",
+      "adresse": "Limmattalstrasse 406, 8049 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 5,
+      "place_id": "ChIJPSnlqR8LkEcR4KDhD3hjW28",
+      "gefunden_via_keyword": "Aussichtsplattform",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4048908,
+        "lng": 8.4797082
+      }
+    },
+    {
+      "name": "Raintobelweg",
+      "adresse": "Raintobelweg 1, 8053 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 5,
+      "place_id": "ChIJGTGupLWnmkcRj2XqcyUy2-c",
+      "gefunden_via_keyword": "Wandern",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3587325,
+        "lng": 8.576151399999999
+      }
+    },
+    {
+      "name": "Grossmünster",
+      "adresse": "Zwinglipl. 7, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 9852,
+      "place_id": "ChIJZWHfSaqgmkcREF9TlBQlGkk",
+      "gefunden_via_keyword": "Sehenswürdigkeit, Historische Sehenswürdigkeit",
+      "types": [
+        "church",
+        "establishment",
+        "place_of_worship",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3700931,
+        "lng": 8.544054
+      }
+    },
+    {
+      "name": "Chinagarten Zürich",
+      "adresse": "Bellerivestrasse 138, 8008 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 6973,
+      "place_id": "ChIJSYDsdUWnmkcRabPN-fTDZ8U",
+      "gefunden_via_keyword": "Park",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3548182,
+        "lng": 8.5520921
+      }
+    },
+    {
+      "name": "Paradeplatz Zürich",
+      "adresse": "Paradeplatz, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 1759,
+      "place_id": "ChIJ-Y5XfYkLkEcRdkuK2fN0Ab8",
+      "gefunden_via_keyword": "Sehenswürdigkeit, Historische Sehenswürdigkeit",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3697508,
+        "lng": 8.538908
+      }
+    },
+    {
+      "name": "Naturstation Silberweide",
+      "adresse": "Seestrasse 37, 8617 Mönchaltorf, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 480,
+      "place_id": "ChIJSVybI9W6mkcRspEfzaElnJI",
+      "gefunden_via_keyword": "Naturschutzgebiet",
+      "types": [
+        "establishment",
+        "food",
+        "park",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.3215766,
+        "lng": 8.7055173
+      }
+    },
+    {
+      "name": "Giacometti-Halle",
+      "adresse": "Bahnhofquai 3, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 371,
+      "place_id": "ChIJHytJlQcKkEcRC01paW7HcnE",
+      "gefunden_via_keyword": "Sehenswürdigkeit, Landschaftlich schöner Ort",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3754389,
+        "lng": 8.541687099999999
+      }
+    },
+    {
+      "name": "Pfannenstiel",
+      "adresse": "Pfannenstiel, 8706 Meilen, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 208,
+      "place_id": "ChIJycUTW3GlmkcRztz5emVoQkE",
+      "gefunden_via_keyword": "Berggipfel",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.2923,
+        "lng": 8.67093
+      }
+    },
+    {
+      "name": "Hörnli",
+      "adresse": "Hörnli, 8496 Fischenthal, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 185,
+      "place_id": "ChIJbTVafIbAmkcRZ1qHvS9uOmo",
+      "gefunden_via_keyword": "Berggipfel",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.3709,
+        "lng": 8.94192
+      }
+    },
+    {
+      "name": "Chöpfi",
+      "adresse": "Wülflingerstrasse 226, 8408 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 126,
+      "place_id": "ChIJOe67luObmkcRhFPKgepXmVk",
+      "gefunden_via_keyword": "Landschaftlich schöner Ort",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.5166167,
+        "lng": 8.700099999999999
+      }
+    },
+    {
+      "name": "Centralhof Monument",
+      "adresse": "8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 92,
+      "place_id": "ChIJ_WOSiQAKkEcRztmf5y0ES6M",
+      "gefunden_via_keyword": "Historische Sehenswürdigkeit, Monument",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3692785,
+        "lng": 8.5401103
+      }
+    },
+    {
+      "name": "Waldweiher",
+      "adresse": "Hasenrain, 8037 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 86,
+      "place_id": "ChIJY6iAo14KkEcRRftwCHkcXUQ",
+      "gefunden_via_keyword": "Landschaftlich schöner Ort, Picknickstellen",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4030368,
+        "lng": 8.5220871
+      }
+    },
+    {
+      "name": "Allmend Stettbach",
+      "adresse": "Hochbordstrasse 24, 8600 Dübendorf, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 55,
+      "place_id": "ChIJa_HikP-gmkcRK5dkJiEh_Go",
+      "gefunden_via_keyword": "Landschaftsschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.4012671,
+        "lng": 8.597303799999999
+      }
+    },
+    {
+      "name": "Aussichtsturm Stocklen",
+      "adresse": "Stocklen 1, 8117 Fällanden, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 28,
+      "place_id": "ChIJoyY_w3GjmkcR97UrQlW_WLA",
+      "gefunden_via_keyword": "Aussichtsplattform",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.370878,
+        "lng": 8.6506743
+      }
+    },
+    {
+      "name": "Zugang zum Fällander Tobel",
+      "adresse": "Oberdorfstrasse 4, 8117 Fällanden, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 22,
+      "place_id": "ChIJ_2lRA1ihmkcRUvqbPFrfdY8",
+      "gefunden_via_keyword": "Wandern",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.369506,
+        "lng": 8.6379509
+      }
+    },
+    {
+      "name": "Abzweigung Aufstieg Üetliberg",
+      "adresse": "Unnamed Road, 8041, 8041 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 11,
+      "place_id": "ChIJZedwGMcJkEcREWfdP52toj8",
+      "gefunden_via_keyword": "Wandern",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3429726,
+        "lng": 8.511388199999999
+      }
+    },
+    {
+      "name": "Alter Botanischer Garten",
+      "adresse": "Talstrasse 71, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 1833,
+      "place_id": "ChIJP6pXlAMKkEcRIclMVyfc4kE",
+      "gefunden_via_keyword": "Historische Sehenswürdigkeit, Botanischer Garten",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3712278,
+        "lng": 8.5337556
+      }
+    },
+    {
+      "name": "Bruno Weber Park",
+      "adresse": "Zur Weinrebe 3, 8953 Dietikon, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 1683,
+      "place_id": "ChIJy8X0R7QNkEcRhp2aaVpYDyo",
+      "gefunden_via_keyword": "Park",
+      "types": [
+        "establishment",
+        "museum",
+        "park",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.40552830000001,
+        "lng": 8.381254
+      }
+    },
+    {
+      "name": "Blumenuhr",
+      "adresse": "General-Guisan-Quai, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 225,
+      "place_id": "ChIJH5DtWFWnmkcRSla63A6-Czs",
+      "gefunden_via_keyword": "Sehenswürdigkeit",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3659002,
+        "lng": 8.5402957
+      }
+    },
+    {
+      "name": "Wasserfall Ziegelhütte",
+      "adresse": "Hüttenrainstrasse, 8051 Zürich, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 62,
+      "place_id": "ChIJzcr7VJmhmkcRVQtI4ja4XSE",
+      "gefunden_via_keyword": "Wandern",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.4008013,
+        "lng": 8.568414299999999
+      }
+    },
+    {
+      "name": "Grabstein Lucius (Archäologisches Fenster)",
+      "adresse": "Lindenhofstrasse 19, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 37,
+      "place_id": "ChIJ5eeqQQcKkEcRP5xZ4zMh9yM",
+      "gefunden_via_keyword": "Historische Sehenswürdigkeit",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3726973,
+        "lng": 8.5407279
+      }
+    },
+    {
+      "name": "Aussichtsplattform - Tambel",
+      "adresse": "8304 Wallisellen, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 18,
+      "place_id": "ChIJXVrcW_-hmkcRilo9DXykWUE",
+      "gefunden_via_keyword": "Aussichtsplattform",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.422141,
+        "lng": 8.591645999999999
+      }
+    },
+    {
+      "name": "Klingenpark",
+      "adresse": "Limmatstrasse 65, 8005 Zürich, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 183,
+      "place_id": "ChIJZ7tJxQ0KkEcRUU7nQk6BPBo",
+      "gefunden_via_keyword": "Park",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3826572,
+        "lng": 8.535159199999999
+      }
+    },
+    {
+      "name": "Burg Friesenberg",
+      "adresse": "8055 Zürich, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 102,
+      "place_id": "ChIJTzzYYJwJkEcRrfoc_jojRZw",
+      "gefunden_via_keyword": "Historische Sehenswürdigkeit",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.358298,
+        "lng": 8.4938934
+      }
+    },
+    {
+      "name": "Belvedere Zollikon",
+      "adresse": "Forchstrasse, 8702 Zollikon, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 27,
+      "place_id": "ChIJD1Q1KdymmkcRoDjeVgvmQdU",
+      "gefunden_via_keyword": "Aussichtsplattform",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3461897,
+        "lng": 8.589301700000002
+      }
+    },
+    {
+      "name": "Nägelimoos",
+      "adresse": "Prügelweg, 8302 Kloten, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 73,
+      "place_id": "ChIJ6SCW_OmfmkcRqirQoQ7IRuE",
+      "gefunden_via_keyword": "Naturschutzgebiet, Landschaftsschutzgebiet",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.46175059999999,
+        "lng": 8.5868638
+      }
+    },
+    {
+      "name": "Altherr-Terrasse",
+      "adresse": "8057 Zürich, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 36,
+      "place_id": "ChIJ-XAO05ygmkcRJ_Kec5QCopc",
+      "gefunden_via_keyword": "Aussichtsplattform",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3952554,
+        "lng": 8.552582899999999
+      }
+    },
+    {
+      "name": "Wanderweg - Uetliberg",
+      "adresse": "Uetliberg 8143, 8045 Stallikon, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 12,
+      "place_id": "ChIJxWFYXHIJkEcR1j-9cYCP2A4",
+      "gefunden_via_keyword": "Wandern",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3506477,
+        "lng": 8.4919862
+      }
+    },
+    {
+      "name": "Denkmal Schlacht bei Zürich",
+      "adresse": "Hüttenkopfstrasse, 8051 Zürich, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 5,
+      "place_id": "ChIJ2UjZ8w6hmkcRlZ2fxr_NhC4",
+      "gefunden_via_keyword": "Denkmal, Kulturelles Denkmal",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3981036,
+        "lng": 8.5741988
+      }
+    },
+    {
+      "name": "Grillplatz",
+      "adresse": "Probsteistrasse, 8051 Zürich, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 5,
+      "place_id": "ChIJmTY6IjOhmkcRAhcxhuyA4zM",
+      "gefunden_via_keyword": "Barbecuebereich",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3988299,
+        "lng": 8.5736932
+      }
+    },
+    {
+      "name": "Grillstelle Loorenkopf",
+      "adresse": "Loorenkopfstrasse 99, 8053 Zürich, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 5,
+      "place_id": "ChIJk4XBcuuhmkcRIH38LFylH8o",
+      "gefunden_via_keyword": "Barbecuebereich",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3696548,
+        "lng": 8.599496
+      }
+    },
+    {
+      "name": "Thurauen Naturschutzgebiet",
+      "adresse": "8416 Flaach, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 70,
+      "place_id": "ChIJv2-9D_x3kEcR4k-4avGRSy4",
+      "gefunden_via_keyword": "Vogelbeobachtungsgebiet",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5934744,
+        "lng": 8.6035719
+      }
+    },
+    {
+      "name": "Quartierhühner Entlisberg",
+      "adresse": "Gustav-Heinrich-Weg 8038, 8038 Zürich, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 8,
+      "place_id": "ChIJbcQ6k9AJkEcROnjX1MXgHZs",
+      "gefunden_via_keyword": "Wildpark",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.33721569999999,
+        "lng": 8.5234343
+      }
+    },
+    {
+      "name": "Rosenhofbrunnen",
+      "adresse": "Weingasse, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 7,
+      "place_id": "ChIJv_fjGp-hmkcRRtk7lavzaV8",
+      "gefunden_via_keyword": "Skulptur",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3729084,
+        "lng": 8.543306399999999
+      }
+    },
+    {
+      "name": "Bird Aviary",
+      "adresse": "Mythenquai 1, 8002 Zürich, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 7,
+      "place_id": "ChIJfZjag_4JkEcRFE5ogVoVt5g",
+      "gefunden_via_keyword": "Vogelbeobachtungsgebiet",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3623242,
+        "lng": 8.5356461
+      }
+    },
+    {
+      "name": "Masoala-Halle",
+      "adresse": "Hottingen, 8044 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 2331,
+      "place_id": "ChIJufZeMzWhmkcRa5hMz-3u3jY",
+      "gefunden_via_keyword": "Zoo",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.3846502,
+        "lng": 8.578806300000002
+      }
+    },
+    {
+      "name": "Lewa Savanne",
+      "adresse": "Zürichbergstrasse 221, 8044 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 666,
+      "place_id": "ChIJlQKAAd6hmkcRay17HPdXksk",
+      "gefunden_via_keyword": "Zoo, Tierzoo",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.38809180000001,
+        "lng": 8.579012800000001
+      }
+    },
+    {
+      "name": "Kiddy Park Dübendorf",
+      "adresse": "Stettbachstrasse 4, 8600 Dübendorf, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 658,
+      "place_id": "ChIJU0ny9-afmkcRSbE8oQMjq0I",
+      "gefunden_via_keyword": "Vergnügungspark",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.395254,
+        "lng": 8.6024304
+      }
+    },
+    {
+      "name": "Spielplatz Bachwiesen",
+      "adresse": "Bachwiesen-Strasse 40, 8047 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 101,
+      "place_id": "ChIJZYBKK9ALkEcRBA3SWWDnhNI",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3804232,
+        "lng": 8.4867914
+      }
+    },
+    {
+      "name": "Alfred Escher-Denkmal",
+      "adresse": "Bahnhofplatz, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 42,
+      "place_id": "ChIJGWM0mwgKkEcRPCcR53OTGa8",
+      "gefunden_via_keyword": "Monument, Denkmal, Skulptur, Kulturelles Denkmal",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3771385,
+        "lng": 8.5399718
+      }
+    },
+    {
+      "name": "Storchenkolonie Uznach",
+      "adresse": "Im Zübli 8730, 8730 Uznach, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 40,
+      "place_id": "ChIJfyxjmc7ImkcRQ2BKh1lgfCE",
+      "gefunden_via_keyword": "Vogelbeobachtungsgebiet",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2281029,
+        "lng": 8.9785817
+      }
+    },
+    {
+      "name": "Voliere Seebach",
+      "adresse": "Glatttalstrasse 45, 8052 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 36,
+      "place_id": "ChIJAfch-ZgKkEcRapLlpcGUO9g",
+      "gefunden_via_keyword": "Vogelbeobachtungsgebiet",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4231981,
+        "lng": 8.5485285
+      }
+    },
+    {
+      "name": "Herkulesbrunnen",
+      "adresse": "Bahnhofstrasse, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 20,
+      "place_id": "ChIJOckOWiMLkEcRVYT1tNyk1lk",
+      "gefunden_via_keyword": "Monument",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.374015,
+        "lng": 8.5386215
+      }
+    },
+    {
+      "name": "Grillstelle",
+      "adresse": "Emil-Klöti-Strasse 40, 8049 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 20,
+      "place_id": "ChIJIZ5Z0fELkEcRo-8Lq8oFCRI",
+      "gefunden_via_keyword": "Barbecuebereich",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4017454,
+        "lng": 8.5104489
+      }
+    },
+    {
+      "name": "Schanzengraben",
+      "adresse": "Schanzengraben, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 20,
+      "place_id": "ChIJ401PWgEKkEcRk6ZzKCq6Hjk",
+      "gefunden_via_keyword": "Fluss",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.3703129,
+        "lng": 8.5344984
+      }
+    },
+    {
+      "name": "Grillstelle Käferberg",
+      "adresse": "9GXH+QV, 8037 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 15,
+      "place_id": "ChIJcWeeWBsLkEcRStAkidfjzCA",
+      "gefunden_via_keyword": "Barbecuebereich, Picknickstellen",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3994516,
+        "lng": 8.5296793
+      }
+    },
+    {
+      "name": "\"Augustinerbrunnen\", Künstler unbekannt, 1577 (#KiöR)",
+      "adresse": "Augustinergasse, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 11,
+      "place_id": "ChIJaSwnA8sLkEcR-dVZN8cR-0c",
+      "gefunden_via_keyword": "Skulptur",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3720624,
+        "lng": 8.5395118
+      }
+    },
+    {
+      "name": "Zelt-Klub Zürich",
+      "adresse": "Rausenbachweg 8, 8124 Maur, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 9,
+      "place_id": "ChIJgVK_SGWkmkcRw3qlzy0O_Tc",
+      "gefunden_via_keyword": "Campingplatz",
+      "types": [
+        "campground",
+        "establishment",
+        "lodging",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.34657199999999,
+        "lng": 8.669457
+      }
+    },
+    {
+      "name": "Blockskulptur für Gedenkstätte Katharina von Zimmern - von Anna-Maria Bauer, 2004 (#KiöR)",
+      "adresse": "Kirche Fraumünster, Münsterhof 2, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 8,
+      "place_id": "ChIJ-cKsNQALkEcRf1Oaf0z7bxc",
+      "gefunden_via_keyword": "Denkmal, Kulturelles Denkmal",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3695823,
+        "lng": 8.541077099999999
+      }
+    },
+    {
+      "name": "Grillplatz Elefant",
+      "adresse": "Buchholzstrasse 61, 8053 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 6,
+      "place_id": "ChIJoXma8vmnmkcRNf_5UeRsQQk",
+      "gefunden_via_keyword": "Barbecuebereich",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.362286,
+        "lng": 8.582239999999999
+      }
+    },
+    {
+      "name": "Flussbad Unterer Letten",
+      "adresse": "Wasserwerkstrasse 141, 8037 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 884,
+      "place_id": "ChIJ77eZhGsKkEcReNrJEGKsHQA",
+      "gefunden_via_keyword": "Fluss",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "spa"
+      ],
+      "koordinaten": {
+        "lat": 47.3901011,
+        "lng": 8.5285918
+      }
+    },
+    {
+      "name": "Camping Hüttenberg",
+      "adresse": "Huttenberg, 8264 Eschenz, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 717,
+      "place_id": "ChIJSf0yoySPmkcR3cOQEbwA9nU",
+      "gefunden_via_keyword": "Campingplatz",
+      "types": [
+        "campground",
+        "establishment",
+        "lodging",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.644559,
+        "lng": 8.859862
+      }
+    },
+    {
+      "name": "Ganymed-Skulptur",
+      "adresse": "Bürkliterrasse 8001, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 346,
+      "place_id": "ChIJ_SL2UVWnmkcRdZd5HeyX3-k",
+      "gefunden_via_keyword": "Monument, Skulptur, Kriegsdenkmal",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3660231,
+        "lng": 8.541229099999999
+      }
+    },
+    {
+      "name": "Robinsonspielplatz Witikon",
+      "adresse": "Stöckenhaldenweg, 8053 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 216,
+      "place_id": "ChIJUzqxAiunmkcRHFZUAUwP-S4",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3612852,
+        "lng": 8.5849767
+      }
+    },
+    {
+      "name": "Wehrmännerdenkmal",
+      "adresse": "Kronenweg 4, 8127 Küsnacht, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 174,
+      "place_id": "ChIJm4V3ejekmkcRXNZbkKuBYco",
+      "gefunden_via_keyword": "Monument, Denkmal, Kulturelles Denkmal, Kriegsdenkmal",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3284121,
+        "lng": 8.6469872
+      }
+    },
+    {
+      "name": "Kaeng Krachan Elefantenpark",
+      "adresse": "8044 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 170,
+      "place_id": "ChIJ42bYyvmhmkcRPPpIGZkc4_4",
+      "gefunden_via_keyword": "Zoo, Tierzoo",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.38844109999999,
+        "lng": 8.5774667
+      }
+    },
+    {
+      "name": "Täufergedenkplatte",
+      "adresse": "Schipfe 16-24, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 129,
+      "place_id": "ChIJVwmqewcKkEcRGU2aZ9fVBSE",
+      "gefunden_via_keyword": "Monument, Denkmal, Kulturelles Denkmal",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3735228,
+        "lng": 8.5419321
+      }
+    },
+    {
+      "name": "Spielplatz & Liegewiese beim Lindenhof",
+      "adresse": "Fortunagasse, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 77,
+      "place_id": "ChIJpw7EdAcKkEcR7uEb51V884U",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.373836,
+        "lng": 8.541126199999999
+      }
+    },
+    {
+      "name": "Zoolino",
+      "adresse": "8044 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 68,
+      "place_id": "ChIJIypkeMmhmkcRN2g5hi-OVYM",
+      "gefunden_via_keyword": "Zoo, Tierzoo",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.3861684,
+        "lng": 8.577176399999999
+      }
+    },
+    {
+      "name": "Kaltbrunner Riet",
+      "adresse": "Hans-Noll-Weg, 8730 Uznach, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 37,
+      "place_id": "ChIJTRQOl6bPmkcRyNNtxmTCeCs",
+      "gefunden_via_keyword": "Vogelbeobachtungsgebiet",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2150776,
+        "lng": 8.9845848
+      }
+    },
+    {
+      "name": "Brunnenfigur «Die tapferen Zürcherinnen von 1292» von Gustav Siber, 1912 (#KiöR)",
+      "adresse": "Lindenhof, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 32,
+      "place_id": "ChIJw6TmCAALkEcRLJe2qJ8uEms",
+      "gefunden_via_keyword": "Monument",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3729411,
+        "lng": 8.5412413
+      }
+    },
+    {
+      "name": "Vogelbeobachtung, Gebäude",
+      "adresse": "8464 Marthalen, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 30,
+      "place_id": "ChIJuwABEPd3kEcR-JJKuUtbOj0",
+      "gefunden_via_keyword": "Vogelbeobachtungsgebiet",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.59662970000001,
+        "lng": 8.5954825
+      }
+    },
+    {
+      "name": "Grillplatz Entlisbergkopf",
+      "adresse": "Entlisbergweg, 8041 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 27,
+      "place_id": "ChIJPYJk6isIkEcROar9m7pRJ60",
+      "gefunden_via_keyword": "Barbecuebereich",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.32470199999999,
+        "lng": 8.5231678
+      }
+    },
+    {
+      "name": "Stüssibrunnen",
+      "adresse": "Stüssihofstatt 10, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 26,
+      "place_id": "ChIJU_wjTuqhmkcRIdgJN1r5ogE",
+      "gefunden_via_keyword": "Monument",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3725251,
+        "lng": 8.5437239
+      }
+    },
+    {
+      "name": "Zurich Bronze Modell",
+      "adresse": "Stadthausquai 17, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 20,
+      "place_id": "ChIJP0TdDFyhmkcRNk_I8LNw3Tg",
+      "gefunden_via_keyword": "Skulptur",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3693049,
+        "lng": 8.541963299999999
+      }
+    },
+    {
+      "name": "Lewa Giraffenhaus",
+      "adresse": "Hirzenbach, 8044 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 19,
+      "place_id": "ChIJPVXQ-LOhmkcRdY5qkfW4G7k",
+      "gefunden_via_keyword": "Tierzoo",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.3892513,
+        "lng": 8.5778061
+      }
+    },
+    {
+      "name": "Schlachtendenkmal",
+      "adresse": "Hanslinweg, 8044 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 17,
+      "place_id": "ChIJnf4CV5agmkcRXhfL7S9ZAVA",
+      "gefunden_via_keyword": "Monument, Denkmal, Skulptur, Kulturelles Denkmal, Kriegsdenkmal",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3870619,
+        "lng": 8.5623652
+      }
+    },
+    {
+      "name": "Semien-Anlage",
+      "adresse": "8044 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 7,
+      "place_id": "ChIJbcVVOPqhmkcR_pNwq4Y_GLk",
+      "gefunden_via_keyword": "Zoo",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.3873781,
+        "lng": 8.5759878
+      }
+    },
+    {
+      "name": "Denkmal für Hans Künzi von Carsten Höller, 2017 (#KiöR)",
+      "adresse": "Museumstrasse 1, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 6,
+      "place_id": "ChIJd7uT6akLkEcRvMNXj9dtBkc",
+      "gefunden_via_keyword": "Monument, Denkmal",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3782196,
+        "lng": 8.536117899999999
+      }
+    },
+    {
+      "name": "Storchennest Riedikon",
+      "adresse": "Riedikerstrasse 106, 8616 Riedikon, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 6,
+      "place_id": "ChIJuUy_JgClmkcReBCD-P-Csoo",
+      "gefunden_via_keyword": "Vogelbeobachtungsgebiet",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3299983,
+        "lng": 8.7107494
+      }
+    },
+    {
+      "name": "Zoo Zürich",
+      "adresse": "Zürichbergstrasse 221, 8044 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 29837,
+      "place_id": "ChIJl6a3EuqgmkcRIbfUKDeckjE",
+      "gefunden_via_keyword": "Zoo",
+      "types": [
+        "aquarium",
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.3842845,
+        "lng": 8.5744797
+      }
+    },
+    {
+      "name": "Adventure Arena Zürich",
+      "adresse": "Stettbachstrasse 2, 8600 Dübendorf, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 2768,
+      "place_id": "ChIJ2-5myiqhmkcRyfFIYdnhOqU",
+      "gefunden_via_keyword": "Vergnügungspark",
+      "types": [
+        "amusement_park",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.3948964,
+        "lng": 8.6030837
+      }
+    },
+    {
+      "name": "Josefwiese",
+      "adresse": "Josefstrasse 197, 8005 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 1475,
+      "place_id": "ChIJx3a8chUKkEcRiE9YqjEq730",
+      "gefunden_via_keyword": "Picknickstellen",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3857839,
+        "lng": 8.523565399999999
+      }
+    },
+    {
+      "name": "Flussbad Au-Höngg",
+      "adresse": "Werdinsel 2, 8049 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 1054,
+      "place_id": "ChIJU4ZgCbALkEcRdQv1qhvdX9E",
+      "gefunden_via_keyword": "Fluss",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3993137,
+        "lng": 8.4909105
+      }
+    },
+    {
+      "name": "Campingprofi Donada & Witzig AG",
+      "adresse": "Giessenstrasse 11 B, 8953 Dietikon, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 563,
+      "place_id": "ChIJjb9Wz0MMkEcRCctXRyaJYyU",
+      "gefunden_via_keyword": "Campingplatz",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "store"
+      ],
+      "koordinaten": {
+        "lat": 47.40086549999999,
+        "lng": 8.4252886
+      }
+    },
+    {
+      "name": "Freizeitpark Erlenmoos",
+      "adresse": "Sihleggstrasse 4, 8832 Wollerau, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 549,
+      "place_id": "ChIJuw3fgiKymkcRSzh_opocRqk",
+      "gefunden_via_keyword": "Vergnügungspark",
+      "types": [
+        "amusement_park",
+        "establishment",
+        "park",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.1887932,
+        "lng": 8.705141099999999
+      }
+    },
+    {
+      "name": "Kulturareal Mühle Tiefenbrunnen",
+      "adresse": "Seefeldstrasse 219 Seefeldstrasse 223 Seefeldstrasse 225 Seefeldstrasse 231, Seefeldstrasse 233, 8008 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 293,
+      "place_id": "ChIJn-VImTinmkcRNskt2vJybnE",
+      "gefunden_via_keyword": "Kulturelles Denkmal",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3519424,
+        "lng": 8.5609408
+      }
+    },
+    {
+      "name": "Stolzewiese",
+      "adresse": "Stolzestrasse 14, 8006 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 157,
+      "place_id": "ChIJpwuD-5-gmkcRpLZk1rNdkDE",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3863968,
+        "lng": 8.5467819
+      }
+    },
+    {
+      "name": "Spielplatz Kollerwiese",
+      "adresse": "Steinstrasse 8, 8003 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 147,
+      "place_id": "ChIJP1niffUJkEcREWwwhv7m66s",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3682376,
+        "lng": 8.5192189
+      }
+    },
+    {
+      "name": "Spielplatz Artergut",
+      "adresse": "Minervastrasse 46, 8032 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 98,
+      "place_id": "ChIJQUYn2LKgmkcR9GjXT5qR-xg",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3662804,
+        "lng": 8.5554404
+      }
+    },
+    {
+      "name": "Mühlesteg",
+      "adresse": "Mühlesteg, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 58,
+      "place_id": "ChIJL2V2lHcLkEcReJvzPrIpLVk",
+      "gefunden_via_keyword": "Fluss",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.37559419999999,
+        "lng": 8.542752199999999
+      }
+    },
+    {
+      "name": "Spielplatz beim GZ Riesbach",
+      "adresse": "Seefeldstrasse 93, 8008 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 51,
+      "place_id": "ChIJPY_E-k6nmkcRQyG9UQ2YAa0",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3589448,
+        "lng": 8.553811999999999
+      }
+    },
+    {
+      "name": "Eisvogel Brutplatz, Töss",
+      "adresse": "8310 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 49,
+      "place_id": "ChIJQx6iwJaZmkcRHXGWj0nfMRU",
+      "gefunden_via_keyword": "Vogelbeobachtungsgebiet",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4637489,
+        "lng": 8.7276858
+      }
+    },
+    {
+      "name": "Spielplatz GZ Schindlergut",
+      "adresse": "Kronenstrasse 12, 8006 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 42,
+      "place_id": "ChIJz1by0nIKkEcRbTMWyIed88g",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3868254,
+        "lng": 8.5367132
+      }
+    },
+    {
+      "name": "Spielplatz Rosshalde",
+      "adresse": "Rosshalde 27, 8047 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 41,
+      "place_id": "ChIJBygGQ34JkEcRZ3mcwnsX8Yw",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3688961,
+        "lng": 8.4881327
+      }
+    },
+    {
+      "name": "Gedenkstein Dr. Arnold Bürkli",
+      "adresse": "General-Guisan-Quai 30, 8002 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 39,
+      "place_id": "ChIJZcoVFK0JkEcRG2ySdJLxMYQ",
+      "gefunden_via_keyword": "Monument, Denkmal, Kulturelles Denkmal",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.363489,
+        "lng": 8.5367999
+      }
+    },
+    {
+      "name": "Täuferhöhle",
+      "adresse": "Täuferhöhle, 8344 Bäretswil, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 35,
+      "place_id": "ChIJl9UF6-u4mkcRFMGboXVe1mk",
+      "gefunden_via_keyword": "Höhle",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.3167,
+        "lng": 8.88618
+      }
+    },
+    {
+      "name": "Hüttenkopf Spielplatz",
+      "adresse": "Hüttenkopfstrasse 74, 8051 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 33,
+      "place_id": "ChIJIVPrp4ygmkcRVylXMjTVzZU",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3993353,
+        "lng": 8.572547499999999
+      }
+    },
+    {
+      "name": "Grillplatz",
+      "adresse": "Unnamed Road, 8049, 8046 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 21,
+      "place_id": "ChIJwfu_pRALkEcRzSkviwTUuj0",
+      "gefunden_via_keyword": "Barbecuebereich, Picknickstellen",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4167722,
+        "lng": 8.4893564
+      }
+    },
+    {
+      "name": "Spielplatz",
+      "adresse": "Brandschenkestrasse 72, 8003 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 19,
+      "place_id": "ChIJ5ygdX2AJkEcRnIDwuQnXg9M",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3674718,
+        "lng": 8.5268449
+      }
+    },
+    {
+      "name": "Gottfried-Keller-Denkmal",
+      "adresse": "8002 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 14,
+      "place_id": "ChIJL17ojU4JkEcRRdCixgWz8sI",
+      "gefunden_via_keyword": "Denkmal",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3588701,
+        "lng": 8.5358486
+      }
+    },
+    {
+      "name": "Camping Club Sihl",
+      "adresse": "Sihluferweg 21, 8136 Gattikon, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 13,
+      "place_id": "ChIJEeyhKlqpmkcRKv2pDfthiDU",
+      "gefunden_via_keyword": "Campingplatz",
+      "types": [
+        "establishment",
+        "lodging",
+        "point_of_interest",
+        "rv_park"
+      ],
+      "koordinaten": {
+        "lat": 47.2798318,
+        "lng": 8.5481482
+      }
+    },
+    {
+      "name": "Grillstelle",
+      "adresse": "In der Weid 8, 8942 Oberrieden, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 11,
+      "place_id": "ChIJy8kwS46pmkcRRePVbBPKLAk",
+      "gefunden_via_keyword": "Barbecuebereich",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2667557,
+        "lng": 8.5748097
+      }
+    },
+    {
+      "name": "Grillstelle",
+      "adresse": "Gänziloobrücke 8002, 8041 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 9,
+      "place_id": "ChIJT1mXILkJkEcRqR7iO0RxYQ8",
+      "gefunden_via_keyword": "Barbecuebereich, Picknickstellen",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.34836120000001,
+        "lng": 8.5176464
+      }
+    },
+    {
+      "name": "Grillstelle Werdhölzli Floss",
+      "adresse": "Bändlistrasse 148, 8064 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 5,
+      "place_id": "ChIJ4-xfEQALkEcRwcD6TDSvhuk",
+      "gefunden_via_keyword": "Barbecuebereich, Picknickstellen",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4006772,
+        "lng": 8.4798489
+      }
+    },
+    {
+      "name": "Grillstelle",
+      "adresse": "8037 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 5,
+      "place_id": "ChIJm_z-jcgLkEcR0n-ihl9gq3g",
+      "gefunden_via_keyword": "Barbecuebereich",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4028727,
+        "lng": 8.5248964
+      }
+    },
+    {
+      "name": "Knies Kinderzoo Rapperswil",
+      "adresse": "Oberseestrasse 36, 8640 Rapperswil-Jona, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 6678,
+      "place_id": "ChIJZ-W1BuO2mkcRw7w-u3y8Z8w",
+      "gefunden_via_keyword": "Zoo, Tierzoo, Kinderzoo",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.22403329999999,
+        "lng": 8.822533199999999
+      }
+    },
+    {
+      "name": "Wildpark Bruderhaus Winterthur",
+      "adresse": "Bruderhausstrasse 3, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 2961,
+      "place_id": "ChIJbfeYSamZmkcRk2J77T3Plj0",
+      "gefunden_via_keyword": "Wildpark",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest",
+        "tourist_attraction",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.477306,
+        "lng": 8.7261709
+      }
+    },
+    {
+      "name": "Camping am Schützenweiher GmbH",
+      "adresse": "Eichliwaldstrasse 4, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 349,
+      "place_id": "ChIJaWSkbtubmkcRuL_e5O4z9ss",
+      "gefunden_via_keyword": "Campingplatz",
+      "types": [
+        "campground",
+        "establishment",
+        "lodging",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5197634,
+        "lng": 8.7163752
+      }
+    },
+    {
+      "name": "Campingplatz Gütighausen",
+      "adresse": "Gütighuuserstrasse, 8475 Gütighausen, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 266,
+      "place_id": "ChIJ1XdLzzKbmkcR696QckAPzHc",
+      "gefunden_via_keyword": "Campingplatz",
+      "types": [
+        "campground",
+        "establishment",
+        "lodging",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.58838040000001,
+        "lng": 8.7397987
+      }
+    },
+    {
+      "name": "Spielplatz Blatterwiese",
+      "adresse": "Bellerivestrasse 138, 8008 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 190,
+      "place_id": "ChIJiTzGekWnmkcRHhEe9cBACDc",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3556165,
+        "lng": 8.5512944
+      }
+    },
+    {
+      "name": "MyCamper - Die Camper Sharing Plattform",
+      "adresse": "Badenerstrasse 47, 8004 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 181,
+      "place_id": "ChIJDZVLi_kLkEcR94bjjvo1KI4",
+      "gefunden_via_keyword": "Campingplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3731484,
+        "lng": 8.5283593
+      }
+    },
+    {
+      "name": "Seiler Camping Wildberg AG",
+      "adresse": "Weid 2, 8489 Wildberg, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 131,
+      "place_id": "ChIJzZ_lLSaWmkcR4Dz2mOxI-sI",
+      "gefunden_via_keyword": "Campingplatz",
+      "types": [
+        "campground",
+        "establishment",
+        "lodging",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4348835,
+        "lng": 8.8284699
+      }
+    },
+    {
+      "name": "Camping Rässenwies",
+      "adresse": "Alte Steinerstrasse, 8451 Kleinandelfingen, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 102,
+      "place_id": "ChIJ3SvlJUqDmkcRimnZJ3s2mp8",
+      "gefunden_via_keyword": "Campingplatz",
+      "types": [
+        "campground",
+        "establishment",
+        "lodging",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5967968,
+        "lng": 8.6850699
+      }
+    },
+    {
+      "name": "Spielplatz GZ Buchegg",
+      "adresse": "Hofwiesenstrasse 146, 8057 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 93,
+      "place_id": "ChIJcdcrUGQKkEcRWKDUE4VxUpQ",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3996855,
+        "lng": 8.5344072
+      }
+    },
+    {
+      "name": "Ulrich Zwingli Monument",
+      "adresse": "Limmatquai 20, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 78,
+      "place_id": "ChIJVTw-WqqgmkcRgv9DVyo5o28",
+      "gefunden_via_keyword": "Monument, Denkmal, Skulptur",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3694757,
+        "lng": 8.543286199999999
+      }
+    },
+    {
+      "name": "Grillplatz Fällanden",
+      "adresse": "Buenstrasse 94B, 8600 Dübendorf, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 63,
+      "place_id": "ChIJJ0yZI2ehmkcRTeK1F7UFteE",
+      "gefunden_via_keyword": "Barbecuebereich",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.38133329999999,
+        "lng": 8.634976700000001
+      }
+    },
+    {
+      "name": "Spielplatz Aegerten",
+      "adresse": "Zurlindenstrasse 21, 8003 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 51,
+      "place_id": "ChIJ8QeJ_R0KkEcRRVb9ejxBAyI",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3685362,
+        "lng": 8.5224993
+      }
+    },
+    {
+      "name": "Ateliers und Skulpturenpark",
+      "adresse": "8162 Steinmaur, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 45,
+      "place_id": "ChIJVaex4Q5zkEcRpzUwXRRMzPE",
+      "gefunden_via_keyword": "Skulptur",
+      "types": [
+        "establishment",
+        "museum",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.48587380000001,
+        "lng": 8.4453914
+      }
+    },
+    {
+      "name": "Australien-Anlage",
+      "adresse": "8044 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 33,
+      "place_id": "ChIJrQsjHUChmkcRdG-__-EalpY",
+      "gefunden_via_keyword": "Zoo",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.3844017,
+        "lng": 8.572472099999999
+      }
+    },
+    {
+      "name": "Spielplatz 64 Lindenhof",
+      "adresse": "Fortunagasse, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 25,
+      "place_id": "ChIJ33z5bAcKkEcRtAryFvubKbY",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.37351049999999,
+        "lng": 8.5409165
+      }
+    },
+    {
+      "name": "Spielplatzn 54 Neumünsteranlage",
+      "adresse": "Neumünsterstrasse 12, 8008 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 19,
+      "place_id": "ChIJXyR7fUmnmkcRpsUTjklBx8E",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.36034,
+        "lng": 8.5591824
+      }
+    },
+    {
+      "name": "Feuerstelle Im Rehsprung",
+      "adresse": "Im Rehsprung, 8037 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 17,
+      "place_id": "ChIJL3M3ej0LkEcRHlQk3MJGdl4",
+      "gefunden_via_keyword": "Barbecuebereich, Picknickstellen",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4008896,
+        "lng": 8.5267049
+      }
+    },
+    {
+      "name": "Bienenhaus - Hardwald",
+      "adresse": "8152 Wallisellen, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 17,
+      "place_id": "ChIJeVtY7d2hmkcR_7kpJIkNw88",
+      "gefunden_via_keyword": "Vogelbeobachtungsgebiet",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4244092,
+        "lng": 8.5887118
+      }
+    },
+    {
+      "name": "Feuerstelle Dunkelhölzli",
+      "adresse": "Dunkelhölzlistrasse 40, 8048 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 14,
+      "place_id": "ChIJoUTV4isLkEcR0TaAK9kz_0g",
+      "gefunden_via_keyword": "Barbecuebereich",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3886172,
+        "lng": 8.465468099999999
+      }
+    },
+    {
+      "name": "Grill",
+      "adresse": "waldweg, 8047 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 8,
+      "place_id": "ChIJ5Z7hiB4LkEcRWeeHUIVe2mA",
+      "gefunden_via_keyword": "Barbecuebereich",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3982611,
+        "lng": 8.448795
+      }
+    },
+    {
+      "name": "Schweizerpsalm-Denkmal von Franz Wagner, 1907 (#KiöR)",
+      "adresse": "Bellerivestrasse 150, 8008 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 6,
+      "place_id": "ChIJ0VA3S-inmkcRdyA30jhIyOk",
+      "gefunden_via_keyword": "Kulturelles Denkmal",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.353846,
+        "lng": 8.5520099
+      }
+    },
+    {
+      "name": "Conny-Land",
+      "adresse": "Connylandstrasse 2, 8564 Lipperswil, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 5234,
+      "place_id": "ChIJT2pMcQjzmkcRE_c_4Wc2JTI",
+      "gefunden_via_keyword": "Vergnügungspark",
+      "types": [
+        "amusement_park",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.614355,
+        "lng": 9.0574462
+      }
+    },
+    {
+      "name": "Naturfreunde Zeltplatz",
+      "adresse": "Aschbach, 8124 Maur, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 96,
+      "place_id": "ChIJm3AoBXSkmkcRuLzzhZiiYtU",
+      "gefunden_via_keyword": "Campingplatz",
+      "types": [
+        "campground",
+        "establishment",
+        "lodging",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.35307,
+        "lng": 8.663556
+      }
+    },
+    {
+      "name": "Spielplatz 43 - Siriuswiese",
+      "adresse": "Gladbachstrasse, 8044 Zürich, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 61,
+      "place_id": "ChIJOZ2yiKOgmkcRN1x0-QXeNT8",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3808514,
+        "lng": 8.5530121
+      }
+    },
+    {
+      "name": "Grillstelle",
+      "adresse": "Gratstrasse 8143, 8143 Stallikon, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 16,
+      "place_id": "ChIJVQcN0LYJkEcRShEoBpdg0e8",
+      "gefunden_via_keyword": "Barbecuebereich",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3370018,
+        "lng": 8.5018353
+      }
+    },
+    {
+      "name": "Vrenelisgärtli",
+      "adresse": "Germaniastrasse 17, 8006 Zürich, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 10,
+      "place_id": "ChIJtY3qRgyhmkcR9FksK-yhHxc",
+      "gefunden_via_keyword": "Barbecuebereich, Picknickstellen",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.391349,
+        "lng": 8.5523331
+      }
+    },
+    {
+      "name": "Windkinetische Skulptur von George Rickey",
+      "adresse": "Brandschenkestrasse 5, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 8,
+      "place_id": "ChIJXxqMOcoLkEcRpHYZxfIZJfQ",
+      "gefunden_via_keyword": "Skulptur",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3699879,
+        "lng": 8.5343583
+      }
+    },
+    {
+      "name": "Plättli-Zoo AG",
+      "adresse": "Hertenstrasse 41, 8500 Frauenfeld, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 2120,
+      "place_id": "ChIJh-6XfhOSmkcRqsg4JP5Kkf4",
+      "gefunden_via_keyword": "Zoo, Tierzoo",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.5605297,
+        "lng": 8.9157423
+      }
+    },
+    {
+      "name": "Camping Saland AG",
+      "adresse": "Auwisstrasse 35, 8493 Saland, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 148,
+      "place_id": "ChIJtS_Bb2a-mkcR-azN-fxrI8o",
+      "gefunden_via_keyword": "Campingplatz",
+      "types": [
+        "campground",
+        "establishment",
+        "lodging",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3899272,
+        "lng": 8.8596523
+      }
+    },
+    {
+      "name": "Voliere Zürich",
+      "adresse": "Mythenquai 1, 8002 Zürich, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 146,
+      "place_id": "ChIJnQnbg_4JkEcR12ZdWUIhtqI",
+      "gefunden_via_keyword": "Vogelbeobachtungsgebiet",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.3622904,
+        "lng": 8.535674199999999
+      }
+    },
+    {
+      "name": "Lutherwiese",
+      "adresse": "Lutherstrasse, 8004 Zürich, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 96,
+      "place_id": "ChIJIereBBsKkEcR-8fYAWCaR8o",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3746203,
+        "lng": 8.5282723
+      }
+    },
+    {
+      "name": "Kinderspielplatz Switzerland",
+      "adresse": "8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 29,
+      "place_id": "ChIJce4CDQcKkEcRO80cE4JV_m8",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3735167,
+        "lng": 8.5409311
+      }
+    },
+    {
+      "name": "Denkmal der Arbeit",
+      "adresse": "8004 Zürich, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 6,
+      "place_id": "ChIJsWuxHW4LkEcRciSUJ73tbrM",
+      "gefunden_via_keyword": "Monument, Denkmal, Kulturelles Denkmal",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3724801,
+        "lng": 8.5289918
+      }
+    },
+    {
+      "name": "Sangay Bergnebelwald",
+      "adresse": "Zürichbergstrasse 221, 8044 Zürich, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 6,
+      "place_id": "ChIJ--RULzehmkcRAzIMRm5DwjE",
+      "gefunden_via_keyword": "Zoo, Tierzoo",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.3856461,
+        "lng": 8.573080899999999
+      }
+    },
+    {
+      "name": "Pestalozzi-Denkmal",
+      "adresse": "Lintheschergasse 10, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 447,
+      "place_id": "ChIJx5oCPwYKkEcRdCEwAioLbwc",
+      "gefunden_via_keyword": "Monument, Denkmal, Kulturelles Denkmal",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3756095,
+        "lng": 8.5387395
+      }
+    },
+    {
+      "name": "Kiddy Park Bülach",
+      "adresse": "Schützenmattstrasse 30, 8180 Bülach, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 105,
+      "place_id": "ChIJ7wsB1xl3kEcRv9fAUy-DfE8",
+      "gefunden_via_keyword": "Vergnügungspark",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5287578,
+        "lng": 8.5337932
+      }
+    },
+    {
+      "name": "Förderverein Tierpark Waidberg Zürich",
+      "adresse": "Obere Waidstrasse, Waidbadstrasse, 8037 Zürich, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 60,
+      "place_id": "ChIJk2adqVsKkEcRABzFuf7gsMk",
+      "gefunden_via_keyword": "Zoo, Tierzoo, Wildpark",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.4003801,
+        "lng": 8.5172171
+      }
+    },
+    {
+      "name": "Zoo",
+      "adresse": "8044 Zürich, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 32,
+      "place_id": "ChIJ_3L1V8CgmkcRnV5Mmf7j0Jg",
+      "gefunden_via_keyword": "Zoo",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "transit_station"
+      ],
+      "koordinaten": {
+        "lat": 47.3815704,
+        "lng": 8.5715538
+      }
+    },
+    {
+      "name": "Camping Café",
+      "adresse": "Zentralstrasse 25, 8003 Zürich, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 26,
+      "place_id": "ChIJi36gzMELkEcRJ91uJY_3ep0",
+      "gefunden_via_keyword": "Campingplatz",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.371199,
+        "lng": 8.519987
+      }
+    },
+    {
+      "name": "Türlersee - Camping Strandbad Restaurant",
+      "adresse": "Türlen, 8915 Hausen am Albis, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 1042,
+      "place_id": "ChIJgRiO3yComkcRSCZSuYECk4A",
+      "gefunden_via_keyword": "Campingplatz",
+      "types": [
+        "campground",
+        "establishment",
+        "food",
+        "lodging",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.2676568,
+        "lng": 8.5102523
+      }
+    },
+    {
+      "name": "Camping Waldhof",
+      "adresse": "Camping Waldhof, 8335 Hittnau, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 255,
+      "place_id": "ChIJuzwoLBK8mkcRamcx71KJYZw",
+      "gefunden_via_keyword": "Campingplatz",
+      "types": [
+        "campground",
+        "establishment",
+        "lodging",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.35839130000001,
+        "lng": 8.810091
+      }
+    },
+    {
+      "name": "Pavillon-Skulptur von Max Bill, 1983 (#KiöR)",
+      "adresse": "Bahnhofstrasse 47, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 26,
+      "place_id": "ChIJwxwPzwYKkEcRDEe58jlGq4k",
+      "gefunden_via_keyword": "Monument, Skulptur",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3723155,
+        "lng": 8.538094899999999
+      }
+    },
+    {
+      "name": "Spielplatz 47",
+      "adresse": "u. Zäune 15, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 24,
+      "place_id": "ChIJY74wcamgmkcRixWJi4VAR4M",
+      "gefunden_via_keyword": "Spielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3720748,
+        "lng": 8.5455112
+      }
+    },
+    {
+      "name": "Heinrich Zollinger Memorial",
+      "adresse": "8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 10,
+      "place_id": "ChIJ-386xAMKkEcRHWIU_lUZaRE",
+      "gefunden_via_keyword": "Monument, Denkmal",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3704273,
+        "lng": 8.5343868
+      }
+    },
+    {
+      "name": "Länggenbach",
+      "adresse": "Länggenbach, 8104 Weiningen, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 8,
+      "place_id": "ChIJPcodtfcMkEcR5_hoCj4pHMc",
+      "gefunden_via_keyword": "Fluss",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.4161544,
+        "lng": 8.4243959
+      }
+    },
+    {
+      "name": "Erlebnisflugplatz Sitterdorf",
+      "adresse": "8589 Zihlschlacht-Sitterdorf, Schweiz",
+      "rating_durchschnitt": 4,
+      "rating_anzahl": 525,
+      "place_id": "ChIJr2R50IfkmkcRsTj86undru8",
+      "gefunden_via_keyword": "Vergnügungspark",
+      "types": [
+        "airport",
+        "amusement_park",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant",
+        "tourist_attraction",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.5094883,
+        "lng": 9.2600154
+      }
+    },
+    {
+      "name": "Grillstelle Küngenmatt",
+      "adresse": "8055 Zürich, Schweiz",
+      "rating_durchschnitt": 3.9,
+      "rating_anzahl": 9,
+      "place_id": "ChIJ8eITiB8JkEcRyg4SZsHlVYU",
+      "gefunden_via_keyword": "Picknickstellen",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3617821,
+        "lng": 8.493138799999999
+      }
+    },
+    {
+      "name": "Fischers Fritz Camping",
+      "adresse": "Seestrasse 559, 8038 Zürich, Schweiz",
+      "rating_durchschnitt": 3.7,
+      "rating_anzahl": 1400,
+      "place_id": "ChIJe_NKN3unmkcRfTJ-pZFqkZQ",
+      "gefunden_via_keyword": "Campingplatz",
+      "types": [
+        "campground",
+        "establishment",
+        "lodging",
+        "point_of_interest",
+        "rv_park"
+      ],
+      "koordinaten": {
+        "lat": 47.3358608,
+        "lng": 8.5412178
+      }
+    },
+    {
+      "name": "Mongolische Steppe",
+      "adresse": "Zürichbergstrasse 221, 8044 Zürich, Schweiz",
+      "rating_durchschnitt": 3.7,
+      "rating_anzahl": 9,
+      "place_id": "ChIJkZyEP52hmkcRS79ItjRzHvk",
+      "gefunden_via_keyword": "Zoo",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "zoo"
+      ],
+      "koordinaten": {
+        "lat": 47.3872784,
+        "lng": 8.5743942
+      }
+    },
+    {
+      "name": "statue football",
+      "adresse": "FIFA-Strasse 1, 8044 Zürich, Schweiz",
+      "rating_durchschnitt": 3.7,
+      "rating_anzahl": 6,
+      "place_id": "ChIJlSbmS1ChmkcRjExclXrt9j4",
+      "gefunden_via_keyword": "Kulturelles Denkmal",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3811769,
+        "lng": 8.5731152
+      }
+    },
+    {
+      "name": "Vic mansion",
+      "adresse": "Oberbirgstrasse 20, 8718 Schänis, Schweiz",
+      "rating_durchschnitt": 3.5,
+      "rating_anzahl": 6,
+      "place_id": "ChIJoctVlTLNmkcR8fz8q_yUROs",
+      "gefunden_via_keyword": "Vergnügungspark",
+      "types": [
+        "amusement_park",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.1573678,
+        "lng": 9.0491809
+      }
+    },
+    {
+      "name": "Bauschänzli",
+      "adresse": "Bauschänzli, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 3.3,
+      "rating_anzahl": 210,
+      "place_id": "ChIJvd1FwKqgmkcRtfarNNrwrBA",
+      "gefunden_via_keyword": "Fluss",
+      "types": [
+        "establishment",
+        "natural_feature"
+      ],
+      "koordinaten": {
+        "lat": 47.3677133,
+        "lng": 8.5423475
+      }
+    }
+  ]
+}

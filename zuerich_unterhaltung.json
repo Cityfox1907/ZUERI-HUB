@@ -1,0 +1,4455 @@
+{
+  "meta": {
+    "erstellt_am": "2026-03-02 04:28:49",
+    "dauer_minuten": 42,
+    "region": "Kanton Zürich",
+    "keywords": [
+      "Spielhalle",
+      "Freizeitzentrum",
+      "Indoorspielplatz",
+      "Abenteuersportcenter",
+      "Go Karting",
+      "Minigolf",
+      "Golfplatz",
+      "Fussballgolf",
+      "Kegelbahn",
+      "Billiardhalle",
+      "Escape Room",
+      "Lasergamezentrum",
+      "Paintballzentrum"
+    ],
+    "min_bewertungen": 10,
+    "methode": "Grid Search",
+    "statistik": {
+      "api_requests_total": 676,
+      "rohdaten_total": 13292,
+      "gefiltert_zu_wenig_bewertungen": 1420,
+      "gefiltert_ausserhalb_zh": 4173,
+      "finale_eintraege": 316,
+      "davon_stadt_zuerich": 196,
+      "davon_rest_kanton": 120
+    }
+  },
+  "orte": [
+    {
+      "name": "Axtra - Urban Axe Throwing",
+      "adresse": "Dörflistrasse 50, 8050 Zürich, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 1626,
+      "place_id": "ChIJKXfnjXkLkEcRHjwRLDSW_Dg",
+      "gefunden_via_keyword": "Abenteuersportcenter",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4062808,
+        "lng": 8.550505000000001
+      }
+    },
+    {
+      "name": "Escape Room 24 Winterthur | Live Escape Game",
+      "adresse": "Zürcherstrasse 182, 8406 Winterthur, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 1180,
+      "place_id": "ChIJ3b9i-BSZmkcRX2O_Chx2eT0",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.48990999999999,
+        "lng": 8.7038157
+      }
+    },
+    {
+      "name": "The Way Out (Escape Room)",
+      "adresse": "Hohlenbaumstrasse 61, 8200 Schaffhausen, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 358,
+      "place_id": "ChIJjUn_IRV_kEcRkP4wp2tmpBU",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.7061882,
+        "lng": 8.6185333
+      }
+    },
+    {
+      "name": "Sim Racing Events & Lounge - Reservation an jedem Tag der Woche möglich",
+      "adresse": "Zürichstrasse 66a, 8340 Hinwil, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 136,
+      "place_id": "ChIJdUee5XK5mkcRqqEDTF2kfmA",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3044875,
+        "lng": 8.8353276
+      }
+    },
+    {
+      "name": "MilSim Events",
+      "adresse": "Schaffhauserstrasse 491, 8052 Zürich, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 128,
+      "place_id": "ChIJd0KZtC4LkEcRP0Af0igTC4E",
+      "gefunden_via_keyword": "Paintballzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4209435,
+        "lng": 8.549073
+      }
+    },
+    {
+      "name": "Escape Mission Obertor Winterthur – Indoor & Outdoor Escape Room",
+      "adresse": "Zentrum Obertor, Obertor 8, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 76,
+      "place_id": "ChIJB70-N5WZmkcRUuLC63rTKj8",
+      "gefunden_via_keyword": "Abenteuersportcenter, Escape Room",
+      "types": [
+        "amusement_park",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.5004031,
+        "lng": 8.7328946
+      }
+    },
+    {
+      "name": "Alpaka-Zürich-Oberland",
+      "adresse": "Niderdürstelenstrasse 66, 8494 Bauma, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 73,
+      "place_id": "ChIJnw-7Txu_mkcR8pMw4_bFRTI",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3705052,
+        "lng": 8.8551427
+      }
+    },
+    {
+      "name": "Divecorner",
+      "adresse": "Schützenstrasse 81, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 62,
+      "place_id": "ChIJs59ePyKSmkcRmZivLxZxTmM",
+      "gefunden_via_keyword": "Abenteuersportcenter",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "school",
+        "store",
+        "travel_agency"
+      ],
+      "koordinaten": {
+        "lat": 47.5090127,
+        "lng": 8.720729
+      }
+    },
+    {
+      "name": "Flipperclub Silverball",
+      "adresse": "Würenloserstrasse 2, 8956 Killwangen, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 59,
+      "place_id": "ChIJZ24ZcOcTkEcRpWelD90rgNU",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.432784,
+        "lng": 8.357908499999999
+      }
+    },
+    {
+      "name": "VR City - Virtual Reality Center & Escape Room",
+      "adresse": "Klosterstrasse 19b, 8406 Winterthur, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 54,
+      "place_id": "ChIJYwyYtE6ZmkcRqwLMoW2GHSw",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4888814,
+        "lng": 8.7055799
+      }
+    },
+    {
+      "name": "Monkeys Connect",
+      "adresse": "Weinbergstrasse 73, 8006 Zürich, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 49,
+      "place_id": "ChIJK2nBsscLkEcRJwaUnqsT3NA",
+      "gefunden_via_keyword": "Abenteuersportcenter",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.383193,
+        "lng": 8.543187999999999
+      }
+    },
+    {
+      "name": "SWISS-SURVIVAL-TRAINING",
+      "adresse": "Freiestrasse 21, 8610 Uster, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 41,
+      "place_id": "ChIJA4hGlLmxmkcRcLysQ_dFRYE",
+      "gefunden_via_keyword": "Abenteuersportcenter",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3485081,
+        "lng": 8.7221276
+      }
+    },
+    {
+      "name": "Raum 6 - Escape Room Zürich",
+      "adresse": "Auf der Rückseite des Gebäudes neben Rest. Indoor Imbiss, Chriesbaumstrasse 4, 8604 Volketswil, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 32,
+      "place_id": "ChIJk_VOqfCjmkcRKsAfudKegro",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3819194,
+        "lng": 8.6810078
+      }
+    },
+    {
+      "name": "Kiddoland GmbH",
+      "adresse": "Zürcherstrasse 17, 8173 Neerach, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 31,
+      "place_id": "ChIJOd_r7cFzkEcRBkqH_89rPa0",
+      "gefunden_via_keyword": "Indoorspielplatz, Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5123621,
+        "lng": 8.4771211
+      }
+    },
+    {
+      "name": "ZÜRIRING Simulation-Motodrom",
+      "adresse": "Hagackerstrasse 12, 8953 Dietikon, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 29,
+      "place_id": "ChIJId07gv4NkEcRXAUIRA6WtsM",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4189984,
+        "lng": 8.3998543
+      }
+    },
+    {
+      "name": "Zurich Golf",
+      "adresse": "Pfingstweidstrasse 106, 8005 Zürich, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 27,
+      "place_id": "ChIJkRL2AY8LkEcRtb3uAFIJS1Q",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3911747,
+        "lng": 8.5078046
+      }
+    },
+    {
+      "name": "Der Schatz im Feld - Outdoor Escape Game in Wetzikon",
+      "adresse": "Langfurrenstrasse 2, 8620 Wetzikon, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 23,
+      "place_id": "ChIJjx7dppO7mkcR6YSBzY0VITY",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3276146,
+        "lng": 8.8099467
+      }
+    },
+    {
+      "name": "DreamAlpin GmbH",
+      "adresse": "Alpthalerstrasse 8, 8849 Alpthal, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 18,
+      "place_id": "ChIJI68uGla1mkcRYkHaRJvkehY",
+      "gefunden_via_keyword": "Abenteuersportcenter",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.08604159999999,
+        "lng": 8.7212974
+      }
+    },
+    {
+      "name": "Sato Code",
+      "adresse": "Stauffacher, Grüngasse 7, 8004 Zürich, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 18,
+      "place_id": "ChIJEXOoKVILkEcRmLSY0ldLmUw",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3725088,
+        "lng": 8.526072899999999
+      }
+    },
+    {
+      "name": "studiogolf",
+      "adresse": "Flüelastrasse 16/1. OG, 8048 Zürich, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 15,
+      "place_id": "ChIJEZ5LfVILkEcRQEYn3OWNRcQ",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3829731,
+        "lng": 8.4959718
+      }
+    },
+    {
+      "name": "Pure Stroke Golf Lounge",
+      "adresse": "Gufenhaldenweg 4, 8708 Männedorf, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 14,
+      "place_id": "ChIJ7-RAczOvmkcRG-VgKTOUtiY",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2584463,
+        "lng": 8.6904767
+      }
+    },
+    {
+      "name": "Spielraum Indigo",
+      "adresse": "Langrüti 37, 8820 Wädenswil, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 13,
+      "place_id": "ChIJe3TXux-vmkcRGWUOAPVHzoA",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "school"
+      ],
+      "koordinaten": {
+        "lat": 47.2133725,
+        "lng": 8.6601376
+      }
+    },
+    {
+      "name": "Grotto Games",
+      "adresse": "Buckhauserstrasse 30, 8048 Zürich, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 11,
+      "place_id": "ChIJ82a8_Y0LkEcRZrpBIsVvDa4",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3840463,
+        "lng": 8.4924049
+      }
+    },
+    {
+      "name": "WHANAU watersport & outdoor activities",
+      "adresse": "Boniswilerstrasse 1, 5707 Seengen, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 11,
+      "place_id": "ChIJGSYdMxEXkEcR2dRH0bBH7NI",
+      "gefunden_via_keyword": "Abenteuersportcenter",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3251767,
+        "lng": 8.2025402
+      }
+    },
+    {
+      "name": "Aficionados.golf",
+      "adresse": "Töpferstrasse 28, 8045 Zürich, Schweiz",
+      "rating_durchschnitt": 5,
+      "rating_anzahl": 11,
+      "place_id": "ChIJ3dwCQRMJkEcRD12tNDO1YuY",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3594652,
+        "lng": 8.514778999999999
+      }
+    },
+    {
+      "name": "ROOM Escape Room Zürich",
+      "adresse": "Hohlstrasse 465, 8048 Zürich, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 1157,
+      "place_id": "ChIJ8VBEIeALkEcRrjwP6GFRjt8",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "amusement_park",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.38725059999999,
+        "lng": 8.4992055
+      }
+    },
+    {
+      "name": "the escape Zürich",
+      "adresse": "Löwenstrasse 69, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 841,
+      "place_id": "ChIJf-mNrwgKkEcRpd0ZCLmeWT0",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.377249,
+        "lng": 8.5382406
+      }
+    },
+    {
+      "name": "Secret Clue GmbH - Escape Rooms",
+      "adresse": "Schlosserstrasse 4, 8180 Bülach, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 601,
+      "place_id": "ChIJU11lp3B1kEcRTx5BbW5YHCg",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5075638,
+        "lng": 8.5391764
+      }
+    },
+    {
+      "name": "Escape Squad - Dietlikon",
+      "adresse": "Bahnstrasse 11, 8305 Dietlikon, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 571,
+      "place_id": "ChIJx-JGh1yhmkcRjShNuV1g_88",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4160519,
+        "lng": 8.6177301
+      }
+    },
+    {
+      "name": "trueVR Center Dietlikon - Virtual Reality Center",
+      "adresse": "Riedwiesenstrasse 23, 8305 Dietlikon, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 539,
+      "place_id": "ChIJ5fu73b2hmkcR9Wzcyl_ZWuo",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4141313,
+        "lng": 8.6263802
+      }
+    },
+    {
+      "name": "VRilliant - Virtual Reality Arenas - Zürich",
+      "adresse": "Badenerstrasse 569, 8048 Zürich, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 510,
+      "place_id": "ChIJG6EtMVILkEcRbf3jUOickYs",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3833504,
+        "lng": 8.495733099999999
+      }
+    },
+    {
+      "name": "Cinema Escape Zürich",
+      "adresse": "Badenerstrasse 569, 8048 Zürich, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 507,
+      "place_id": "ChIJ2y-CtiYLkEcRYzIsYRbgCCs",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3833417,
+        "lng": 8.495602
+      }
+    },
+    {
+      "name": "Laserstar GmbH",
+      "adresse": "Ifangstrasse 2, 8603 Schwerzenbach, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 459,
+      "place_id": "ChIJAYIWL5mjmkcR4xWoKMW98kM",
+      "gefunden_via_keyword": "Lasergamezentrum, Paintballzentrum, Spielhalle",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.3833302,
+        "lng": 8.6614287
+      }
+    },
+    {
+      "name": "Geheimgang 188",
+      "adresse": "Lagerpl. 2, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 430,
+      "place_id": "ChIJh-Q3wnOZmkcR70f_mdi5Fzc",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.495555,
+        "lng": 8.718401
+      }
+    },
+    {
+      "name": "Gamer Zürich - Die Gameshow",
+      "adresse": "Bachstrasse 27, 8912 Obfelden, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 407,
+      "place_id": "ChIJ5f1V7kUHkEcRkvOIvblpYh0",
+      "gefunden_via_keyword": "Spielhalle, Minigolf, Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.2663905,
+        "lng": 8.422600899999999
+      }
+    },
+    {
+      "name": "Rageroom Frauenfeld",
+      "adresse": "Weckingen 14, 8532 Weckingen, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 309,
+      "place_id": "ChIJYbAcvIWTmkcRi41hu984_NU",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5961625,
+        "lng": 8.893719299999999
+      }
+    },
+    {
+      "name": "Excitement.ch",
+      "adresse": "Limmatstrasse 2, 8957 Spreitenbach, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 296,
+      "place_id": "ChIJ0VMUnY0NkEcRSQNNLrmb-zY",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4290732,
+        "lng": 8.3704454
+      }
+    },
+    {
+      "name": "Next Level Escape AG - Immersive Escape Rooms - Teambuilding & Teamevent, Adventurerooms, Gruppen- und Freizeitaktivitäten",
+      "adresse": "Steinackerstrasse 41, 8302 Kloten, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 290,
+      "place_id": "ChIJI2SX8kmfmkcRVeWWnfLe1a4",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.448616,
+        "lng": 8.6011285
+      }
+    },
+    {
+      "name": "Outdoor Escape Games",
+      "adresse": "Predigerpl. 22, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 246,
+      "place_id": "ChIJTQt6F6gLkEcRPmpOyAc4A-c",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.373539,
+        "lng": 8.545511
+      }
+    },
+    {
+      "name": "Mission: Escape Rümlang",
+      "adresse": "Oberglatterstrasse 35, 8153 Rümlang, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 223,
+      "place_id": "ChIJF0zAVWd1kEcRoUiBAIV9hSo",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4630638,
+        "lng": 8.526354699999999
+      }
+    },
+    {
+      "name": "HOUDINI’S QUEST",
+      "adresse": "St. GallerStrasse 18, 8500 Frauenfeld, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 218,
+      "place_id": "ChIJqxaR1iOSmkcRVNHjgAwYxmI",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.55379509999999,
+        "lng": 8.898332800000002
+      }
+    },
+    {
+      "name": "Escape Dinner",
+      "adresse": "Zürcherstrasse 182, 8406 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 167,
+      "place_id": "ChIJszzQTmGZmkcRjjU-A3L-K44",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4900635,
+        "lng": 8.7038202
+      }
+    },
+    {
+      "name": "Play Village",
+      "adresse": "Buckhauserstrasse 28, 8048 Zürich, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 155,
+      "place_id": "ChIJ34pfFGZtkEcRhtAnXuXbDao",
+      "gefunden_via_keyword": "Spielhalle, Indoorspielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3844961,
+        "lng": 8.4928311
+      }
+    },
+    {
+      "name": "Rennsimulator Mieten",
+      "adresse": "In der Euelwies 22, 8408 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 134,
+      "place_id": "ChIJ7_DihyoLkEcRie7hRE_HJfA",
+      "gefunden_via_keyword": "Paintballzentrum, Escape Room, Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5086366,
+        "lng": 8.675478
+      }
+    },
+    {
+      "name": "smartescape | Escape Room Schaffhausen",
+      "adresse": "Moserstrasse 14, 8200 Schaffhausen, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 122,
+      "place_id": "ChIJX6qWP7R_kEcRiTq-9Z5aq6E",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.6954017,
+        "lng": 8.639348199999999
+      }
+    },
+    {
+      "name": "RacingFuel Academy",
+      "adresse": "Tödistrasse 54, 8810 Horgen, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 84,
+      "place_id": "ChIJvXJow8OomkcRq-CPV4wmzpE",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.25923419999999,
+        "lng": 8.5850818
+      }
+    },
+    {
+      "name": "Nürburgring eSports - SimRacing Lounge & Bar Zürich Opfikon",
+      "adresse": "Stelzenstrasse 2, 8152 Opfikon, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 82,
+      "place_id": "ChIJu_fnOhqhmkcRxLvP3fPE6Ms",
+      "gefunden_via_keyword": "Go Karting",
+      "types": [
+        "bar",
+        "establishment",
+        "point_of_interest",
+        "store"
+      ],
+      "koordinaten": {
+        "lat": 47.4250549,
+        "lng": 8.559969599999999
+      }
+    },
+    {
+      "name": "Alea Spielbar",
+      "adresse": "Zschokkestrasse 1, 8037 Zürich, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 71,
+      "place_id": "ChIJy0e7ZAALkEcRW6vabvhoMzU",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "bar",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3953408,
+        "lng": 8.5257188
+      }
+    },
+    {
+      "name": "Golf and Wellness",
+      "adresse": "8132 Egg, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 68,
+      "place_id": "ChIJpzG7IHLHhEcRQr3YIZuyXJM",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2995246,
+        "lng": 8.6903921
+      }
+    },
+    {
+      "name": "Trampoline Center",
+      "adresse": "Tafletenstrasse 11, 8608 Bubikon, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 62,
+      "place_id": "ChIJixO5RhJukEcR3lG80VLcvHE",
+      "gefunden_via_keyword": "Abenteuersportcenter",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "store"
+      ],
+      "koordinaten": {
+        "lat": 47.2746009,
+        "lng": 8.8228329
+      }
+    },
+    {
+      "name": "Modellbahnfreunde Glattfelden",
+      "adresse": "Schwimmbadstrasse, 8192 Glattfelden, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 59,
+      "place_id": "ChIJx_q2ADJxkEcR1sLgsITBvOA",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.558025,
+        "lng": 8.493827
+      }
+    },
+    {
+      "name": "challenge ARENA GmbH Wangen (SZ)",
+      "adresse": "Leuholz 14, 8855 Wangen, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 56,
+      "place_id": "ChIJgfRcoL_JmkcRaVTfeX1NEcE",
+      "gefunden_via_keyword": "Go Karting",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.19493869999999,
+        "lng": 8.8803467
+      }
+    },
+    {
+      "name": "Gleis 9 3/4",
+      "adresse": "Schützenstrasse 24, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 55,
+      "place_id": "ChIJj_FkuO2ZmkcRPuJvBA8LstM",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "store"
+      ],
+      "koordinaten": {
+        "lat": 47.5005779,
+        "lng": 8.719129299999999
+      }
+    },
+    {
+      "name": "Sato Code",
+      "adresse": "Hardstrasse 201, 8005 Zürich, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 48,
+      "place_id": "ChIJHWScTh0LkEcRrgFkB7xWxhM",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.38610329999999,
+        "lng": 8.517318900000001
+      }
+    },
+    {
+      "name": "Playnet Gurtweil",
+      "adresse": "Tiengener Str. 1, 79761 Waldshut-Tiengen, Deutschland",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 28,
+      "place_id": "ChIJvSDn25JnkEcRMZKt6Hnbg2I",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "casino",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.6460342,
+        "lng": 8.2483339
+      }
+    },
+    {
+      "name": "All Out Golf",
+      "adresse": "Im Glattgarten 1, 8304 Wallisellen, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 27,
+      "place_id": "ChIJ7_0mMluhmkcRtOaq3nm6M3w",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4115004,
+        "lng": 8.591884499999999
+      }
+    },
+    {
+      "name": "Andy's Billard",
+      "adresse": "Aeschistrasse 7, 6410 Goldau, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 24,
+      "place_id": "ChIJq6qqqgcKkEcRZb1cmQbrePo",
+      "gefunden_via_keyword": "Billiardhalle",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "store"
+      ],
+      "koordinaten": {
+        "lat": 47.0435227,
+        "lng": 8.5422605
+      }
+    },
+    {
+      "name": "Tomkart",
+      "adresse": "Steigstrasse 5, 8406 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 16,
+      "place_id": "ChIJYzexQRyZmkcRHlG-AAdKlok",
+      "gefunden_via_keyword": "Go Karting",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.476185,
+        "lng": 8.7027419
+      }
+    },
+    {
+      "name": "Sportcenter Blue Point",
+      "adresse": "Hallenbadweg 15, 8610 Uster, Schweiz",
+      "rating_durchschnitt": 4.9,
+      "rating_anzahl": 10,
+      "place_id": "ChIJSY-X9sGjmkcRz5M4N3TNmao",
+      "gefunden_via_keyword": "Abenteuersportcenter, Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.358831,
+        "lng": 8.7254097
+      }
+    },
+    {
+      "name": "Paintball Arena (Oberer Zürichsee)",
+      "adresse": "Witöfelistrasse, 8718 Schänis, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 2948,
+      "place_id": "ChIJd9ejYuzNmkcRBw8_EHbCSvo",
+      "gefunden_via_keyword": "Paintballzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.15336869999999,
+        "lng": 9.0416591
+      }
+    },
+    {
+      "name": "Boda Borg Zürich",
+      "adresse": "Oberglatterstrasse 35, 8153 Rümlang, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 2455,
+      "place_id": "ChIJcb2Ve2Z1kEcRU7zqzmz1PVw",
+      "gefunden_via_keyword": "Escape Room, Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.463395,
+        "lng": 8.526065
+      }
+    },
+    {
+      "name": "Windwerk AG",
+      "adresse": "Ohrbühlstrasse 21, 8409 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 1168,
+      "place_id": "ChIJxYJa3fqZmkcRMrkJOcRDthw",
+      "gefunden_via_keyword": "Paintballzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4989456,
+        "lng": 8.7655639
+      }
+    },
+    {
+      "name": "Bowling Five Thayngen",
+      "adresse": "Industriestrasse 12, 8240 Thayngen, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 873,
+      "place_id": "ChIJ2VrdMnyAmkcRwShIe5yF7pI",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.744373,
+        "lng": 8.7012553
+      }
+    },
+    {
+      "name": "Escape City",
+      "adresse": "Bernstrasse N 208, 8064 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 795,
+      "place_id": "ChIJ3YWRkzkLkEcR0rv9zYUN_W0",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.39606149999999,
+        "lng": 8.4833036
+      }
+    },
+    {
+      "name": "Fusion Arena Virtual Reality Center Zürich",
+      "adresse": "Baslerstrasse 50, 8048 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 788,
+      "place_id": "ChIJ62sp2jQKkEcRr7LxExdfkVE",
+      "gefunden_via_keyword": "Spielhalle, Escape Room, Lasergamezentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3869183,
+        "lng": 8.498986
+      }
+    },
+    {
+      "name": "Kiddy Park Dübendorf",
+      "adresse": "Stettbachstrasse 4, 8600 Dübendorf, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 659,
+      "place_id": "ChIJU0ny9-afmkcRSbE8oQMjq0I",
+      "gefunden_via_keyword": "Spielhalle, Indoorspielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.395254,
+        "lng": 8.6024304
+      }
+    },
+    {
+      "name": "VR City - Virtual Reality Center & Escape Room",
+      "adresse": "Baslerstrasse 30, 8048 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 553,
+      "place_id": "ChIJowD1yqYLkEcRwFcOJ898cBQ",
+      "gefunden_via_keyword": "Spielhalle, Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3856758,
+        "lng": 8.503186
+      }
+    },
+    {
+      "name": "Hidden Games Zürich - Escape Room Zürich",
+      "adresse": "Kriesbachstrasse 4, 8600 Dübendorf, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 488,
+      "place_id": "ChIJM_VmGKehmkcRYoNuBnFbAuI",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4023399,
+        "lng": 8.616837499999999
+      }
+    },
+    {
+      "name": "Mission: Escape Dietikon",
+      "adresse": "Riedstrasse 6, 8953 Dietikon, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 449,
+      "place_id": "ChIJV8iJBwkNkEcRyzaXJopwoEg",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4194493,
+        "lng": 8.394488299999999
+      }
+    },
+    {
+      "name": "Sandbox VR",
+      "adresse": "Swiss Life Arena, Zone P - level 5, Vulkanstrasse 130i, Vulkanstrasse 130i, 8048 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 245,
+      "place_id": "ChIJo5uWAWoLkEcRqmC0br3QLgc",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3949964,
+        "lng": 8.479005599999999
+      }
+    },
+    {
+      "name": "Escape Frauenfeld",
+      "adresse": "Rheinstrasse 37, 8500 Frauenfeld, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 243,
+      "place_id": "ChIJ8feGTxCOmkcRF7ydSlqwXa0",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5593547,
+        "lng": 8.8916942
+      }
+    },
+    {
+      "name": "Montelino KidsClub & Bistro",
+      "adresse": "St. Gallerstrasse 118, 8645 Jona SG, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 151,
+      "place_id": "ChIJsdX_ZUS3mkcRAkwTo74yS7s",
+      "gefunden_via_keyword": "Indoorspielplatz",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.2298679,
+        "lng": 8.848162799999999
+      }
+    },
+    {
+      "name": "Exitadventure GmbH (Outdoor Escape Games)",
+      "adresse": "Rathausstrasse 1, 8640 Rapperswil-Jona, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 98,
+      "place_id": "ChIJz6J66x-3mkcRMrhy8hRcJ0w",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2264249,
+        "lng": 8.8168816
+      }
+    },
+    {
+      "name": "Liam's Wunderland",
+      "adresse": "Lonzaring 10, 79761 Waldshut-Tiengen, Deutschland",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 90,
+      "place_id": "ChIJW1z3M_VpkEcRZC0YJ1Ut_lE",
+      "gefunden_via_keyword": "Indoorspielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.6163306,
+        "lng": 8.238830199999999
+      }
+    },
+    {
+      "name": "Lucky Panda Billard and Sports Bar Lounge",
+      "adresse": "Brandbachstrasse 5, 8305 Dietlikon, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 79,
+      "place_id": "ChIJJXbTE_qhmkcRIxotZOeC5QI",
+      "gefunden_via_keyword": "Spielhalle, Billiardhalle",
+      "types": [
+        "bar",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.4164793,
+        "lng": 8.6235555
+      }
+    },
+    {
+      "name": "WeAreVR",
+      "adresse": "Oberglatterstrasse 35, 8153 Rümlang, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 78,
+      "place_id": "ChIJy-2HN_Z1kEcRmkcGzqQpLuI",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "store"
+      ],
+      "koordinaten": {
+        "lat": 47.463395,
+        "lng": 8.526065
+      }
+    },
+    {
+      "name": "Racing Unleashed | Racing Lounge Zurich City",
+      "adresse": "Kasernenstrasse 97, 8004 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 69,
+      "place_id": "ChIJsY81xkOZmkcR0cY6ntaymBQ",
+      "gefunden_via_keyword": "Go Karting",
+      "types": [
+        "bar",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant",
+        "store"
+      ],
+      "koordinaten": {
+        "lat": 47.3774987,
+        "lng": 8.535574
+      }
+    },
+    {
+      "name": "Outdoor Escape Room",
+      "adresse": "Schulhausstrasse 14, 8002 Zürich, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 55,
+      "place_id": "ChIJsSPPdUMJkEcRigkemzoVDHw",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3620336,
+        "lng": 8.530170499999999
+      }
+    },
+    {
+      "name": "PINCITY",
+      "adresse": "Bönirainstrasse 11, 8800 Thalwil, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 41,
+      "place_id": "ChIJaZvAlsypmkcRHIUaw6UtmAU",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2840347,
+        "lng": 8.5644454
+      }
+    },
+    {
+      "name": "Dübai Golf",
+      "adresse": "Hochbordstrasse 41, 8600 Dübendorf, Schweiz",
+      "rating_durchschnitt": 4.8,
+      "rating_anzahl": 17,
+      "place_id": "ChIJM0VGeB6hmkcRaq8tn2xDhoo",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3975975,
+        "lng": 8.600454899999999
+      }
+    },
+    {
+      "name": "Actionworld",
+      "adresse": "Bachstrasse 27, 8912 Obfelden, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 1603,
+      "place_id": "ChIJf_PsiHoGkEcRAA_d1zh7zxg",
+      "gefunden_via_keyword": "Abenteuersportcenter, Minigolf, Escape Room, Paintballzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2663571,
+        "lng": 8.4228132
+      }
+    },
+    {
+      "name": "Frohsinn",
+      "adresse": "Mühlegasse 8, 8152 Opfikon, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 1282,
+      "place_id": "ChIJcQ0HPBCgmkcRR5Fs11UAajU",
+      "gefunden_via_keyword": "Kegelbahn",
+      "types": [
+        "establishment",
+        "lodging",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4314118,
+        "lng": 8.5725578
+      }
+    },
+    {
+      "name": "Hiwi Bowling",
+      "adresse": "Hintere Wässeristrasse 12, 8340 Hinwil, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 376,
+      "place_id": "ChIJrYvQUp25mkcRc8VzNNf0Mbc",
+      "gefunden_via_keyword": "Kegelbahn, Spielhalle",
+      "types": [
+        "bar",
+        "bowling_alley",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.304775,
+        "lng": 8.826013999999999
+      }
+    },
+    {
+      "name": "Hüpfburg-Ziegelei Einsiedeln",
+      "adresse": "Zürichstrasse 38, 8840 Einsiedeln, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 320,
+      "place_id": "ChIJM9jEQyazmkcRXPPDy2AWBqw",
+      "gefunden_via_keyword": "Indoorspielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.1310302,
+        "lng": 8.745004699999999
+      }
+    },
+    {
+      "name": "Escape Room - Snary Mary Adventures - Adventures Room - Zürich",
+      "adresse": "Vulkanstrasse 122, 8048 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 242,
+      "place_id": "ChIJdTBuyb4LkEcRGfMPsW8ATrc",
+      "gefunden_via_keyword": "Abenteuersportcenter, Escape Room",
+      "types": [
+        "amusement_park",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.3946239,
+        "lng": 8.4814552
+      }
+    },
+    {
+      "name": "Indoor-Racing - Sim Racing Team Event Center",
+      "adresse": "im AP Cafe, Wittenwilerstrasse 33, 8355 Aadorf, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 109,
+      "place_id": "ChIJw9pxG3t_kEcRNg78R135GdE",
+      "gefunden_via_keyword": "Go Karting, Freizeitzentrum",
+      "types": [
+        "bar",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.4972769,
+        "lng": 8.9044575
+      }
+    },
+    {
+      "name": "Freizeitanlage Wädenswil",
+      "adresse": "Tobelrainstrasse 25, 8820 Wädenswil, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 98,
+      "place_id": "ChIJY6vKpEWumkcRvIGYig_EUg8",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2282935,
+        "lng": 8.659594799999999
+      }
+    },
+    {
+      "name": "Golfclub Breitenloo",
+      "adresse": "Breitenloo 16, 8309 Nürensdorf, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 95,
+      "place_id": "ChIJmWzCthqfmkcROVzz4Boqv-8",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.47131599999999,
+        "lng": 8.630374999999999
+      }
+    },
+    {
+      "name": "Golf & Country Club Hittnau",
+      "adresse": "Loweidstrasse 101, 8335 Hittnau, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 77,
+      "place_id": "ChIJVc6Ezby-mkcRqhTMzzMMzQo",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3601446,
+        "lng": 8.843572
+      }
+    },
+    {
+      "name": "Silvercube Lounge & Hardrock Lounge Dielsdorf - Arcade & Spielhalle",
+      "adresse": "Ruchwiesenstrasse 5, 8157 Dielsdorf, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 72,
+      "place_id": "ChIJVyBmvXpzkEcR-1mGxPZvQ20",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "bar",
+        "establishment",
+        "night_club",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.481984,
+        "lng": 8.466325
+      }
+    },
+    {
+      "name": "Dolder Golfclub Zürich",
+      "adresse": "Kurhausstrasse 66, 8032 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 65,
+      "place_id": "ChIJqWxwyM6gmkcRPFYZ79NDKA4",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3723068,
+        "lng": 8.5739555
+      }
+    },
+    {
+      "name": "Golfabout",
+      "adresse": "Flochenstrasse 24, 8404 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 55,
+      "place_id": "ChIJJ4kO3F6amkcRA_tg7SuOZ2M",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5354923,
+        "lng": 8.7620366
+      }
+    },
+    {
+      "name": "Waldhütte Jonen",
+      "adresse": "8916 Jonen, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 37,
+      "place_id": "ChIJS4LJG18PkEcRzHf7_HvKdF8",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2992183,
+        "lng": 8.408597499999999
+      }
+    },
+    {
+      "name": "Golfflix - Indoor Golf",
+      "adresse": "Dietlimoosplatz 1, 8134 Adliswil, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 30,
+      "place_id": "ChIJARYD2U6nmkcREY7kAWVa8Bc",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3222692,
+        "lng": 8.529767099999999
+      }
+    },
+    {
+      "name": "Adliswil",
+      "adresse": "Schönauweg 8, 8134 Adliswil, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 22,
+      "place_id": "ChIJpeE9q4mnmkcRCfmzK-DDOx8",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3155923,
+        "lng": 8.5279897
+      }
+    },
+    {
+      "name": "Züri Fit Calisthenics Street Workout Place",
+      "adresse": "Alt, 8045 Zürich, Schweiz",
+      "rating_durchschnitt": 4.7,
+      "rating_anzahl": 13,
+      "place_id": "ChIJBXrwUu4JkEcRsTqDQqXcOqA",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3562632,
+        "lng": 8.521933599999999
+      }
+    },
+    {
+      "name": "Adventure Arena Zürich",
+      "adresse": "Stettbachstrasse 2, 8600 Dübendorf, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 2768,
+      "place_id": "ChIJ2-5myiqhmkcRyfFIYdnhOqU",
+      "gefunden_via_keyword": "Freizeitzentrum, Abenteuersportcenter, Go Karting, Escape Room, Paintballzentrum, Minigolf",
+      "types": [
+        "amusement_park",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.3948964,
+        "lng": 8.6030837
+      }
+    },
+    {
+      "name": "Eulachpark",
+      "adresse": "Im Link 25, 8404 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 985,
+      "place_id": "ChIJYZLTn_eZmkcRbp3pZJqcTpw",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.5055696,
+        "lng": 8.7641677
+      }
+    },
+    {
+      "name": "FUN BOWL Bowling & Freizeitcenter",
+      "adresse": "Zürichstrasse 183, 8910 Affoltern am Albis, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 915,
+      "place_id": "ChIJwxA_ViQGkEcRxrw8jU_4oQY",
+      "gefunden_via_keyword": "Freizeitzentrum, Go Karting, Minigolf, Kegelbahn",
+      "types": [
+        "bar",
+        "bowling_alley",
+        "casino",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2871321,
+        "lng": 8.4523564
+      }
+    },
+    {
+      "name": "Monkey Town Rümlang | Indoor Spielplatz",
+      "adresse": "Oberglatterstrasse 35, 8153 Rümlang, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 669,
+      "place_id": "ChIJHWDHyUd1kEcRRm87X6WIZIg",
+      "gefunden_via_keyword": "Indoorspielplatz, Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4631645,
+        "lng": 8.5257706
+      }
+    },
+    {
+      "name": "AP Café Indoor-Racing -- Gourmet Burger, Fun & Sim Racing",
+      "adresse": "Wittenwilerstrasse 33, 8355 Aadorf, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 651,
+      "place_id": "ChIJJ-adSEuTmkcRRCngcwdIFcM",
+      "gefunden_via_keyword": "Go Karting, Freizeitzentrum",
+      "types": [
+        "amusement_park",
+        "bar",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.4972196,
+        "lng": 8.9044171
+      }
+    },
+    {
+      "name": "Gasthaus Badhof & Golf Meggen",
+      "adresse": "Kreuzbuchweg 1, 6045 Meggen, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 607,
+      "place_id": "ChIJj8OPSVz5j0cRnbyoPjCd7Kk",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "food",
+        "lodging",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.0490787,
+        "lng": 8.3571618
+      }
+    },
+    {
+      "name": "Minigolf Waldshut Kiosk",
+      "adresse": "Jahnweg 1, 79761 Waldshut-Tiengen, Deutschland",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 341,
+      "place_id": "ChIJ-1OrZB1okEcRLiwVqRq6wgI",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.616823,
+        "lng": 8.2231493
+      }
+    },
+    {
+      "name": "Laser Arena - Laser Tag Center",
+      "adresse": "Rüeggisingerstrasse 152, 6032 Emmen, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 307,
+      "place_id": "ChIJDTaggZP8j0cRjRS76F8Z1Tw",
+      "gefunden_via_keyword": "Lasergamezentrum, Paintballzentrum, Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.0880099,
+        "lng": 8.2944567
+      }
+    },
+    {
+      "name": "Golfpark Otelfingen",
+      "adresse": "Neue Riedstrasse 72, 8112 Otelfingen, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 247,
+      "place_id": "ChIJW3YwXzINkEcRxm_wKG_v3fk",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4548874,
+        "lng": 8.4018116
+      }
+    },
+    {
+      "name": "Golf Club Lipperswil / Golf Lipperswil AG",
+      "adresse": "Golf Pk. 1, 8564 Lipperswil, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 233,
+      "place_id": "ChIJZwEizwjzmkcR71EGuLz_mPs",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "food",
+        "health",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.6154713,
+        "lng": 9.0538949
+      }
+    },
+    {
+      "name": "Golfpark Nuolen AG",
+      "adresse": "Bachtellenstrasse 1, 8855 Wangen, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 231,
+      "place_id": "ChIJ-XGs6pTJmkcRgMQlIK84ZzE",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.19841599999999,
+        "lng": 8.896906
+      }
+    },
+    {
+      "name": "Lasermaxx Waldshut",
+      "adresse": "Bleiche 1, 79761 Waldshut-Tiengen, Deutschland",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 229,
+      "place_id": "ChIJ8UdcbNtCkEcR_lysRh4rn6g",
+      "gefunden_via_keyword": "Lasergamezentrum, Paintballzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.6161003,
+        "lng": 8.186302099999999
+      }
+    },
+    {
+      "name": "Break Bar Billard Darts Steeldarts",
+      "adresse": "Industriestrasse 19, 8910 Affoltern am Albis, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 228,
+      "place_id": "ChIJMQGDsUYGkEcR_Ar_s9bRhR0",
+      "gefunden_via_keyword": "Billiardhalle",
+      "types": [
+        "bar",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2711169,
+        "lng": 8.445433000000001
+      }
+    },
+    {
+      "name": "Sportcenter Blue Point Badmintonhalle Blue Shuttle",
+      "adresse": "Hallenbadweg 15, 8610 Uster, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 219,
+      "place_id": "ChIJ2RiinVGjmkcRWLTPH7wHkes",
+      "gefunden_via_keyword": "Abenteuersportcenter, Minigolf",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.35871600000001,
+        "lng": 8.724916
+      }
+    },
+    {
+      "name": "Winterberg Golf & Academy",
+      "adresse": "Kleinikon 13, 8312 Winterberg ZH, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 205,
+      "place_id": "ChIJiedbssaYmkcRXvjzEkuiAT0",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4578453,
+        "lng": 8.685096099999999
+      }
+    },
+    {
+      "name": "Airsoft Arena",
+      "adresse": "Rüeggisingerstrasse 152, 6032 Emmen, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 205,
+      "place_id": "ChIJa_DKcCX9j0cRWr0mal1kq2c",
+      "gefunden_via_keyword": "Paintballzentrum, Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.0878391,
+        "lng": 8.294604
+      }
+    },
+    {
+      "name": "Golf Augwil",
+      "adresse": "Augwilerstrasse 101 8426 Lufingen-Augwil, 8426 Kloten, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 203,
+      "place_id": "ChIJC6z-L7GfmkcRfMp232CNbbY",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4738755,
+        "lng": 8.6044505
+      }
+    },
+    {
+      "name": "Zürcher Gemeinschaftszentren GZ Oerlikon",
+      "adresse": "Gubelstrasse 10, 8050 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 202,
+      "place_id": "ChIJZQJ3JIcKkEcRcLeaJVLC8Kg",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4077972,
+        "lng": 8.5457483
+      }
+    },
+    {
+      "name": "GZ Loogarten - Zürcher Gemeinschaftszentren",
+      "adresse": "Salzweg 1, 8048 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 183,
+      "place_id": "ChIJl4DcZ-oLkEcRlUcLcmL9_r4",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.38856759999999,
+        "lng": 8.4725477
+      }
+    },
+    {
+      "name": "Freestyle Halle",
+      "adresse": "Bändlistrasse 76, 8064 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 176,
+      "place_id": "ChIJqTnDdrwLkEcRcgMwgrnGZtY",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3984872,
+        "lng": 8.4831111
+      }
+    },
+    {
+      "name": "Golf Range Uster",
+      "adresse": "Golf Range Uster, Seefeldstrasse 59, 8616 Riedikon, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 165,
+      "place_id": "ChIJ6yUP2r6kmkcRNQxR6ni8GEU",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3371979,
+        "lng": 8.707243
+      }
+    },
+    {
+      "name": "Albis-Golf Driving Range und Golf School GmbH",
+      "adresse": "Moosstrasse 7, 8907 Wettswil am Albis, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 162,
+      "place_id": "ChIJ74cNuB8JkEcRF0ePjoi5xz4",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest",
+        "store"
+      ],
+      "koordinaten": {
+        "lat": 47.33419440000001,
+        "lng": 8.4600457
+      }
+    },
+    {
+      "name": "Robinsonspielplatz Dübendorf Zelgli",
+      "adresse": "Höglerstrasse, 8600 Dübendorf, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 131,
+      "place_id": "ChIJ0b3E4x2hmkcRgXRbtXTjRm0",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.39315149999999,
+        "lng": 8.6129338
+      }
+    },
+    {
+      "name": "Chräen - Freizeitanlage",
+      "adresse": "Krähenweg, 8413 Neftenbach, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 50,
+      "place_id": "ChIJWyFb_zucmkcR1r2tBQlHVFg",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.530638,
+        "lng": 8.6574248
+      }
+    },
+    {
+      "name": "Minigolf Hard",
+      "adresse": "Hardgutstrasse 7, 8048 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 49,
+      "place_id": "ChIJx-Sqn8ELkEcRNMye7pPB85c",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3855605,
+        "lng": 8.5048753
+      }
+    },
+    {
+      "name": "Quartierzentrum Schütze",
+      "adresse": "Heinrichstrasse 238, 8005 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 44,
+      "place_id": "ChIJ688s0RQLkEcRyYfEJZFahUQ",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "cafe",
+        "establishment",
+        "food",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.38902110000001,
+        "lng": 8.523358199999999
+      }
+    },
+    {
+      "name": "GZ Leimbach - Zürcher Gemeinschaftszentren",
+      "adresse": "Leimbachstrasse 200, 8041 Zürich, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 42,
+      "place_id": "ChIJpz27oc4JkEcRByaEkn_DTNs",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3262644,
+        "lng": 8.514230699999999
+      }
+    },
+    {
+      "name": "Round Robin Snooker, Billard, Darts",
+      "adresse": "Im Schossacher 21, 8600 Dübendorf, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 27,
+      "place_id": "ChIJLVnC2owKkEcRPSZVdLm1Zcc",
+      "gefunden_via_keyword": "Billiardhalle",
+      "types": [
+        "bar",
+        "establishment",
+        "point_of_interest",
+        "store"
+      ],
+      "koordinaten": {
+        "lat": 47.3934463,
+        "lng": 8.6426593
+      }
+    },
+    {
+      "name": "Familienzentrum Schaffhausen",
+      "adresse": "Kirchhofpl. 19, 8200 Schaffhausen, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 25,
+      "place_id": "ChIJgTZucvJ_kEcRzSfY5eIbiTM",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.6968094,
+        "lng": 8.636311899999999
+      }
+    },
+    {
+      "name": "Magic MAX",
+      "adresse": "Bahnhofstrasse 39, 8620 Wetzikon, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 16,
+      "place_id": "ChIJ_23GVJa7mkcRCaRixuBEJu8",
+      "gefunden_via_keyword": "Billiardhalle",
+      "types": [
+        "bar",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3204025,
+        "lng": 8.7938435
+      }
+    },
+    {
+      "name": "Stadt Casino Waldshut",
+      "adresse": "Karl-Ziegler-Straße 2, 79761 Waldshut-Tiengen, Deutschland",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 13,
+      "place_id": "ChIJ8SdYor1pkEcRQmry-m5ZhV4",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.6154809,
+        "lng": 8.2454982
+      }
+    },
+    {
+      "name": "MARS Enduro",
+      "adresse": "Im Wattbuck 3, 8307 Illnau-Effretikon, Schweiz",
+      "rating_durchschnitt": 4.6,
+      "rating_anzahl": 10,
+      "place_id": "ChIJTWmAuHmimkcRG9SS3puOLeA",
+      "gefunden_via_keyword": "Abenteuersportcenter",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4306799,
+        "lng": 8.695551499999999
+      }
+    },
+    {
+      "name": "Atzmännig",
+      "adresse": "Atzmännigstrasse 1, 8638 Goldingen, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 3052,
+      "place_id": "ChIJk2loU3rGmkcRzdpwdlaDq-M",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.2853658,
+        "lng": 8.997038
+      }
+    },
+    {
+      "name": "FLIP LAB Zürich",
+      "adresse": "Oberglatterstrasse 35, 8153 Rümlang, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 1419,
+      "place_id": "ChIJP3QWEql1kEcRFoPQzlvSzSE",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4633121,
+        "lng": 8.525325
+      }
+    },
+    {
+      "name": "Kartbahn Lyss",
+      "adresse": "Lyssstrasse 31, 3273 Kappelen, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 876,
+      "place_id": "ChIJs-iT1hgYjkcRIwzCysAl-Ys",
+      "gefunden_via_keyword": "Go Karting",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.065977,
+        "lng": 7.287288999999999
+      }
+    },
+    {
+      "name": "GZ Bachwiesen - Zürcher Gemeinschaftszentren",
+      "adresse": "GZ Bachwiesen, Bachwiesen-Strasse 40, 8047 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 503,
+      "place_id": "ChIJWZzgLdALkEcRO2FdSQJANZU",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3800629,
+        "lng": 8.486307199999999
+      }
+    },
+    {
+      "name": "Breakpoint Billard & Dart",
+      "adresse": "Feldstrasse 80, 8180 Bülach, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 496,
+      "place_id": "ChIJPbWj68t1kEcREDWmNJ3wvkc",
+      "gefunden_via_keyword": "Billiardhalle, Spielhalle",
+      "types": [
+        "bar",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.5089268,
+        "lng": 8.5393297
+      }
+    },
+    {
+      "name": "GZ Buchegg - Zürcher Gemeinschaftszentren",
+      "adresse": "Bucheggstrasse 93, 8057 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 449,
+      "place_id": "ChIJL3BfAGUKkEcRGFjJAGiKwnc",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.39900069999999,
+        "lng": 8.5350633
+      }
+    },
+    {
+      "name": "EMA Spielparadies | Spielplatz Wetzikon",
+      "adresse": "Zürcherstrasse 35, 8620 Wetzikon, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 444,
+      "place_id": "ChIJIX_TxGi7mkcRVs0zP0bENBg",
+      "gefunden_via_keyword": "Indoorspielplatz, Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3233826,
+        "lng": 8.7869092
+      }
+    },
+    {
+      "name": "GZ Wollishofen - Zürcher Gemeinschaftszentren",
+      "adresse": "Bachstrasse 7, 8038 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 441,
+      "place_id": "ChIJLcCLUWCnmkcR0J1fMEs4OiE",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3450414,
+        "lng": 8.5358665
+      }
+    },
+    {
+      "name": "GZ Wipkingen – Zürcher Gemeinschaftszentren",
+      "adresse": "Breitensteinstrasse 19A, 8037 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 407,
+      "place_id": "ChIJb8Fc3kMKkEcRh-uy7uUsJlU",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3926722,
+        "lng": 8.5210188
+      }
+    },
+    {
+      "name": "GZ Schindlergut - Zürcher Gemeinschaftszentren",
+      "adresse": "Kronenstrasse 12, 8006 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 398,
+      "place_id": "ChIJ9d3sKA0KkEcR70NBnKfkVp0",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3864388,
+        "lng": 8.5361082
+      }
+    },
+    {
+      "name": "Island Billards AG",
+      "adresse": "Hungerbüelstrasse 12a, 8500 Frauenfeld, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 315,
+      "place_id": "ChIJcU6cS-qRmkcRhEnQV6gzxKw",
+      "gefunden_via_keyword": "Billiardhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.56268,
+        "lng": 8.872449
+      }
+    },
+    {
+      "name": "PlayX",
+      "adresse": "Zürcherstrasse 91, 8620 Wetzikon, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 223,
+      "place_id": "ChIJF_edjna7mkcRZad0AFQeg0U",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3278823,
+        "lng": 8.7814534
+      }
+    },
+    {
+      "name": "Minigolf Breite Winterthur (Miniatur-Golf-Genossenschaft Winterthur)",
+      "adresse": "Bruderhausstrasse, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 212,
+      "place_id": "ChIJRwLqDaCZmkcRBojz7FxaRCk",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4897526,
+        "lng": 8.7249503
+      }
+    },
+    {
+      "name": "GZ Affoltern – Zürcher Gemeinschaftszentren",
+      "adresse": "Bodenacker 25, 8046 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 209,
+      "place_id": "ChIJOx41vuEKkEcRoPU3X3WBsjs",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4247886,
+        "lng": 8.5109135
+      }
+    },
+    {
+      "name": "Billard Center Zypresse",
+      "adresse": "Badenerstrasse 294, 8004 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 194,
+      "place_id": "ChIJpT8IXSMKkEcRvmUi0Jtfwmo",
+      "gefunden_via_keyword": "Billiardhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3774974,
+        "lng": 8.5139064
+      }
+    },
+    {
+      "name": "Sportzentrum Schachen",
+      "adresse": "Schuelrain, 8906 Bonstetten, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 171,
+      "place_id": "ChIJO5wyevoIkEcRKLyTYQWoQBk",
+      "gefunden_via_keyword": "Fussballgolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3224183,
+        "lng": 8.470763
+      }
+    },
+    {
+      "name": "Billard Golden 8",
+      "adresse": "Baumackerstrasse 41, 8050 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 171,
+      "place_id": "ChIJzawRRIYKkEcRZnE7F-HjZu4",
+      "gefunden_via_keyword": "Billiardhalle",
+      "types": [
+        "bar",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant",
+        "store"
+      ],
+      "koordinaten": {
+        "lat": 47.4092031,
+        "lng": 8.543028999999999
+      }
+    },
+    {
+      "name": "GZ Hirzenbach - Zürcher Gemeinschaftszentren",
+      "adresse": "Helen-Keller-Strasse 55, 8051 Zürich, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 151,
+      "place_id": "ChIJD4l9JlagmkcRHsijNd_txO8",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4026247,
+        "lng": 8.5918226
+      }
+    },
+    {
+      "name": "Golfclub Unterengstringen",
+      "adresse": "In den Schanzen 1, 8103 Unterengstringen, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 145,
+      "place_id": "ChIJn_4yo08MkEcRqEDAIB-uOA4",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4036706,
+        "lng": 8.4160063
+      }
+    },
+    {
+      "name": "Sport- & Freizeitzentrum Tellimatt",
+      "adresse": "Freizeitzentrum Tellimatt, Tellimattstrasse 15, 6287 Aesch, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 133,
+      "place_id": "ChIJKxZ3I78bkEcREztLB-9WabQ",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2545086,
+        "lng": 8.2431745
+      }
+    },
+    {
+      "name": "Billard BAR 57",
+      "adresse": "Amriswilerstrasse 57, 8570 Weinfelden, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 126,
+      "place_id": "ChIJ9wvrZNnxmkcRWUCMD8iX4l0",
+      "gefunden_via_keyword": "Billiardhalle",
+      "types": [
+        "bar",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5631614,
+        "lng": 9.1253216
+      }
+    },
+    {
+      "name": "Kart-Shop Carigiet AG",
+      "adresse": "Heuelstrasse 1, 8153 Rümlang, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 59,
+      "place_id": "ChIJhyfEdS51kEcReVivH_UjRNg",
+      "gefunden_via_keyword": "Go Karting",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "store"
+      ],
+      "koordinaten": {
+        "lat": 47.4518431,
+        "lng": 8.527811999999999
+      }
+    },
+    {
+      "name": "Minigolf Dübendorf - Im Chreis | Sport und Freizeit Dübendorf",
+      "adresse": "Hermikonstrasse 68, 8600 Dübendorf, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 51,
+      "place_id": "ChIJ2U6jdQ6hmkcR4-Qv_l5OfLs",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3897805,
+        "lng": 8.6273502
+      }
+    },
+    {
+      "name": "Billiard Point AG",
+      "adresse": "Brandbachstrasse 5, 8305 Dietlikon, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 39,
+      "place_id": "ChIJi0OQxL6hmkcR4APkWhtbdSA",
+      "gefunden_via_keyword": "Billiardhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4165037,
+        "lng": 8.6232919
+      }
+    },
+    {
+      "name": "Freizeitanlage Chiesgrueb Iberg",
+      "adresse": "Weierstrasse 95, 8405 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 34,
+      "place_id": "ChIJs_12VJ2XmkcRGUtiTQ9A_so",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4667633,
+        "lng": 8.7788396
+      }
+    },
+    {
+      "name": "Golfplatz Winterberg GmbH",
+      "adresse": "Kleinikon 4, 8312 Winterberg ZH, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 21,
+      "place_id": "ChIJ15-64sCYmkcR1fdjtBbPvyI",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4568318,
+        "lng": 8.6859329
+      }
+    },
+    {
+      "name": "Minigolffreunde Waldshut 1974 e.V.",
+      "adresse": "Jahnweg 1, 79761 Waldshut-Tiengen, Deutschland",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 13,
+      "place_id": "ChIJ-1OrZB1okEcRxH6aJ45fJ0c",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.6169615,
+        "lng": 8.2228368
+      }
+    },
+    {
+      "name": "Bar und Billard",
+      "adresse": "Bahnhofstrasse 55, 8500 Frauenfeld, Schweiz",
+      "rating_durchschnitt": 4.5,
+      "rating_anzahl": 12,
+      "place_id": "ChIJxUx-PSCSmkcRk6gzRfmTuFQ",
+      "gefunden_via_keyword": "Billiardhalle",
+      "types": [
+        "bar",
+        "establishment",
+        "night_club",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.556271,
+        "lng": 8.8937093
+      }
+    },
+    {
+      "name": "SKILLS PARK",
+      "adresse": "Lagerpl. 17, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 3136,
+      "place_id": "ChIJa6blTnKZmkcRIc1bGPyjbMo",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "bar",
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.494816,
+        "lng": 8.7183957
+      }
+    },
+    {
+      "name": "Riedmatt Center Rümlang",
+      "adresse": "Oberglatterstrasse 35, 8153 Rümlang, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 2002,
+      "place_id": "ChIJP9ViYhB1kEcRzgT3y2f7V5w",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "shopping_mall"
+      ],
+      "koordinaten": {
+        "lat": 47.4628406,
+        "lng": 8.525958
+      }
+    },
+    {
+      "name": "Bowling Universum",
+      "adresse": "Industriestrasse 29, 8305 Dietlikon, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 1205,
+      "place_id": "ChIJGZGLnbuhmkcRRGOafZ-qJqw",
+      "gefunden_via_keyword": "Kegelbahn, Spielhalle",
+      "types": [
+        "bowling_alley",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4126167,
+        "lng": 8.6199808
+      }
+    },
+    {
+      "name": "Sportzentrum Effretikon",
+      "adresse": "Sportplatzstrasse 4, 8307 Illnau-Effretikon, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 631,
+      "place_id": "ChIJcWlJaGKimkcR9DOZkAF06ZU",
+      "gefunden_via_keyword": "Minigolf, Freizeitzentrum",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.4203581,
+        "lng": 8.7014072
+      }
+    },
+    {
+      "name": "Kartbahn Fimmelsberg",
+      "adresse": "Frauenfelderstrasse 31, 8514 Amlikon-Bissegg, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 627,
+      "place_id": "ChIJ57IU4GLtmkcR0nUuW0pm1kg",
+      "gefunden_via_keyword": "Go Karting, Paintballzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5607042,
+        "lng": 9.0320629
+      }
+    },
+    {
+      "name": "Joe's Bowling Center",
+      "adresse": "Zürcherstrasse 71, 8620 Wetzikon, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 614,
+      "place_id": "ChIJ0amajaK7mkcRx3cvoKLVIoU",
+      "gefunden_via_keyword": "Kegelbahn",
+      "types": [
+        "bowling_alley",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant",
+        "store"
+      ],
+      "koordinaten": {
+        "lat": 47.3274217,
+        "lng": 8.7811222
+      }
+    },
+    {
+      "name": "Indoor-Karting Waldshut GmbH",
+      "adresse": "Auweg 27, 79761 Waldshut-Tiengen, Deutschland",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 460,
+      "place_id": "ChIJEafdudxCkEcR8Cxnl-LvzOg",
+      "gefunden_via_keyword": "Go Karting, Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.6138944,
+        "lng": 8.1863195
+      }
+    },
+    {
+      "name": "Paintball Arena Luzern",
+      "adresse": "Rüeggisingerstrasse 152, 6032 Emmen, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 443,
+      "place_id": "ChIJ-VXEuQf7j0cRhofF4cmdELA",
+      "gefunden_via_keyword": "Paintballzentrum",
+      "types": [
+        "bar",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.08788,
+        "lng": 8.2941933
+      }
+    },
+    {
+      "name": "Matrix Billard-Café",
+      "adresse": "Carl-Zeiss-Straße 9, 79761 Waldshut-Tiengen, Deutschland",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 395,
+      "place_id": "ChIJ5eAYwdlnkEcRgkTu9HRfPyU",
+      "gefunden_via_keyword": "Billiardhalle",
+      "types": [
+        "bar",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.62771009999999,
+        "lng": 8.2633359
+      }
+    },
+    {
+      "name": "Jona Bowling",
+      "adresse": "Feldlistrasse 9, 8645 Jona SG, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 377,
+      "place_id": "ChIJ60ePta23mkcRoCVrAmusU5g",
+      "gefunden_via_keyword": "Kegelbahn",
+      "types": [
+        "bar",
+        "bowling_alley",
+        "establishment",
+        "point_of_interest",
+        "store"
+      ],
+      "koordinaten": {
+        "lat": 47.2284025,
+        "lng": 8.848886499999999
+      }
+    },
+    {
+      "name": "AdventureRooms Zürich - Standort Weinbergstrasse - Escape Room Zürich",
+      "adresse": "Weinbergstrasse 68, 8006 Zürich, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 352,
+      "place_id": "ChIJB0Bk0ewJkEcRVKqn8pNtfv8",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3827259,
+        "lng": 8.5438239
+      }
+    },
+    {
+      "name": "GZ Heuried – Zürcher Gemeinschaftszentren",
+      "adresse": "Döltschiweg 130, 8055 Zürich, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 296,
+      "place_id": "ChIJAxN91IcJkEcRmoQEV7LL-7U",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.367233,
+        "lng": 8.5036668
+      }
+    },
+    {
+      "name": "Bowlingcenter Schindellegi",
+      "adresse": "Chaltenbodenstrasse 10, 8834 Schindellegi, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 283,
+      "place_id": "ChIJJ3arku6zmkcRsrphthwwYP8",
+      "gefunden_via_keyword": "Freizeitzentrum, Kegelbahn",
+      "types": [
+        "bar",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.1676393,
+        "lng": 8.7263729
+      }
+    },
+    {
+      "name": "Adventure Arena Luzern",
+      "adresse": "Rüeggisingerstrasse 152, 6032 Emmen, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 276,
+      "place_id": "ChIJFYpTUX39j0cReM_mr5U615o",
+      "gefunden_via_keyword": "Abenteuersportcenter, Freizeitzentrum, Indoorspielplatz, Escape Room, Paintballzentrum",
+      "types": [
+        "amusement_park",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.0878391,
+        "lng": 8.294604
+      }
+    },
+    {
+      "name": "GZ Seebach - Zürcher Gemeinschaftszentren",
+      "adresse": "Hertensteinstrasse 20, 8052 Zürich, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 245,
+      "place_id": "ChIJfyw1UpgKkEcRo-TZdh2jX0g",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4248299,
+        "lng": 8.5436798
+      }
+    },
+    {
+      "name": "Roli's Billard",
+      "adresse": "Giessenstrasse 15, 8953 Dietikon, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 235,
+      "place_id": "ChIJBz4FkkMMkEcRi2ZEt1cMSOs",
+      "gefunden_via_keyword": "Billiardhalle",
+      "types": [
+        "bar",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4007819,
+        "lng": 8.4239564
+      }
+    },
+    {
+      "name": "Live Escape Game",
+      "adresse": "Räffelstrasse 11, 8045 Zürich, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 214,
+      "place_id": "ChIJ97HXC34KkEcREySv0VN5FLk",
+      "gefunden_via_keyword": "Spielhalle, Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.36304519999999,
+        "lng": 8.5143766
+      }
+    },
+    {
+      "name": "Restaurant, Minigolf & Pingpong",
+      "adresse": "Festhüttenstrasse 24, 8500 Frauenfeld, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 200,
+      "place_id": "ChIJedW_pg6TmkcRhsL7X-TAgOk",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.5490278,
+        "lng": 8.899212799999999
+      }
+    },
+    {
+      "name": "GZ Riesbach - Zürcher Gemeinschaftszentren",
+      "adresse": "Seefeldstrasse 93, 8008 Zürich, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 196,
+      "place_id": "ChIJ47OM8U6nmkcRmCVJCTvPtio",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3592988,
+        "lng": 8.5540785
+      }
+    },
+    {
+      "name": "Golfclub Schloss Goldenberg",
+      "adresse": "Golfclub Schloss Goldenberg, 8458 Dorf, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 129,
+      "place_id": "ChIJEWjKh96cmkcRVwqgqLcyrNQ",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.57608,
+        "lng": 8.6550478
+      }
+    },
+    {
+      "name": "360Footballarena - Indoor Fussballhalle in Zürich",
+      "adresse": "Bächlistrasse 1, 8425 Oberembrach, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 107,
+      "place_id": "ChIJkx_tZAKfmkcRJtv4UIBIkzs",
+      "gefunden_via_keyword": "Fussballgolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4924198,
+        "lng": 8.6023202
+      }
+    },
+    {
+      "name": "Badminton Center Shuttlezone",
+      "adresse": "Zürcherstrasse 69, 8620 Wetzikon, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 101,
+      "place_id": "ChIJdegh9KK7mkcRBnUJw4W86Q4",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "food",
+        "gym",
+        "health",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.3273412,
+        "lng": 8.7814588
+      }
+    },
+    {
+      "name": "Golf & Country Club Zürich",
+      "adresse": "Weid 9, 8126 Zumikon, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 93,
+      "place_id": "ChIJMYEYNp-mmkcRudVkv3TJ4Rw",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.335318,
+        "lng": 8.626083
+      }
+    },
+    {
+      "name": "Swiss Golf Park",
+      "adresse": "Sportplatzweg 1, 8820 Wädenswil, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 71,
+      "place_id": "ChIJlVEh4Q6umkcRndNfVqPocB8",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.20569889999999,
+        "lng": 8.6704457
+      }
+    },
+    {
+      "name": "GZ Grünau – Zürcher Gemeinschaftszentren",
+      "adresse": "Grünauring 18, 8064 Zürich, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 51,
+      "place_id": "ChIJ86VEx7ALkEcRmPVxRD3scY8",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3958788,
+        "lng": 8.489649499999999
+      }
+    },
+    {
+      "name": "Bowling & Riverbar",
+      "adresse": "Spinnerei Lettenstrasse 2, 8192 Glattfelden, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 30,
+      "place_id": "ChIJZQL1McxxkEcRgtwKSfBM-8s",
+      "gefunden_via_keyword": "Kegelbahn",
+      "types": [
+        "bar",
+        "bowling_alley",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5692304,
+        "lng": 8.480511
+      }
+    },
+    {
+      "name": "FunPark Winterthur AG",
+      "adresse": "Oberer Deutweg 4, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 28,
+      "place_id": "ChIJq6rqy5OZmkcRSOX10qPL-lw",
+      "gefunden_via_keyword": "Spielhalle, Freizeitzentrum, Indoorspielplatz, Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4965153,
+        "lng": 8.746351599999999
+      }
+    },
+    {
+      "name": "Bowling Bar Sorriso",
+      "adresse": "Glatttalstrasse 182, 8153 Rümlang, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 19,
+      "place_id": "ChIJpbHm_S11kEcRLY0aCDjnCXM",
+      "gefunden_via_keyword": "Kegelbahn",
+      "types": [
+        "bowling_alley",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.451368,
+        "lng": 8.529002
+      }
+    },
+    {
+      "name": "Schützenweiher",
+      "adresse": "Eichliwaldstrasse, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 17,
+      "place_id": "ChIJo9FRC9ubmkcRE98JN8OkN5c",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "park",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5190637,
+        "lng": 8.7166262
+      }
+    },
+    {
+      "name": "Freizeitanlage Sunnehüsli",
+      "adresse": "Hardgutstrasse 58, 8408 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.4,
+      "rating_anzahl": 13,
+      "place_id": "ChIJK_5a3aqemkcRcrv0cvH6-Yc",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "real_estate_agency",
+        "travel_agency"
+      ],
+      "koordinaten": {
+        "lat": 47.51217,
+        "lng": 8.6808213
+      }
+    },
+    {
+      "name": "Wunderland",
+      "adresse": "Steigstrasse 5, 8406 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 1450,
+      "place_id": "ChIJ0-DclnOZmkcR-toR2_T4L8Q",
+      "gefunden_via_keyword": "Indoorspielplatz, Spielhalle",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.4762342,
+        "lng": 8.7030719
+      }
+    },
+    {
+      "name": "Starbie Spielhalle",
+      "adresse": "Riedstrasse 3, 8953 Dietikon, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 1042,
+      "place_id": "ChIJo0h_egkNkEcRRE2M97DcaxQ",
+      "gefunden_via_keyword": "Spielhalle, Indoorspielplatz",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.41982650000001,
+        "lng": 8.3932924
+      }
+    },
+    {
+      "name": "Laser Arena Zürich",
+      "adresse": "Brandschenkestrasse 178, 8002 Zürich, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 964,
+      "place_id": "ChIJufTvgqugmkcRRTW4w7_M20Q",
+      "gefunden_via_keyword": "Spielhalle, Lasergamezentrum, Paintballzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.362292,
+        "lng": 8.5262946
+      }
+    },
+    {
+      "name": "Tempodrom",
+      "adresse": "Steigstrasse 5, 8406 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 954,
+      "place_id": "ChIJZZpx6XOZmkcRtxtJDoBjsGs",
+      "gefunden_via_keyword": "Go Karting",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4762307,
+        "lng": 8.702763299999999
+      }
+    },
+    {
+      "name": "Kartbahn Spreitenbach AG",
+      "adresse": "Industriestrasse 166a, 8957 Spreitenbach, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 863,
+      "place_id": "ChIJwz27X3wNkEcRM381P5DPmE4",
+      "gefunden_via_keyword": "Go Karting",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4262075,
+        "lng": 8.368138799999999
+      }
+    },
+    {
+      "name": "Grindel - Das Sportzentrum / TSM Grindel AG Bassersdorf",
+      "adresse": "Grindelstrasse 11, 8303 Bassersdorf, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 830,
+      "place_id": "ChIJWeq9SoKfmkcR7vAVpm0j9wQ",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "store"
+      ],
+      "koordinaten": {
+        "lat": 47.4466468,
+        "lng": 8.6103429
+      }
+    },
+    {
+      "name": "Restaurant Schützenruh",
+      "adresse": "Uetlibergstrasse 300, 8045 Zürich, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 762,
+      "place_id": "ChIJ8xI3q5QJkEcR42wRwRwrk1Q",
+      "gefunden_via_keyword": "Kegelbahn",
+      "types": [
+        "bowling_alley",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.3538074,
+        "lng": 8.5120971
+      }
+    },
+    {
+      "name": "Milandia Sport und Erlebnispark",
+      "adresse": "Im, Grossriet 1, 8606 Greifensee, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 736,
+      "place_id": "ChIJjysG6pujmkcRsIhvIFFObRU",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3771904,
+        "lng": 8.673741999999999
+      }
+    },
+    {
+      "name": "Bowling-Halle BeSeCo",
+      "adresse": "Rümikerstrasse 5A, 8352 Elsau, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 712,
+      "place_id": "ChIJ88FcMVKXmkcR2D_VaSkDbC0",
+      "gefunden_via_keyword": "Spielhalle, Kegelbahn",
+      "types": [
+        "amusement_park",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.50175,
+        "lng": 8.786791
+      }
+    },
+    {
+      "name": "1001 Freizeit Arena",
+      "adresse": "Quellenstrasse 39, 8580 Amriswil, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 645,
+      "place_id": "ChIJdSnM-VPjmkcRp2KHTlx2yZ0",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "bar",
+        "establishment",
+        "food",
+        "health",
+        "night_club",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.541221,
+        "lng": 9.2896042
+      }
+    },
+    {
+      "name": "Bowling Center Master",
+      "adresse": "Glatttalstrasse 40, 8052 Zürich, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 415,
+      "place_id": "ChIJXwabYk0LkEcRk7481Dk3Cdw",
+      "gefunden_via_keyword": "Freizeitzentrum, Kegelbahn",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4252398,
+        "lng": 8.5486145
+      }
+    },
+    {
+      "name": "Whiteline Bowlingcenter",
+      "adresse": "Hellmühlestrasse 4, 6344 Meierskappel, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 336,
+      "place_id": "ChIJRc-Y0-7_j0cR28PROQ0ELa0",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.12515699999999,
+        "lng": 8.4498368
+      }
+    },
+    {
+      "name": "Restaurant Golfpark Zürichsee – Öffentliches Restaurant. Terrasse. Bankett. Seminar",
+      "adresse": "Rütihof 3, 8855 Wangen, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 245,
+      "place_id": "ChIJG2kQx-nJmkcRhUPAGfNpkUs",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.198054,
+        "lng": 8.897687
+      }
+    },
+    {
+      "name": "Billard Center Borsalino",
+      "adresse": "Borsalino Winterthur AG, Werkstrasse 16, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 235,
+      "place_id": "ChIJszRPAY6ZmkcRhVoKIfXO724",
+      "gefunden_via_keyword": "Billiardhalle, Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4994558,
+        "lng": 8.7455886
+      }
+    },
+    {
+      "name": "Golf-Club Konstanz e.V.",
+      "adresse": "Q36P+5V Hofgut, Kargegg 1, 78476 Allensbach, Deutschland",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 181,
+      "place_id": "ChIJXVD5rLJfmkcRhDevLqsZEYM",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.76379499999999,
+        "lng": 9.0922983
+      }
+    },
+    {
+      "name": "Minigolf Stockmatt",
+      "adresse": "Bernhaustrasse 20, 8910 Affoltern am Albis, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 156,
+      "place_id": "ChIJKUaDwTQGkEcRn0pbJau6ULM",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.277893,
+        "lng": 8.4631404
+      }
+    },
+    {
+      "name": "Lazerfun Winterthur",
+      "adresse": "Oberer Deutweg 4, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 138,
+      "place_id": "ChIJkf9Cy5OZmkcRdOr4-LcvQxI",
+      "gefunden_via_keyword": "Lasergamezentrum, Spielhalle, Minigolf, Paintballzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4964188,
+        "lng": 8.746146099999999
+      }
+    },
+    {
+      "name": "Minigolf Schönegg",
+      "adresse": "Schöneggstrasse 16, 8820 Wädenswil, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 132,
+      "place_id": "ChIJoVcbB1aumkcRin7PiZ29bOQ",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2354467,
+        "lng": 8.6469772
+      }
+    },
+    {
+      "name": "Golf Adlisberg Driving Range",
+      "adresse": "Adlisbergstrasse 35, 8044 Zürich, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 131,
+      "place_id": "ChIJw21qHsWgmkcR_ygq0RE0eT8",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.37612379999999,
+        "lng": 8.5778574
+      }
+    },
+    {
+      "name": "Sportzentrum Josef",
+      "adresse": "Josefstrasse 219, 8005 Zürich, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 113,
+      "place_id": "ChIJrfxVmAwLkEcRIfFb8VCBxD8",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3876169,
+        "lng": 8.5210002
+      }
+    },
+    {
+      "name": "Mehrzweckhalle Wallisellen",
+      "adresse": "Alte Winterthurerstrasse 62, 8304 Wallisellen, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 103,
+      "place_id": "ChIJg0fT3kigmkcRkahBf8g1bQM",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4172749,
+        "lng": 8.5939406
+      }
+    },
+    {
+      "name": "Minigolfanlage Rapperswil",
+      "adresse": "Lidopl. 20, 8640 Rapperswil-Jona, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 77,
+      "place_id": "ChIJm1VuU_62mkcR4U-MefX1vws",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2222314,
+        "lng": 8.8241719
+      }
+    },
+    {
+      "name": "Freizeit- und Jugendzentrum frjz",
+      "adresse": "Zürichstrasse 30, 8610 Uster, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 71,
+      "place_id": "ChIJx_qIxqakmkcRodGq4qx6YSo",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3500945,
+        "lng": 8.71303
+      }
+    },
+    {
+      "name": "Sternensauser Seilrutsche -Flying Fox",
+      "adresse": "Hoch-Ybrig, 8842 Unteriberg, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 62,
+      "place_id": "ChIJexnsM8lJhUcRLya4TNhfisc",
+      "gefunden_via_keyword": "Abenteuersportcenter",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 46.9998783,
+        "lng": 8.7978416
+      }
+    },
+    {
+      "name": "Spielplatz",
+      "adresse": "Lindenstrasse 3, 8153 Rümlang, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 31,
+      "place_id": "ChIJLSQxPTJ1kEcRrESZ5l_6nH0",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4506465,
+        "lng": 8.5308256
+      }
+    },
+    {
+      "name": "Alpha Swiss GmbH",
+      "adresse": "Eichwatt 5, 8105 Watt, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 11,
+      "place_id": "ChIJJ5ikuzQLkEcRbj_f2J2jjDk",
+      "gefunden_via_keyword": "Indoorspielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4385942,
+        "lng": 8.475434900000002
+      }
+    },
+    {
+      "name": "Pestalozzihaus",
+      "adresse": "Riedstrasse 1, 8953 Dietikon, Schweiz",
+      "rating_durchschnitt": 4.3,
+      "rating_anzahl": 10,
+      "place_id": "ChIJq6rqgQkNkEcR38uqG0of1EM",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4196197,
+        "lng": 8.392358399999999
+      }
+    },
+    {
+      "name": "Billiardino",
+      "adresse": "Heinrichstrasse 245, 8005 Zürich, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 1143,
+      "place_id": "ChIJBwlLA0AKkEcRUufCJf_iFCk",
+      "gefunden_via_keyword": "Spielhalle, Billiardhalle",
+      "types": [
+        "bar",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.3883807,
+        "lng": 8.5223421
+      }
+    },
+    {
+      "name": "Sportzentrum Hirslen",
+      "adresse": "Hochfelderstrasse 75, 8180 Bülach, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 836,
+      "place_id": "ChIJT-09FyZ0kEcRYxSilFAK0hY",
+      "gefunden_via_keyword": "Freizeitzentrum, Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5219646,
+        "lng": 8.5256677
+      }
+    },
+    {
+      "name": "Spielzänti - Kinderwelt (Zentrum Volketswil)",
+      "adresse": "Im Zentrum 18, 8604 Volketswil, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 727,
+      "place_id": "ChIJg_mi07GjmkcRzUQSr0H3S68",
+      "gefunden_via_keyword": "Indoorspielplatz, Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3886375,
+        "lng": 8.6803236
+      }
+    },
+    {
+      "name": "Fantasy Golf",
+      "adresse": "Oberer Deutweg 4, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 686,
+      "place_id": "ChIJewtszJOZmkcR2i4kAGIdB2c",
+      "gefunden_via_keyword": "Minigolf, Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4966326,
+        "lng": 8.7463959
+      }
+    },
+    {
+      "name": "Kartbahn Sulgen AG",
+      "adresse": "Bädlistrasse 92, 8583 Sulgen, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 675,
+      "place_id": "ChIJX-SPH_DvmkcRBgx9Cw2jzcU",
+      "gefunden_via_keyword": "Go Karting",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.543733,
+        "lng": 9.172692999999999
+      }
+    },
+    {
+      "name": "Billiard Center Wallisellen",
+      "adresse": "Gewerbehallenstrasse 4, 8304 Wallisellen, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 461,
+      "place_id": "ChIJY9Kwj2igmkcRasL7MPA00d0",
+      "gefunden_via_keyword": "Billiardhalle",
+      "types": [
+        "bar",
+        "establishment",
+        "food",
+        "night_club",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.4135539,
+        "lng": 8.576074799999999
+      }
+    },
+    {
+      "name": "Swiss Golf Bubikon",
+      "adresse": "Kämmoos 2, 8608 Bubikon, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 286,
+      "place_id": "ChIJlSlhmGG3mkcR1kJ4h9vPMl8",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2615321,
+        "lng": 8.8305069
+      }
+    },
+    {
+      "name": "Kiddy Park Bülach",
+      "adresse": "Schützenmattstrasse 30, 8180 Bülach, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 106,
+      "place_id": "ChIJ7wsB1xl3kEcRv9fAUy-DfE8",
+      "gefunden_via_keyword": "Indoorspielplatz, Spielhalle, Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5287578,
+        "lng": 8.5337932
+      }
+    },
+    {
+      "name": "Quartierzentrum Bäckeranlage",
+      "adresse": "Hohlstrasse 67, 8004 Zürich, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 75,
+      "place_id": "ChIJHxHRWBcKkEcR7u9cZKLp8lQ",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3778274,
+        "lng": 8.5244535
+      }
+    },
+    {
+      "name": "Golf and Country Club Schönenberg",
+      "adresse": "8824 Schönenberg, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 70,
+      "place_id": "ChIJp9CnQ9CtmkcRKpTPFAaLvbI",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.2050811,
+        "lng": 8.6275383
+      }
+    },
+    {
+      "name": "Golfplatz Schönenberg AG",
+      "adresse": "Klubhaus, 8824 Schönenberg, Schweiz",
+      "rating_durchschnitt": 4.2,
+      "rating_anzahl": 13,
+      "place_id": "ChIJfxVt3IKumkcRnohNNe6XMhE",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2056045,
+        "lng": 8.6249757
+      }
+    },
+    {
+      "name": "Sportanlage Erlen",
+      "adresse": "Niederhaslistrasse 20, 8157 Dielsdorf, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 1031,
+      "place_id": "ChIJw36SnXxzkEcRXG75WkrzGdM",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "food",
+        "health",
+        "point_of_interest",
+        "restaurant",
+        "spa"
+      ],
+      "koordinaten": {
+        "lat": 47.4820218,
+        "lng": 8.4716312
+      }
+    },
+    {
+      "name": "KingPin Bowling-Center",
+      "adresse": "Von-Opel-Straße 2, 79761 Waldshut-Tiengen, Deutschland",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 1015,
+      "place_id": "ChIJDRuhvXVokEcRcTr8mT_kaz0",
+      "gefunden_via_keyword": "Kegelbahn, Paintballzentrum",
+      "types": [
+        "bar",
+        "bowling_alley",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.6225357,
+        "lng": 8.2552719
+      }
+    },
+    {
+      "name": "PrestigeBowling GmbH",
+      "adresse": "Kriesbachstrasse 4, 8600 Dübendorf, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 920,
+      "place_id": "ChIJM_VmGKehmkcR1GRpi10_HAU",
+      "gefunden_via_keyword": "Kegelbahn, Spielhalle",
+      "types": [
+        "bar",
+        "bowling_alley",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.402403,
+        "lng": 8.616635
+      }
+    },
+    {
+      "name": "OZ Bowling",
+      "adresse": "Ruchwiesenstrasse 5, 8157 Dielsdorf, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 713,
+      "place_id": "ChIJVyBmvXpzkEcRermf2KzO5rc",
+      "gefunden_via_keyword": "Kegelbahn",
+      "types": [
+        "bowling_alley",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.48209749999999,
+        "lng": 8.4665761
+      }
+    },
+    {
+      "name": "KIDS PLAYLAND Zürich Indoor Kinderspielparadies",
+      "adresse": "Hohlstrasse 461, 8048 Zürich, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 342,
+      "place_id": "ChIJzUuJYxELkEcRU-g4ulOHGxc",
+      "gefunden_via_keyword": "Spielhalle, Indoorspielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3872898,
+        "lng": 8.498901499999999
+      }
+    },
+    {
+      "name": "Springding Indoorspielplatz Reichenburg",
+      "adresse": "Gewerbestrasse 3, 8864 Reichenburg, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 247,
+      "place_id": "ChIJhW2nSQHMmkcRQd6e1GWykQU",
+      "gefunden_via_keyword": "Indoorspielplatz, Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.1722995,
+        "lng": 8.969991199999999
+      }
+    },
+    {
+      "name": "Sportanlagen Faisswiesen AG",
+      "adresse": "Faisswiesen 10, 8305 Dietlikon, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 232,
+      "place_id": "ChIJkRCNDsehmkcRADLDO0jEFik",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest",
+        "spa"
+      ],
+      "koordinaten": {
+        "lat": 47.4227392,
+        "lng": 8.621615199999999
+      }
+    },
+    {
+      "name": "Zentrumshalle Urdorf",
+      "adresse": "Birmensdorferstrasse 77, 8902 Urdorf, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 100,
+      "place_id": "ChIJOZTwMT0MkEcRcAi-fCZlekM",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3856686,
+        "lng": 8.4223451
+      }
+    },
+    {
+      "name": "Mehrzweckhalle Zendenfrei",
+      "adresse": "Schmittenstrasse 5, 8912 Obfelden, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 41,
+      "place_id": "ChIJv4UeqWQGkEcRwsJWzXspc3o",
+      "gefunden_via_keyword": "Freizeitzentrum",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2622523,
+        "lng": 8.4248078
+      }
+    },
+    {
+      "name": "Kreuzegg",
+      "adresse": "Chrüzegg 1, 6313 Menzingen, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 39,
+      "place_id": "ChIJ5ZiEnV2smkcRlEjcFLeSScg",
+      "gefunden_via_keyword": "Kegelbahn",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.1724663,
+        "lng": 8.6040115
+      }
+    },
+    {
+      "name": "Minicity Kinderparadies",
+      "adresse": "Kalanderpl. 1, 8045 Zürich, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 38,
+      "place_id": "ChIJy8mo2-8JkEcRVBmJALchAvw",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3581442,
+        "lng": 8.5225083
+      }
+    },
+    {
+      "name": "Golf Range Weinland",
+      "adresse": "Riethof 1, 8447 Dachsen, Schweiz",
+      "rating_durchschnitt": 4.1,
+      "rating_anzahl": 27,
+      "place_id": "ChIJG6MBCnOCmkcReUFhr07H4Ko",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.65371380000001,
+        "lng": 8.6354647
+      }
+    },
+    {
+      "name": "Bowling West",
+      "adresse": "Ifangstrasse 8, 8952 Schlieren, Schweiz",
+      "rating_durchschnitt": 4,
+      "rating_anzahl": 936,
+      "place_id": "ChIJowPsTogLkEcRGEFnX0qPJfk",
+      "gefunden_via_keyword": "Kegelbahn",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant",
+        "store"
+      ],
+      "koordinaten": {
+        "lat": 47.400552,
+        "lng": 8.455335
+      }
+    },
+    {
+      "name": "Paradisimo Indoor-Spielplatz & Café",
+      "adresse": "Talstrasse 33, 8808 Pfäffikon, Schweiz",
+      "rating_durchschnitt": 4,
+      "rating_anzahl": 272,
+      "place_id": "ChIJPdWNK7u2mkcRNBXnvjWByVE",
+      "gefunden_via_keyword": "Indoorspielplatz",
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.1999583,
+        "lng": 8.796927499999999
+      }
+    },
+    {
+      "name": "Golfers Paradise Superstore",
+      "adresse": "Riedstrasse 1, 8953 Dietikon, Schweiz",
+      "rating_durchschnitt": 4,
+      "rating_anzahl": 143,
+      "place_id": "ChIJJwsqkAkNkEcRkRzcqdDCIbE",
+      "gefunden_via_keyword": "Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "store"
+      ],
+      "koordinaten": {
+        "lat": 47.4192459,
+        "lng": 8.3926131
+      }
+    },
+    {
+      "name": "URBANescape",
+      "adresse": "Schiffbaustrasse 13, 8005 Zürich, Schweiz",
+      "rating_durchschnitt": 4,
+      "rating_anzahl": 135,
+      "place_id": "ChIJIxAQBGMLkEcRe53coPlm02M",
+      "gefunden_via_keyword": "Escape Room",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.38936990000001,
+        "lng": 8.5178243
+      }
+    },
+    {
+      "name": "ERLEBNIS MINIGOLF in der dritten Dimension",
+      "adresse": "Gewerbestrasse 3, 8864 Reichenburg, Schweiz",
+      "rating_durchschnitt": 4,
+      "rating_anzahl": 115,
+      "place_id": "ChIJ5Qoki4zNmkcRFrY7ZUaUFq4",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.1722872,
+        "lng": 8.970067000000002
+      }
+    },
+    {
+      "name": "Urban-Golf-Parcours 1 Winterthur",
+      "adresse": "Lagerpl. 17, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 4,
+      "rating_anzahl": 19,
+      "place_id": "ChIJFeZgk3OZmkcR0WgWGUAw58k",
+      "gefunden_via_keyword": "Fussballgolf, Minigolf, Golfplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4947248,
+        "lng": 8.718593
+      }
+    },
+    {
+      "name": "Billard Club Zürich",
+      "adresse": "Grubenstrasse 11, 8045 Zürich, Schweiz",
+      "rating_durchschnitt": 4,
+      "rating_anzahl": 15,
+      "place_id": "ChIJJQ1lblYJkEcREXTp6pmakfI",
+      "gefunden_via_keyword": "Billiardhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3616292,
+        "lng": 8.516314999999999
+      }
+    },
+    {
+      "name": "Swiss Casino Zürich",
+      "adresse": "Gessnerallee 3/5, 8001 Zürich, Schweiz",
+      "rating_durchschnitt": 3.9,
+      "rating_anzahl": 2633,
+      "place_id": "ChIJiWxQjAQKkEcRtaytpXdhhqY",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "bar",
+        "casino",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant",
+        "tourist_attraction"
+      ],
+      "koordinaten": {
+        "lat": 47.37325389999999,
+        "lng": 8.532750499999999
+      }
+    },
+    {
+      "name": "Restaurant Schützenhaus",
+      "adresse": "Schaffhauserstrasse 201, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 3.9,
+      "rating_anzahl": 1335,
+      "place_id": "ChIJAyArGdubmkcRpyyJgpqUq7Y",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "amusement_park",
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.5197127,
+        "lng": 8.717760199999999
+      }
+    },
+    {
+      "name": "Monkey Town Horgen - Indoor Spielplatz Zurich",
+      "adresse": "Seestrasse 87, 8810 Horgen, Schweiz",
+      "rating_durchschnitt": 3.9,
+      "rating_anzahl": 1116,
+      "place_id": "ChIJ-6DAtWypmkcRqE-3aTTYFSc",
+      "gefunden_via_keyword": "Spielhalle, Indoorspielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.2626237,
+        "lng": 8.5917206
+      }
+    },
+    {
+      "name": "Spassi Freizeitpark mit vielen Gastro und Spielbereichen",
+      "adresse": "Freizeitpark In/Oudoor Spassi, Zur Alten Spinnerei 1, 79669 Zell im Wiesental, Deutschland",
+      "rating_durchschnitt": 3.9,
+      "rating_anzahl": 655,
+      "place_id": "ChIJzW4lWEpTkEcRDZ_Kpti788w",
+      "gefunden_via_keyword": "Indoorspielplatz",
+      "types": [
+        "bowling_alley",
+        "establishment",
+        "food",
+        "lodging",
+        "meal_takeaway",
+        "park",
+        "parking",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.71369379999999,
+        "lng": 7.865107300000001
+      }
+    },
+    {
+      "name": "Piratolino Kinder Spielparadies",
+      "adresse": "Oberer Deutweg 4, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 3.9,
+      "rating_anzahl": 493,
+      "place_id": "ChIJewtszJOZmkcRXLV-grCeQGs",
+      "gefunden_via_keyword": "Indoorspielplatz, Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4964085,
+        "lng": 8.7461441
+      }
+    },
+    {
+      "name": "Virtual Reality Cinema - we are cinema",
+      "adresse": "Hallwylstrasse 62, 8004 Zürich, Schweiz",
+      "rating_durchschnitt": 3.9,
+      "rating_anzahl": 14,
+      "place_id": "ChIJVVVVVQAKkEcRxxgKAhcxoTs",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "movie_theater",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3706065,
+        "lng": 8.527569999999999
+      }
+    },
+    {
+      "name": "Restaurant da Gino",
+      "adresse": "Im, Grossriet 1, 8606 Greifensee, Schweiz",
+      "rating_durchschnitt": 3.9,
+      "rating_anzahl": 14,
+      "place_id": "ChIJO2a_UeijmkcRgWlXobEV0CE",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "food",
+        "point_of_interest",
+        "restaurant"
+      ],
+      "koordinaten": {
+        "lat": 47.3771904,
+        "lng": 8.673741999999999
+      }
+    },
+    {
+      "name": "Minigolf Klostergarten",
+      "adresse": "8840 Einsiedeln, Schweiz",
+      "rating_durchschnitt": 3.9,
+      "rating_anzahl": 11,
+      "place_id": "ChIJCbhAnBOzmkcRrR2Mw1nblHY",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.1258256,
+        "lng": 8.7502955
+      }
+    },
+    {
+      "name": "Familienzentrum Birmensdorf",
+      "adresse": "Breitestrasse 13, 8903 Birmensdorf, Schweiz",
+      "rating_durchschnitt": 3.9,
+      "rating_anzahl": 10,
+      "place_id": "ChIJaQt4P8sOkEcRJsgJRQIQjI4",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3509998,
+        "lng": 8.437232999999999
+      }
+    },
+    {
+      "name": "Minigolf und Gartenwirtschaft Seeburgpark",
+      "adresse": "Seestrasse 49, 8280 Kreuzlingen, Schweiz",
+      "rating_durchschnitt": 3.8,
+      "rating_anzahl": 308,
+      "place_id": "ChIJIXvi2SL3mkcR6VThdNtn_KE",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.6510063,
+        "lng": 9.1817545
+      }
+    },
+    {
+      "name": "Galaxy Golf",
+      "adresse": "Oberglatterstrasse 35, 8153 Rümlang, Schweiz",
+      "rating_durchschnitt": 3.8,
+      "rating_anzahl": 136,
+      "place_id": "ChIJxw0CZ891kEcR3taSVxvlH-c",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4632596,
+        "lng": 8.5255447
+      }
+    },
+    {
+      "name": "Kindercity Sihlcity Kinderparadies",
+      "adresse": "Alt, 8045 Zürich, Schweiz",
+      "rating_durchschnitt": 3.7,
+      "rating_anzahl": 19,
+      "place_id": "ChIJp6tIz-8JkEcRe9XzTzMNpXw",
+      "gefunden_via_keyword": "Spielhalle, Indoorspielplatz",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.3572543,
+        "lng": 8.5230708
+      }
+    },
+    {
+      "name": "Trampolino Kinderparadies",
+      "adresse": "Lerzenstrasse 27, 8953 Dietikon, Schweiz",
+      "rating_durchschnitt": 3.6,
+      "rating_anzahl": 2113,
+      "place_id": "ChIJQdE99AgNkEcRJtWgrtHkbnA",
+      "gefunden_via_keyword": "Indoorspielplatz, Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4194444,
+        "lng": 8.3963889
+      }
+    },
+    {
+      "name": "Minigolfanlage Rosenberg",
+      "adresse": "Eichliwaldstrasse, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 3.5,
+      "rating_anzahl": 114,
+      "place_id": "ChIJ5R5Pu3qbmkcRS9esnZM3Zpg",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5198214,
+        "lng": 8.7176799
+      }
+    },
+    {
+      "name": "Minigolfanlage Sperletwies",
+      "adresse": "Glatttalstrasse 40, 8052 Zürich, Schweiz",
+      "rating_durchschnitt": 3.5,
+      "rating_anzahl": 95,
+      "place_id": "ChIJfXB3fpgKkEcR5nyKriZ4LM0",
+      "gefunden_via_keyword": "Minigolf",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.425078,
+        "lng": 8.548458799999999
+      }
+    },
+    {
+      "name": "Swiss Casino Winterthur",
+      "adresse": "Zürcherstrasse 33, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 3.5,
+      "rating_anzahl": 75,
+      "place_id": "ChIJVzAcaAGZmkcRtewIJG1x06E",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "bar",
+        "casino",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4965473,
+        "lng": 8.715969
+      }
+    },
+    {
+      "name": "Spielcenter/Freizeittreff Peter Bährle",
+      "adresse": "Konstanzer Str. 8, 79761 Waldshut-Tiengen, Deutschland",
+      "rating_durchschnitt": 3.5,
+      "rating_anzahl": 13,
+      "place_id": "ChIJ6dEiTBlokEcRxv_WSsxLPdU",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "casino",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.6111635,
+        "lng": 8.2298487
+      }
+    },
+    {
+      "name": "Kinderparadies",
+      "adresse": "Schaffhauserstrasse 152, 8400 Winterthur, Schweiz",
+      "rating_durchschnitt": 3.3,
+      "rating_anzahl": 15,
+      "place_id": "ChIJw1M_itqbmkcRdTgcg64170I",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.5186425,
+        "lng": 8.7198393
+      }
+    },
+    {
+      "name": "Kinderparadies",
+      "adresse": "Shoppi Tivoli, Shopping Center, 8957 Spreitenbach, Schweiz",
+      "rating_durchschnitt": 3.2,
+      "rating_anzahl": 20,
+      "place_id": "ChIJcZ3rMXkNkEcRv-_EzJLbZEY",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.4208605,
+        "lng": 8.3688118
+      }
+    },
+    {
+      "name": "MAGIC Spielhalle Number One Waldshut-Tiengen Carl-Zeiss-Strasse",
+      "adresse": "Carl-Zeiss-Straße 6, 79761 Waldshut-Tiengen, Deutschland",
+      "rating_durchschnitt": 3.1,
+      "rating_anzahl": 55,
+      "place_id": "ChIJPQiUvtlnkEcR_uA3rDZ9I8E",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "casino",
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.627789,
+        "lng": 8.2628496
+      }
+    },
+    {
+      "name": "ADMIRAL Spielhalle",
+      "adresse": "Von-Opel-Straße 2, 79761 Waldshut-Tiengen, Deutschland",
+      "rating_durchschnitt": 2.4,
+      "rating_anzahl": 14,
+      "place_id": "ChIJKy13ogBpkEcRhy_Gtiyw1wI",
+      "gefunden_via_keyword": "Spielhalle",
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ],
+      "koordinaten": {
+        "lat": 47.62243309999999,
+        "lng": 8.2549428
+      }
+    }
+  ]
+}
