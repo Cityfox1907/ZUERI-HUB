@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ZüriHub – Events & Veranstaltungen</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎪</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-tokens.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#F4F7FB;--surface:#FFFFFF;--surface2:#EBF0F7;--border:#D4DCE8;--border-light:#E8EDF5;--text:#0D1B2A;--text2:#4A5568;--text3:#8896A6;--primary:#0F47AF;--primary-light:#E8EEFB;--primary-lighter:#F2F5FC;--primary-dark:#0A3580;--primary-50:rgba(15,71,175,.06);--accent:#E63946;--accent-light:#FEF0F1;--gold:#D4930D;--radius:14px;--shadow:0 1px 3px rgba(13,27,42,.05),0 1px 2px rgba(13,27,42,.03);--shadow-md:0 4px 14px rgba(13,27,42,.08);--shadow-lg:0 12px 36px rgba(13,27,42,.12);--font:'Inter',system-ui,-apple-system,sans-serif;--font-display:'Fraunces',Georgia,serif;--card-bg:#FFFFFF;--header-bg:rgba(255,255,255,.92);--modal-bg:#fff;--splash-bg:var(--primary)}
+html.dark{--bg:#0f1b2d;--surface:#1a2a3a;--surface2:#1e3148;--border:#2a3f58;--border-light:#243650;--text:#e8ecf2;--text2:#a8b8cc;--text3:#6b7f96;--primary:#5a9cf5;--primary-light:#1e3148;--primary-lighter:#162538;--primary-dark:#7bb8ff;--primary-50:rgba(90,156,245,.08);--accent:#ff6b78;--accent-light:#2a1820;--gold:#f5a623;--shadow:0 1px 3px rgba(0,0,0,.2),0 1px 2px rgba(0,0,0,.15);--shadow-md:0 4px 14px rgba(0,0,0,.3);--shadow-lg:0 12px 36px rgba(0,0,0,.4);--card-bg:#1a2a3a;--header-bg:rgba(15,27,45,.92);--modal-bg:#1a2a3a;--splash-bg:#0f1b2d}
+html{font-family:var(--font);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .3s,color .3s}body{min-height:100vh;overflow-x:hidden}input,select,button,textarea{font-family:inherit;font-size:inherit}button{cursor:pointer;border:none;background:none}a{color:inherit;text-decoration:none}::-webkit-scrollbar{width:5px;height:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}@keyframes spin{to{transform:rotate(360deg)}}.fade-up{animation:fadeUp .35s ease both}
+
+/* Splash */
+#splash{position:fixed;inset:0;background:var(--splash-bg);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;transition:opacity .5s,visibility .5s}#splash.done{opacity:0;visibility:hidden;pointer-events:none}#splash::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:rgba(255,255,255,.06);clip-path:polygon(30% 0,100% 0,100% 100%,0 100%)}.splash-logo{font-family:var(--font-display);font-size:clamp(2rem,5vw,3rem);font-weight:800;position:relative;z-index:1}.splash-sub{font-size:.95rem;opacity:.7;margin-top:.5rem;position:relative;z-index:1}.splash-spinner{width:28px;height:28px;border:3px solid rgba(255,255,255,.2);border-top-color:#fff;border-radius:50%;animation:spin .65s linear infinite;margin-top:2rem;position:relative;z-index:1}
+
+/* Header */
+.header{position:sticky;top:0;z-index:100;background:var(--header-bg);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid var(--border-light);padding:.5rem 1.5rem;transition:background .3s}.header-inner{max-width:1480px;margin:0 auto;display:flex;align-items:center;gap:.75rem}.logo{font-family:var(--font-display);font-size:1.25rem;font-weight:800;color:var(--primary);white-space:nowrap;flex-shrink:0;letter-spacing:-.02em;display:inline-flex;align-items:center;gap:.4rem;text-decoration:none}.logo-icon{flex-shrink:0;display:block}
+.hactions{display:flex;gap:.35rem;align-items:center;margin-left:auto}.hbtn{padding:.42rem .75rem;border-radius:8px;font-size:.8rem;font-weight:500;color:var(--text2);border:1.5px solid var(--border);background:var(--surface);transition:all .15s;display:inline-flex;align-items:center;gap:.3rem;white-space:nowrap;text-decoration:none}.hbtn:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-lighter)}html.dark .hbtn{background:var(--surface);border-color:var(--border);color:var(--text2)}
+.theme-toggle{position:relative;width:52px;height:28px;border-radius:14px;background:var(--border);cursor:pointer;border:1.5px solid var(--border);transition:all .3s;flex-shrink:0;display:flex;align-items:center}.theme-toggle .toggle-knob{position:absolute;left:2px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.15);transition:transform .3s cubic-bezier(.4,0,.2,1)}.theme-toggle .toggle-icon-sun,.theme-toggle .toggle-icon-moon{position:absolute;font-size:.75rem;transition:opacity .25s}.theme-toggle .toggle-icon-sun{right:6px;opacity:1}.theme-toggle .toggle-icon-moon{left:6px;opacity:0}html.dark .theme-toggle{background:#1e3148;border-color:#2a3f58}html.dark .theme-toggle .toggle-knob{transform:translateX(24px);background:#e8914a}html.dark .theme-toggle .toggle-icon-sun{opacity:0}html.dark .theme-toggle .toggle-icon-moon{opacity:1}
+
+/* Nav */
+.nav-tabs{max-width:1480px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:0;border-bottom:1px solid var(--border-light);padding:0 1.25rem}.nav-tab{padding:.6rem .85rem;font-size:.82rem;font-weight:600;color:var(--text3);text-decoration:none;border-bottom:2.5px solid transparent;transition:color .25s,border-color .25s;white-space:nowrap;display:inline-flex;align-items:center;gap:.35rem}.nav-tab:hover{color:var(--text)}.nav-tab.active{color:var(--primary);border-bottom-color:var(--primary);font-weight:700}.nav-tab .nav-emoji{font-size:1rem}html.dark .nav-tab{color:var(--text2)}html.dark .nav-tab.active{color:var(--primary);border-bottom-color:var(--primary)}
+
+/* Pulse Hero Banner */
+.pulse-hero{background:linear-gradient(135deg,var(--primary) 0%,#1a6fd4 50%,#2b8aed 100%);color:#fff;border-radius:20px;padding:1.75rem;margin:1.25rem 1.5rem;max-width:1480px;margin-left:auto;margin-right:auto;position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
+.pulse-hero::before{content:'';position:absolute;top:-30%;right:-10%;width:50%;height:160%;background:rgba(255,255,255,.06);border-radius:50%;pointer-events:none}
+.pulse-hero::after{content:'';position:absolute;bottom:-20%;left:-5%;width:30%;height:120%;background:rgba(255,255,255,.04);border-radius:50%;pointer-events:none}
+html.dark .pulse-hero{background:linear-gradient(135deg,#1e3148 0%,#243e5c 50%,#2a4f73 100%)}
+.pulse-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;opacity:.7;margin-bottom:.5rem;display:flex;align-items:center;gap:.35rem}
+.pulse-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;animation:pulseDot 2s ease infinite}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+.pulse-content{display:flex;align-items:center;gap:1.5rem;position:relative;z-index:1}
+.pulse-emoji{font-size:3rem;flex-shrink:0}
+.pulse-info{flex:1;min-width:0}
+.pulse-name{font-family:var(--font-display);font-size:clamp(1.2rem,3vw,1.6rem);font-weight:800;line-height:1.2;margin-bottom:.25rem}
+.pulse-meta{font-size:.82rem;opacity:.85;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.pulse-meta span{display:inline-flex;align-items:center;gap:.2rem}
+.pulse-countdown{display:flex;gap:.5rem;flex-shrink:0}
+.cd-box{background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border-radius:12px;padding:.5rem .65rem;text-align:center;min-width:52px}
+.cd-num{font-family:var(--font-display);font-size:1.4rem;font-weight:800;line-height:1.2}
+.cd-label{font-size:.55rem;text-transform:uppercase;opacity:.65;letter-spacing:.04em}
+.pulse-cta{margin-top:.85rem;display:flex;gap:.5rem;flex-wrap:wrap}
+.pulse-btn{display:inline-flex;align-items:center;gap:.3rem;padding:.45rem .9rem;border-radius:12px;font-size:.8rem;font-weight:600;transition:all .18s;text-decoration:none;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25)}
+.pulse-btn:hover{background:rgba(255,255,255,.3)}
+
+/* Category Cards */
+.cat-cards{display:grid;grid-template-columns:repeat(6,1fr);gap:.6rem;max-width:1480px;margin:0 auto 1rem;padding:0 1.5rem}
+.cat-card{background:var(--glass-bg,var(--card-bg));backdrop-filter:var(--glass-blur,none);border:2px solid var(--glass-border,var(--border-light));border-radius:14px;padding:.85rem .65rem;text-align:center;cursor:pointer;transition:all .22s var(--ease);box-shadow:var(--shadow-soft,var(--shadow));position:relative}
+.cat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover,var(--shadow-md))}
+.cat-card.active{border-color:var(--primary);background:var(--primary-lighter)}
+html.dark .cat-card{background:var(--glass-bg,var(--card-bg));border-color:var(--glass-border,var(--border))}
+html.dark .cat-card.active{border-color:var(--primary);background:var(--primary-light)}
+.cat-card-emoji{font-size:1.6rem;display:block;margin-bottom:.2rem}
+.cat-card-title{font-weight:700;font-size:.75rem;color:var(--text)}
+.cat-card-count{display:inline-block;margin-top:.3rem;padding:.1rem .4rem;border-radius:8px;background:var(--primary-light);color:var(--primary);font-size:.62rem;font-weight:700}
+html.dark .cat-card-count{background:rgba(90,156,245,.15)}
+
+/* Month Nav */
+.month-nav{position:sticky;top:53px;z-index:50;background:var(--header-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border-light);padding:.45rem 1.5rem;max-width:100%;overflow-x:auto;scrollbar-width:none;display:flex;justify-content:center;gap:.35rem;transition:background .3s}
+.month-nav::-webkit-scrollbar{display:none}
+.month-pill{padding:.35rem .7rem;border-radius:10px;font-size:.75rem;font-weight:600;color:var(--text3);background:transparent;border:1.5px solid transparent;cursor:pointer;transition:all .18s;white-space:nowrap;flex-shrink:0}
+.month-pill:hover{color:var(--text);background:var(--surface2)}
+.month-pill.active{color:var(--primary);background:var(--primary-lighter);border-color:var(--primary);font-weight:700}
+html.dark .month-pill.active{background:var(--primary-light);color:var(--primary)}
+
+/* Feed Container */
+.feed{max-width:1480px;margin:0 auto;padding:.75rem 1.5rem 2rem}
+
+/* Section Headers */
+.sec-head{display:flex;align-items:center;gap:.5rem;margin:1.5rem 0 .75rem;padding-bottom:.4rem;border-bottom:1px solid var(--border-light)}.sec-head h2{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text);display:flex;align-items:center;gap:.35rem;margin:0}.sec-head .sec-count{font-size:.7rem;font-weight:700;color:var(--primary);background:var(--primary-light);padding:.15rem .45rem;border-radius:8px;margin-left:auto}
+
+/* Event Cards */
+.ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.ev-card{background:var(--glass-bg,var(--card-bg));backdrop-filter:var(--glass-blur,none);border:1px solid var(--glass-border,var(--border-light));border-radius:14px;padding:.85rem;cursor:default;transition:all .22s var(--ease);box-shadow:var(--shadow-soft,var(--shadow));position:relative;display:flex;flex-direction:column;gap:.35rem}
+.ev-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover,var(--shadow-md))}
+.ev-card.highlight{border-left:3px solid var(--gold)}
+html.dark .ev-card{background:var(--glass-bg,var(--card-bg));border-color:var(--glass-border,var(--border))}
+.ev-top{display:flex;align-items:center;gap:.5rem}
+.ev-emoji{font-size:1.6rem;flex-shrink:0}
+.ev-info{flex:1;min-width:0}
+.ev-name{font-family:var(--font-display);font-weight:700;font-size:.88rem;color:var(--text);line-height:1.25}
+.ev-date{font-size:.72rem;font-weight:600;color:var(--primary)}
+.ev-loc{font-size:.68rem;color:var(--text3);display:flex;align-items:center;gap:.2rem;margin-top:.15rem}
+.ev-tags{display:flex;flex-wrap:wrap;gap:.25rem;margin-top:.15rem}
+.ev-tag{padding:.1rem .35rem;border-radius:8px;font-size:.6rem;font-weight:600;white-space:nowrap}
+.ev-tag.konzerte{background:rgba(168,85,247,.1);color:#7c3aed}
+.ev-tag.sport{background:rgba(16,185,129,.1);color:#059669}
+.ev-tag.festivals{background:rgba(245,158,11,.1);color:#d97706}
+.ev-tag.tradition{background:rgba(239,68,68,.1);color:#dc2626}
+.ev-tag.kulinarik{background:rgba(236,72,153,.1);color:#db2777}
+.ev-tag.community{background:rgba(59,130,246,.1);color:#2563eb}
+html.dark .ev-tag.konzerte{background:rgba(168,85,247,.15);color:#a78bfa}
+html.dark .ev-tag.sport{background:rgba(16,185,129,.15);color:#34d399}
+html.dark .ev-tag.festivals{background:rgba(245,158,11,.15);color:#fbbf24}
+html.dark .ev-tag.tradition{background:rgba(239,68,68,.15);color:#f87171}
+html.dark .ev-tag.kulinarik{background:rgba(236,72,153,.15);color:#f472b6}
+html.dark .ev-tag.community{background:rgba(59,130,246,.15);color:#93c5fd}
+.ev-status{font-size:.58rem;font-weight:700;padding:.1rem .3rem;border-radius:6px;white-space:nowrap}
+.ev-status.confirmed{background:rgba(16,185,129,.1);color:#059669}
+.ev-status.expected{background:rgba(245,158,11,.1);color:#d97706}
+.ev-status.soldout{background:rgba(239,68,68,.1);color:#dc2626}
+html.dark .ev-status.confirmed{background:rgba(16,185,129,.15);color:#34d399}
+html.dark .ev-status.expected{background:rgba(245,158,11,.15);color:#fbbf24}
+html.dark .ev-status.soldout{background:rgba(239,68,68,.15);color:#f87171}
+.ev-btns{display:flex;gap:.35rem;margin-top:.25rem;flex-wrap:wrap}
+.ev-btns a{display:inline-flex;align-items:center;gap:.2rem;padding:.3rem .55rem;border-radius:10px;font-size:.68rem;font-weight:600;transition:all .15s;text-decoration:none}
+.ev-btn-p{background:var(--primary);color:#fff}.ev-btn-p:hover{background:var(--primary-dark)}
+.ev-btn-s{background:var(--surface2);color:var(--text2);border:1px solid var(--border)}.ev-btn-s:hover{border-color:var(--primary);color:var(--primary)}
+html.dark .ev-btn-s{background:var(--surface2);border-color:var(--border);color:var(--text2)}
+
+/* Coming Up section - wider cards */
+.coming-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+.coming-card{background:var(--glass-bg,var(--card-bg));backdrop-filter:var(--glass-blur,none);border:1px solid var(--glass-border,var(--border-light));border-radius:16px;padding:1rem 1.1rem;transition:all .22s var(--ease);box-shadow:var(--shadow-soft,var(--shadow));display:flex;gap:.75rem;align-items:flex-start}
+.coming-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover,var(--shadow-md))}
+.coming-card.highlight{border-left:3px solid var(--gold)}
+html.dark .coming-card{background:var(--glass-bg,var(--card-bg));border-color:var(--glass-border,var(--border))}
+.coming-date{background:var(--primary);color:#fff;border-radius:12px;padding:.4rem .55rem;text-align:center;flex-shrink:0;min-width:52px}
+.coming-date .cd-day{font-family:var(--font-display);font-size:1.1rem;font-weight:800;line-height:1.1}
+.coming-date .cd-month{font-size:.55rem;text-transform:uppercase;opacity:.85;letter-spacing:.03em}
+html.dark .coming-date{background:var(--primary-light);color:var(--primary)}
+.coming-info{flex:1;min-width:0}
+.coming-name{font-family:var(--font-display);font-weight:700;font-size:.92rem;color:var(--text);line-height:1.25;margin-bottom:.2rem}
+
+/* Footer */
+.ev-footer{text-align:center;padding:2rem 1.5rem;max-width:1480px;margin:0 auto;font-size:.72rem;color:var(--text3);border-top:1px solid var(--border-light)}.ev-footer a{color:var(--primary);text-decoration:underline;text-underline-offset:2px}
+
+/* No Results */
+.no-results{text-align:center;padding:3rem 1rem;display:none}.no-results .nr-emoji{font-size:2.5rem;display:block;margin-bottom:.5rem}.no-results p{color:var(--text3);font-size:.88rem}
+
+/* Back to Top */
+.btt{position:fixed;bottom:1.5rem;right:1.5rem;width:44px;height:44px;border-radius:50%;background:var(--primary);color:#fff;font-size:1.1rem;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md);cursor:pointer;border:none;z-index:90;opacity:0;visibility:hidden;transform:translateY(10px);transition:all .3s}.btt.show{opacity:1;visibility:visible;transform:translateY(0)}.btt:hover{background:var(--primary-dark)}html.dark .btt{background:#e8914a}
+
+/* Responsive */
+@media(max-width:1023px){.ev-grid{grid-template-columns:repeat(2,1fr)}.cat-cards{grid-template-columns:repeat(3,1fr)}.pulse-content{flex-direction:column;align-items:flex-start}.pulse-countdown{margin-top:.5rem}}
+@media(max-width:767px){.ev-grid{grid-template-columns:1fr}.coming-grid{grid-template-columns:1fr}.cat-cards{grid-template-columns:repeat(3,1fr);padding:0 .75rem;gap:.45rem}.feed{padding:.5rem .75rem 1.5rem}.pulse-hero{margin:.75rem .75rem;padding:1.25rem}.cd-box{min-width:44px;padding:.4rem .5rem}.cd-num{font-size:1.1rem}.month-nav{padding:.4rem .75rem;justify-content:flex-start}}
+@media(max-width:640px){.header-inner{gap:.35rem}.nav-tab{font-size:.72rem;padding:.45rem .4rem;gap:.2rem}.nav-tab .nav-label{display:none}.cat-cards{grid-template-columns:repeat(2,1fr)}.cat-card{padding:.65rem .5rem}.cat-card-emoji{font-size:1.3rem}.cat-card-title{font-size:.68rem}.theme-toggle{width:48px;height:28px}}
+</style>
+</head>
+<body>
+<div id="splash"><div class="splash-logo">ZüriHub</div><div class="splash-sub">Events & Veranstaltungen</div><div class="splash-spinner"></div></div>
+<div id="app" style="display:none">
+  <header class="header"><div class="header-inner">
+    <a href="index.html" class="logo"><svg class="logo-icon" width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="92" height="92" rx="20" fill="currentColor" opacity=".08" stroke="currentColor" stroke-width="4"/><path d="M30 82V42l-4-2V38l12-14h2l2 5h16l2-5h2l12 14v2l-4 2v40" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="35" y="40" width="10" height="42" rx="1.5" stroke="currentColor" stroke-width="3.5"/><rect x="55" y="40" width="10" height="42" rx="1.5" stroke="currentColor" stroke-width="3.5"/><circle cx="40" cy="30" r="3.5" fill="currentColor"/><circle cx="60" cy="30" r="3.5" fill="currentColor"/><line x1="26" y1="82" x2="74" y2="82" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>ZüriHub</a>
+    <div class="hactions"><a href="favoriten.html" class="hbtn">⭐</a><div class="theme-toggle" onclick="toggleTheme()"><span class="toggle-icon-sun">☀️</span><span class="toggle-icon-moon">🌙</span><div class="toggle-knob"></div></div></div>
+  </div></header>
+  <nav class="nav-tabs">
+    <a href="index.html" class="nav-tab"><span class="nav-emoji">🧭</span><span class="nav-label">Discovery</span></a>
+    <a href="events.html" class="nav-tab active"><span class="nav-emoji">🎪</span><span class="nav-label">Events</span></a>
+    <a href="gastronomie.html" class="nav-tab"><span class="nav-emoji">🍽️</span><span class="nav-label">Gastronomie</span></a>
+    <a href="kultur.html" class="nav-tab"><span class="nav-emoji">🏛️</span><span class="nav-label">Kultur</span></a>
+    <a href="spiel-spass.html" class="nav-tab"><span class="nav-emoji">🎮</span><span class="nav-label">Spiel & Spass</span></a>
+    <a href="shops.html" class="nav-tab"><span class="nav-emoji">🛍️</span><span class="nav-label">Shops</span></a>
+  </nav>
+
+  <div id="pulseHero" class="pulse-hero"></div>
+  <div class="cat-cards" id="catCards"></div>
+  <div class="month-nav" id="monthNav"></div>
+  <div class="feed" id="feed">
+    <div id="comingSection"></div>
+    <div id="monthSections"></div>
+    <div class="no-results" id="noResults"><span class="nr-emoji">🔍</span><p>Keine Events gefunden. Versuch einen anderen Filter.</p></div>
+  </div>
+  <div class="ev-footer">Alle Angaben ohne Gewähr – Daten & Termine können sich ändern.<br>Quellen: <a href="https://www.zuerich.com/de/events-nachtleben/event-highlights" target="_blank" rel="noopener">zuerich.com</a> · <a href="https://hallenstadion.ch/events/" target="_blank" rel="noopener">hallenstadion.ch</a> · <a href="https://www.ticketcorner.ch/" target="_blank" rel="noopener">ticketcorner.ch</a></div>
+</div>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Nach oben">↑</button>
+
+<script>
+// ── Theme ──
+function toggleTheme(){document.documentElement.classList.toggle('dark');localStorage.setItem('theme',document.documentElement.classList.contains('dark')?'dark':'light')}
+if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark');
+
+// ── Event Data ──
+const EVENTS=[
+// MÄRZ
+{name:"Wu-Tang Clan",emoji:"🎤",date:"2026-03-12",dateEnd:null,dateLabel:"12. März",location:"Hallenstadion",category:"konzerte",tags:["Hip-Hop","Rap"],status:"confirmed",highlight:false,ticketUrl:"https://hallenstadion.ch/events/wu-tang-clan",websiteUrl:"https://www.wutangclan.com/"},
+{name:"Der Herr der Ringe – in Concert",emoji:"🎬",date:"2026-03-13",dateEnd:null,dateLabel:"13. März",location:"Hallenstadion",category:"konzerte",tags:["Filmkonzert","Klassik"],status:"confirmed",highlight:false,ticketUrl:"https://hallenstadion.ch/events/the-lord-of-the-rings",websiteUrl:"https://www.lordoftheringsinconcert.com/"},
+{name:"Eros Ramazzotti",emoji:"🎶",date:"2026-03-16",dateEnd:null,dateLabel:"16. März",location:"Hallenstadion",category:"konzerte",tags:["Pop","Italiano"],status:"confirmed",highlight:false,ticketUrl:"https://hallenstadion.ch/events/eros-ramazzotti-2",websiteUrl:"https://ramazzotti.com/world-tour/"},
+{name:"Swiss Music Awards 2026",emoji:"🏆",date:"2026-03-19",dateEnd:null,dateLabel:"19. März",location:"Hallenstadion",category:"festivals",tags:["Award-Show","Schweizer Musik"],status:"confirmed",highlight:true,ticketUrl:"https://hallenstadion.ch/events/swiss-music-awards-3",websiteUrl:"https://www.swissmusicawards.ch/"},
+{name:"Zürcher Frühlings-Weinausstellung",emoji:"🍷",date:"2026-03-19",dateEnd:"2026-03-26",dateLabel:"19.–26. März",location:"Puls 5, Zürich-West",category:"kulinarik",tags:["Wein","Degustation"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.zuercherweinsalon.ch/"},
+{name:"Kraftklub",emoji:"🎸",date:"2026-03-21",dateEnd:null,dateLabel:"21. März",location:"Hallenstadion",category:"konzerte",tags:["Rock","Indie"],status:"confirmed",highlight:false,ticketUrl:"https://hallenstadion.ch/events/kraftklub",websiteUrl:"https://www.kraftklub.to/home/"},
+{name:"Rosalía – Lux Tour",emoji:"💃",date:"2026-03-22",dateEnd:null,dateLabel:"22. März",location:"Hallenstadion",category:"konzerte",tags:["Pop","Flamenco"],status:"confirmed",highlight:false,ticketUrl:"https://hallenstadion.ch/events/rosalia",websiteUrl:"https://www.rosalia.com/"},
+{name:"Züri Märlitram Frühling",emoji:"🚋",date:"2026-03-20",dateEnd:"2026-04-26",dateLabel:"20. Mär.–26. Apr.",location:"Innenstadt",category:"tradition",tags:["Familie","Kinder"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.zuerich.com/de/events-nachtleben/event-highlights"},
+{name:"Albis Country Festival",emoji:"🤠",date:"2026-03-28",dateEnd:"2026-03-29",dateLabel:"28.–29. März",location:"Hallenstadion",category:"festivals",tags:["Country","Bluegrass"],status:"confirmed",highlight:false,ticketUrl:"https://hallenstadion.ch/events/albis-country-festival",websiteUrl:"https://www.albiscountryfestival.ch/"},
+{name:"Sarah Connor",emoji:"🎤",date:"2026-03-30",dateEnd:null,dateLabel:"30. März",location:"Hallenstadion",category:"konzerte",tags:["Pop","Schlager"],status:"confirmed",highlight:false,ticketUrl:"https://hallenstadion.ch/events/sarah-connor",websiteUrl:"https://www.sarah-connor.de/"},
+{name:"m4music",emoji:"🎵",date:"2026-03-20",dateEnd:"2026-03-21",dateLabel:"20.–21. März",location:"Zürich",category:"festivals",tags:["Popmusik","Newcomer"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.m4music.ch/"},
+// APRIL
+{name:"Howard Carpendale – Abschiedstour",emoji:"🎙️",date:"2026-04-01",dateEnd:null,dateLabel:"1. April",location:"Hallenstadion",category:"konzerte",tags:["Schlager"],status:"confirmed",highlight:false,ticketUrl:"https://hallenstadion.ch/events/howard-carpendale-2",websiteUrl:"https://www.howard-carpendale.de/"},
+{name:"Zürich Marathon",emoji:"🏃",date:"2026-04-12",dateEnd:null,dateLabel:"12. April",location:"Innenstadt & Zürichsee",category:"sport",tags:["Laufsport","Marathon"],status:"confirmed",highlight:true,ticketUrl:"https://www.zurichmarathon.ch/",websiteUrl:"https://www.zurichmarathon.ch/"},
+{name:"Tame Impala",emoji:"🎹",date:"2026-04-14",dateEnd:null,dateLabel:"14. April",location:"Hallenstadion",category:"konzerte",tags:["Psych-Rock","Indie"],status:"confirmed",highlight:false,ticketUrl:"https://hallenstadion.ch/events/tame-impala",websiteUrl:"https://www.tameimpala.com/"},
+{name:"Johannes Oerding",emoji:"🎶",date:"2026-04-15",dateEnd:null,dateLabel:"15. April",location:"Hallenstadion",category:"konzerte",tags:["Pop"],status:"confirmed",highlight:false,ticketUrl:"https://hallenstadion.ch/events/johannes-oerding-3",websiteUrl:"https://www.johannesoerding.de/"},
+{name:"Zünftig Divers '26",emoji:"🌈",date:"2026-04-19",dateEnd:null,dateLabel:"19. April",location:"Kraftwerk Zürich",category:"community",tags:["Diversität"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.kraftwerkzuerich.ch/"},
+{name:"Sechseläuten – Böögg-Verbrennung",emoji:"🔥",date:"2026-04-20",dateEnd:null,dateLabel:"20. April",location:"Sechseläutenplatz",category:"tradition",tags:["Brauchtum","Zürich","Böögg"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.sechselaeuten.ch/"},
+// MAI
+{name:"Michael Patrick Kelly",emoji:"🎵",date:"2026-05-02",dateEnd:null,dateLabel:"2. Mai",location:"Hallenstadion",category:"konzerte",tags:["Pop"],status:"confirmed",highlight:false,ticketUrl:"https://www.ticketcorner.ch/artist/michael-patrick-kelly/",websiteUrl:"https://www.michaelpatrickkelly.com/"},
+{name:"Zürich Street Food Park",emoji:"🍜",date:"2026-05-05",dateEnd:"2026-05-10",dateLabel:"5.–10. Mai",location:"Hauptbahnhof Zürich",category:"kulinarik",tags:["Street Food","International"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.streetfoodparkzh.com/"},
+{name:"Zürich Tanzt",emoji:"💃",date:"2026-05-07",dateEnd:"2026-05-10",dateLabel:"7.–10. Mai",location:"Diverse Orte",category:"festivals",tags:["Tanz","Performance"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.zurichtanzt.ch/"},
+{name:"DJ BoBo – The Great Adventure",emoji:"🎪",date:"2026-05-09",dateEnd:null,dateLabel:"9. Mai",location:"Hallenstadion",category:"konzerte",tags:["Show","Dance"],status:"confirmed",highlight:false,ticketUrl:"https://www.ticketcorner.ch/artist/dj-bobo/",websiteUrl:"https://www.djbobo.ch/"},
+{name:"IIHF Eishockey-WM 2026",emoji:"🏒",date:"2026-05-15",dateEnd:"2026-05-31",dateLabel:"15.–31. Mai",location:"Hallenstadion",category:"sport",tags:["Eishockey","WM"],status:"confirmed",highlight:true,ticketUrl:"https://www.iihf.com/en/events/2026/wm",websiteUrl:"https://www.iihf.com/en/events/2026/wm"},
+{name:"Tim Bendzko",emoji:"🎤",date:"2026-05-22",dateEnd:null,dateLabel:"22. Mai",location:"Zürich",category:"konzerte",tags:["Pop"],status:"confirmed",highlight:false,ticketUrl:"https://www.ticketcorner.ch/artist/tim-bendzko/",websiteUrl:"https://www.timbendzko.de/"},
+{name:"Hot Wheels Monster Trucks Live",emoji:"🚗",date:"2026-05-23",dateEnd:null,dateLabel:"23. Mai",location:"Hallenstadion",category:"community",tags:["Familie","Show"],status:"confirmed",highlight:false,ticketUrl:"https://www.ticketcorner.ch/artist/hot-wheels-monster-trucks-live/",websiteUrl:"https://www.hotwheelsmonstertruckslive.com/"},
+{name:"Metallica – M72 World Tour",emoji:"🤘",date:"2026-05-27",dateEnd:null,dateLabel:"27. Mai",location:"Letzigrund",category:"konzerte",tags:["Metal","Rock","Stadion"],status:"confirmed",highlight:true,ticketUrl:"https://www.ticketcorner.ch/artist/metallica/",websiteUrl:"https://www.metallica.com/tour/"},
+{name:"Cycle Week Zürich",emoji:"🚴",date:"2026-05-28",dateEnd:"2026-05-31",dateLabel:"28.–31. Mai",location:"Zürich",category:"sport",tags:["Velo","Bike"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.cycleweek.ch/"},
+{name:"Kreislauf-Wochenende",emoji:"🛍️",date:"2026-05-30",dateEnd:"2026-05-31",dateLabel:"30.–31. Mai",location:"Kreis 3, 4 & 5",category:"community",tags:["Shopping","Design"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.kreislauf345.ch/"},
+// JUNI
+{name:"IRONMAN 70.3 Switzerland",emoji:"🏊",date:"2026-06-07",dateEnd:null,dateLabel:"7. Juni",location:"Rapperswil-Jona",category:"sport",tags:["Triathlon"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.ironman.com/im703-switzerland"},
+{name:"Winti-Arena – Fussball-WM",emoji:"⚽",date:"2026-06-11",dateEnd:"2026-07-19",dateLabel:"11. Jun.–19. Jul.",location:"Winterthur",category:"sport",tags:["Fussball","WM","Public Viewing"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.winti-arena.ch/"},
+{name:"Zurich Art Weekend",emoji:"🎨",date:"2026-06-12",dateEnd:"2026-06-14",dateLabel:"12.–14. Juni",location:"Diverse Galerien",category:"community",tags:["Kunst","Contemporary Art"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.zurichartweekend.com/"},
+{name:"Zucchero",emoji:"🎸",date:"2026-06-17",dateEnd:"2026-06-18",dateLabel:"17.–18. Juni",location:"Zürich",category:"konzerte",tags:["Blues-Rock"],status:"confirmed",highlight:false,ticketUrl:"https://www.ticketcorner.ch/artist/zucchero/",websiteUrl:"https://www.zucchero.it/"},
+{name:"Lake and Sound Festival",emoji:"🎶",date:"2026-06-19",dateEnd:"2026-06-21",dateLabel:"19.–21. Juni",location:"Rapperswil",category:"festivals",tags:["Open Air","Pop","See"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.zuerich.com/de/events-nachtleben/open-airs-und-musik-festivals/bluesnjazz-rapperswil-jona"},
+{name:"Die Toten Hosen",emoji:"🎸",date:"2026-06-20",dateEnd:null,dateLabel:"20. Juni",location:"Letzigrund",category:"konzerte",tags:["Punk","Rock","Stadion"],status:"soldout",highlight:true,ticketUrl:"https://www.ticketcorner.ch/artist/die-toten-hosen/",websiteUrl:"https://www.dietotenhosen.de/"},
+{name:"Oper für alle",emoji:"🎭",date:"2026-06-26",dateEnd:"2026-06-28",dateLabel:"26.–28. Juni",location:"Sechseläutenplatz",category:"tradition",tags:["Oper","Gratis"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.opernhaus.ch/"},
+{name:"Zurich City Triathlon",emoji:"🏊",date:"2026-06-27",dateEnd:"2026-06-28",dateLabel:"27.–28. Juni",location:"Landiwiese",category:"sport",tags:["Triathlon"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://zurichcitytriathlon.ch/"},
+{name:"Linkin Park – From Zero",emoji:"🎤",date:"2026-06-30",dateEnd:null,dateLabel:"30. Juni",location:"Letzigrund",category:"konzerte",tags:["Rock","Nu-Metal","Stadion"],status:"confirmed",highlight:true,ticketUrl:"https://www.ticketcorner.ch/artist/linkin-park/",websiteUrl:"https://www.linkinpark.com/"},
+// JULI
+{name:"Seeschwimmen Zürich",emoji:"🏊",date:"2026-07-01",dateEnd:null,dateLabel:"1. Juli",location:"Strandbad Mythenquai",category:"sport",tags:["Schwimmen"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.swimsports.ch/schwimmkalender"},
+{name:"Caliente! – Latin Festival",emoji:"💃",date:"2026-07-03",dateEnd:"2026-07-05",dateLabel:"3.–5. Juli",location:"Helvetiaplatz, Kreis 4",category:"festivals",tags:["Latin","Street Food"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.caliente.ch/"},
+{name:"Open Air Frauenfeld",emoji:"🎤",date:"2026-07-09",dateEnd:"2026-07-11",dateLabel:"9.–11. Juli",location:"Frauenfeld (TG)",category:"festivals",tags:["Hip-Hop","Festival"],status:"confirmed",highlight:true,ticketUrl:"https://www.openairfrauenfeld.ch/tickets",websiteUrl:"https://www.openairfrauenfeld.ch/"},
+{name:"Helene Fischer – 360° Tour",emoji:"🎤",date:"2026-07-14",dateEnd:null,dateLabel:"14. Juli",location:"Letzigrund",category:"konzerte",tags:["Schlager","Stadion"],status:"confirmed",highlight:true,ticketUrl:"https://www.ticketcorner.ch/artist/helene-fischer/",websiteUrl:"https://www.helene-fischer.de/"},
+{name:"Allianz Cinema – Open-Air-Kino",emoji:"🎬",date:"2026-07-16",dateEnd:"2026-08-16",dateLabel:"16. Jul.–16. Aug.",location:"Zürichhorn",category:"festivals",tags:["Kino","Open Air"],status:"confirmed",highlight:false,ticketUrl:"https://www.allianzcinema.ch/",websiteUrl:"https://www.allianzcinema.ch/"},
+{name:"Street Food Festival Zürich",emoji:"🍜",date:"2026-07-01",dateEnd:null,dateLabel:"Sommer 2026",location:"Hardturmbrache",category:"kulinarik",tags:["Street Food"],status:"expected",highlight:false,ticketUrl:null,websiteUrl:"https://www.streetfoodfest.ch"},
+{name:"Stars in Town",emoji:"🎵",date:"2026-07-29",dateEnd:"2026-08-08",dateLabel:"29. Jul.–8. Aug.",location:"Schaffhausen",category:"festivals",tags:["Konzerte","Open Air"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.starsintown.ch/"},
+// AUGUST
+{name:"Zurich Music Week",emoji:"🎧",date:"2026-08-03",dateEnd:"2026-08-09",dateLabel:"3.–9. August",location:"Diverse Orte",category:"festivals",tags:["Elektro","Workshops"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.zurichmusicweek.ch/"},
+{name:"51. Winterthurer Musikfestwochen",emoji:"🎶",date:"2026-08-05",dateEnd:"2026-08-16",dateLabel:"5.–16. August",location:"Winterthur",category:"festivals",tags:["Open Air","Gratis"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://musikfestwochen.ch/"},
+{name:"Seenachtfest Rapperswil-Jona",emoji:"🎆",date:"2026-08-07",dateEnd:"2026-08-09",dateLabel:"7.–9. August",location:"Rapperswil-Jona",category:"tradition",tags:["Feuerwerk","Volksfest"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.seenachtfest.ch/"},
+{name:"32. Street Parade",emoji:"🎉",date:"2026-08-08",dateEnd:null,dateLabel:"8. August",location:"Zürich Seebecken",category:"festivals",tags:["Techno","House","Parade"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.streetparade.com/"},
+{name:"60. Zürcher Limmatschwimmen",emoji:"🏊",date:"2026-08-15",dateEnd:null,dateLabel:"15. August",location:"Limmat, Zürich",category:"sport",tags:["Schwimmen","Jubiläum"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.limmatschwimmen.ch/"},
+{name:"Seeschwimmen Zollikon",emoji:"🏊",date:"2026-08-22",dateEnd:null,dateLabel:"22. August",location:"Zollikon",category:"sport",tags:["Schwimmen"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.swimsports.ch/schwimmkalender"},
+{name:"Zürcher Theater Spektakel",emoji:"🎭",date:"2026-08-13",dateEnd:"2026-08-30",dateLabel:"13.–30. August",location:"Landiwiese, Zürichsee",category:"festivals",tags:["Theater","Performance"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.theaterspektakel.ch/"},
+{name:"Weltklasse Zürich – Diamond League",emoji:"🏅",date:"2026-08-26",dateEnd:"2026-08-27",dateLabel:"26.–27. August",location:"Letzigrund",category:"sport",tags:["Leichtathletik"],status:"confirmed",highlight:true,ticketUrl:"https://www.weltklassezuerich.ch/",websiteUrl:"https://www.weltklassezuerich.ch/"},
+{name:"Dörflifäscht (Niederdörflifest)",emoji:"🎊",date:"2026-08-28",dateEnd:"2026-08-30",dateLabel:"28.–30. August",location:"Niederdorf / Altstadt",category:"tradition",tags:["Quartierfest","Live-Musik"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://doerflifaescht.ch/"},
+// SEPTEMBER
+{name:"Lange Nacht der Zürcher Museen",emoji:"🏛️",date:"2026-09-05",dateEnd:null,dateLabel:"5. September",location:"Diverse Museen",category:"community",tags:["Museen","Nacht","Kultur"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.langenacht.ch/"},
+{name:"DJ BoBo – zweite Show",emoji:"🎪",date:"2026-09-11",dateEnd:null,dateLabel:"11. Sep.",location:"Hallenstadion",category:"konzerte",tags:["Show","Dance"],status:"confirmed",highlight:false,ticketUrl:"https://www.ticketcorner.ch/artist/dj-bobo/",websiteUrl:"https://www.djbobo.ch/"},
+{name:"Knabenschiessen",emoji:"🎯",date:"2026-09-12",dateEnd:"2026-09-14",dateLabel:"12.–14. Sep.",location:"Albisgütli",category:"tradition",tags:["Volksfest","Zürich"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.knabenschiessen.ch/"},
+{name:"Zürich Film Festival (ZFF)",emoji:"🎬",date:"2026-09-24",dateEnd:"2026-10-04",dateLabel:"24. Sep.–4. Okt.",location:"Diverse Kinos",category:"festivals",tags:["Film","Premieren"],status:"confirmed",highlight:true,ticketUrl:"https://zff.com/de/",websiteUrl:"https://zff.com/de/"},
+{name:"AnnenMayKantereit",emoji:"🎵",date:"2026-09-26",dateEnd:"2026-09-27",dateLabel:"26.–27. Sep.",location:"Hallenstadion",category:"konzerte",tags:["Indie","Pop"],status:"confirmed",highlight:false,ticketUrl:"https://www.ticketcorner.ch/artist/annenmaykantereit/",websiteUrl:"https://www.annenmaykantereit.de/"},
+{name:"Spiritbox",emoji:"🤘",date:"2026-09-28",dateEnd:null,dateLabel:"28. Sep.",location:"Halle 622",category:"konzerte",tags:["Metal"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.spiritboxband.com/"},
+{name:"Zurich Design Weeks",emoji:"🎨",date:"2026-09-17",dateEnd:"2026-09-27",dateLabel:"17.–27. Sep.",location:"Diverse Orte",category:"community",tags:["Design","Workshops"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.zurichdesignweeks.com/"},
+// OKTOBER
+{name:"Red Bull Dance Your Style – Weltfinale",emoji:"🕺",date:"2026-10-24",dateEnd:null,dateLabel:"24. Oktober",location:"Hallenstadion",category:"sport",tags:["Streetdance","Weltfinale"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.redbull.com/ch-de/events/red-bull-dance-your-style"},
+{name:"Expovina Weinausstellung",emoji:"🍷",date:"2026-10-29",dateEnd:"2026-11-12",dateLabel:"29. Okt.–12. Nov.",location:"Zürichsee-Schiffe",category:"kulinarik",tags:["Wein","Degustation"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.expovina.ch/"},
+{name:"Betontod – Jubiläumstour",emoji:"🎸",date:"2026-10-31",dateEnd:null,dateLabel:"31. Oktober",location:"Zürich",category:"konzerte",tags:["Punk"],status:"confirmed",highlight:false,ticketUrl:"https://www.ticketcorner.ch/artist/betontod/",websiteUrl:"https://www.betontod.de/"},
+// NOVEMBER
+{name:"Internationale Kurzfilmtage Winterthur",emoji:"🎬",date:"2026-11-03",dateEnd:"2026-11-08",dateLabel:"3.–8. Nov.",location:"Winterthur",category:"festivals",tags:["Kurzfilm","Festival"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.kurzfilmtage.ch/"},
+{name:"Nico Santos – Arena Tour",emoji:"🎤",date:"2026-11-11",dateEnd:null,dateLabel:"11. Nov.",location:"Hallenstadion",category:"konzerte",tags:["Pop"],status:"confirmed",highlight:false,ticketUrl:"https://www.ticketcorner.ch/artist/nico-santos/",websiteUrl:"https://www.nicosantos.de/"},
+{name:"Märlitram",emoji:"🚋",date:"2026-11-15",dateEnd:"2026-12-23",dateLabel:"Nov.–Dez.",location:"Innenstadt",category:"tradition",tags:["Kinder","Weihnachten"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.zuerich.com/de/events-nachtleben/event-highlights"},
+{name:"Unheilig",emoji:"🎵",date:"2026-11-16",dateEnd:null,dateLabel:"16. Nov.",location:"Zürich",category:"konzerte",tags:["Rock"],status:"confirmed",highlight:false,ticketUrl:"https://www.ticketcorner.ch/artist/unheilig/",websiteUrl:"https://www.unheilig.com/"},
+{name:"Weihnachtsmärkte Zürich",emoji:"🎄",date:"2026-11-19",dateEnd:"2026-12-23",dateLabel:"ab 19. November",location:"Christkindlimarkt HB, Wienachtsdorf, Niederdorf",category:"tradition",tags:["Weihnachten","Markt"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.zuerich.com/de/events-nachtleben/event-highlights"},
+{name:"Bastian Baker",emoji:"🎸",date:"2026-11-19",dateEnd:null,dateLabel:"19. Nov.",location:"Zürich",category:"konzerte",tags:["Pop","Akustik"],status:"confirmed",highlight:false,ticketUrl:"https://www.ticketcorner.ch/artist/bastian-baker/",websiteUrl:"https://www.bastianbaker.ch/"},
+{name:"Portugal. The Man",emoji:"🎵",date:"2026-11-27",dateEnd:null,dateLabel:"27. Nov.",location:"Komplex 457",category:"konzerte",tags:["Alternative"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.portugaltheman.com/"},
+// DEZEMBER
+{name:"BAP – 50-Jahre-Jubiläum",emoji:"🎶",date:"2026-12-02",dateEnd:null,dateLabel:"2. Dezember",location:"Hallenstadion",category:"konzerte",tags:["Rock"],status:"confirmed",highlight:false,ticketUrl:"https://www.ticketcorner.ch/artist/bap/",websiteUrl:"https://www.bfreiheit.de/"},
+{name:"Samichlausschwimmen",emoji:"🎅",date:"2026-12-06",dateEnd:null,dateLabel:"6. Dezember",location:"Limmat, Zürich",category:"sport",tags:["Schwimmen","Tradition"],status:"expected",highlight:false,ticketUrl:null,websiteUrl:"https://www.limmatschwimmen.ch/"},
+{name:"50. Zürcher Silvesterlauf",emoji:"🏃",date:"2026-12-13",dateEnd:null,dateLabel:"13. Dezember",location:"Innenstadt",category:"sport",tags:["Laufsport","Jubiläum"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.silvesterlauf.ch/"},
+{name:"Silvester Zürich",emoji:"🎆",date:"2026-12-31",dateEnd:null,dateLabel:"31. Dezember",location:"Bellevue / Zürichsee",category:"tradition",tags:["Feuerwerk","Party"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.zuerich.com/de/events-nachtleben/event-highlights"}
+];
+
+// ── Constants ──
+const CATS=[{key:"konzerte",emoji:"🎵",label:"Konzerte"},{key:"sport",emoji:"⚽",label:"Sport"},{key:"festivals",emoji:"🎪",label:"Festivals"},{key:"tradition",emoji:"🏛️",label:"Tradition"},{key:"kulinarik",emoji:"🍷",label:"Kulinarik"},{key:"community",emoji:"🌍",label:"Community"}];
+const MONTHS=[{i:2,label:"Mär",emoji:"🌸",full:"März"},{i:3,label:"Apr",emoji:"🌷",full:"April"},{i:4,label:"Mai",emoji:"🌿",full:"Mai"},{i:5,label:"Jun",emoji:"☀️",full:"Juni"},{i:6,label:"Jul",emoji:"🌞",full:"Juli"},{i:7,label:"Aug",emoji:"🏖️",full:"August"},{i:8,label:"Sep",emoji:"🍂",full:"September"},{i:9,label:"Okt",emoji:"🎃",full:"Oktober"},{i:10,label:"Nov",emoji:"🍁",full:"November"},{i:11,label:"Dez",emoji:"❄️",full:"Dezember"}];
+const STATUS_MAP={confirmed:"✅ Bestätigt",expected:"📅 Erwartet",soldout:"🔥 Ausverkauft"};
+const CAT_LABELS={konzerte:"Konzerte",sport:"Sport",festivals:"Festivals",tradition:"Tradition",kulinarik:"Kulinarik",community:"Community"};
+
+// ── State ──
+let activeCat=null,activeMonth=null;
+const today=new Date().toISOString().split('T')[0];
+const sorted=EVENTS.sort((a,b)=>new Date(a.date)-new Date(b.date));
+const upcoming=sorted.filter(e=>e.date>=today||(e.dateEnd&&e.dateEnd>=today));
+
+// ── Pulse Hero ──
+function renderPulse(){
+  const hl=upcoming.find(e=>e.highlight);
+  if(!hl)return;
+  const el=document.getElementById('pulseHero');
+  const link=hl.websiteUrl||hl.ticketUrl||'#';
+  el.innerHTML=`<div class="pulse-label"><span class="pulse-dot"></span> ZüriPulse – Nächstes Highlight</div>
+    <div class="pulse-content">
+      <span class="pulse-emoji">${hl.emoji}</span>
+      <div class="pulse-info">
+        <div class="pulse-name">${hl.name}</div>
+        <div class="pulse-meta"><span>📅 ${hl.dateLabel}</span><span>📍 ${hl.location}</span></div>
+        <div class="pulse-cta">${link!=='#'?`<a href="${link}" target="_blank" rel="noopener" class="pulse-btn">🎟️ Mehr erfahren</a>`:''}</div>
+      </div>
+      <div class="pulse-countdown" id="countdown">
+        <div class="cd-box"><div class="cd-num" id="cdD">--</div><div class="cd-label">Tage</div></div>
+        <div class="cd-box"><div class="cd-num" id="cdH">--</div><div class="cd-label">Std</div></div>
+        <div class="cd-box"><div class="cd-num" id="cdM">--</div><div class="cd-label">Min</div></div>
+        <div class="cd-box"><div class="cd-num" id="cdS">--</div><div class="cd-label">Sek</div></div>
+      </div>
+    </div>`;
+  function tick(){
+    const diff=new Date(hl.date)-new Date();
+    if(diff<=0)return;
+    document.getElementById('cdD').textContent=Math.floor(diff/864e5);
+    document.getElementById('cdH').textContent=Math.floor((diff%864e5)/36e5);
+    document.getElementById('cdM').textContent=Math.floor((diff%36e5)/6e4);
+    document.getElementById('cdS').textContent=Math.floor((diff%6e4)/1e3);
+  }
+  tick();setInterval(tick,1000);
+}
+
+// ── Category Cards ──
+function renderCats(){
+  const el=document.getElementById('catCards');
+  el.innerHTML=CATS.map(c=>{
+    const count=upcoming.filter(e=>e.category===c.key).length;
+    return`<div class="cat-card${activeCat===c.key?' active':''}" data-cat="${c.key}" onclick="toggleCat('${c.key}')">
+      <span class="cat-card-emoji">${c.emoji}</span>
+      <div class="cat-card-title">${c.label}</div>
+      <span class="cat-card-count">${count} Events</span>
+    </div>`;
+  }).join('');
+}
+
+// ── Month Nav ──
+function renderMonthNav(){
+  const el=document.getElementById('monthNav');
+  const curMonth=new Date().getMonth();
+  el.innerHTML=MONTHS.map(m=>`<button class="month-pill${(activeMonth===m.i||(activeMonth===null&&m.i===curMonth))?' active':''}" onclick="toggleMonth(${m.i})">${m.label}</button>`).join('');
+}
+
+// ── Filters ──
+function toggleCat(key){
+  activeCat=activeCat===key?null:key;
+  renderCats();renderAll();
+}
+function toggleMonth(m){
+  activeMonth=activeMonth===m?null:m;
+  renderMonthNav();renderAll();
+  const sec=document.getElementById('month-'+m);
+  if(sec)sec.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ── Card Rendering ──
+function cardHTML(e,large){
+  const st=`<span class="ev-status ${e.status}">${STATUS_MAP[e.status]||''}</span>`;
+  const catTag=`<span class="ev-tag ${e.category}">${CAT_LABELS[e.category]||e.category}</span>`;
+  let btns='';
+  if(e.ticketUrl)btns+=`<a href="${e.ticketUrl}" target="_blank" rel="noopener" class="ev-btn-p">🎟️ Tickets</a>`;
+  if(e.websiteUrl)btns+=`<a href="${e.websiteUrl}" target="_blank" rel="noopener" class="ev-btn-s">↗️ Website</a>`;
+
+  if(large){
+    const d=new Date(e.date);
+    const day=d.getDate();
+    const mon=['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'][d.getMonth()];
+    return`<div class="coming-card${e.highlight?' highlight':''}">
+      <div class="coming-date"><div class="cd-day">${day}</div><div class="cd-month">${mon}</div></div>
+      <div class="coming-info">
+        <div class="coming-name">${e.emoji} ${e.name}</div>
+        <div class="ev-tags">${catTag} ${e.highlight?'<span class="ev-tag festivals">⭐ Grossevent</span>':''} ${st}</div>
+        <div class="ev-loc">📍 ${e.location} · ${e.dateLabel}</div>
+        ${btns?`<div class="ev-btns">${btns}</div>`:''}
+      </div>
+    </div>`;
+  }
+  return`<div class="ev-card${e.highlight?' highlight':''}">
+    <div class="ev-top"><span class="ev-emoji">${e.emoji}</span><div class="ev-info"><div class="ev-date">${e.dateLabel}</div><div class="ev-name">${e.name}</div></div></div>
+    <div class="ev-tags">${catTag} ${e.highlight?'<span class="ev-tag festivals">⭐</span>':''} ${st}</div>
+    <div class="ev-loc">📍 ${e.location}</div>
+    ${btns?`<div class="ev-btns">${btns}</div>`:''}
+  </div>`;
+}
+
+// ── Render All ──
+function renderAll(){
+  const filtered=upcoming.filter(e=>{
+    if(activeCat&&e.category!==activeCat)return false;
+    if(activeMonth!==null&&new Date(e.date).getMonth()!==activeMonth)return false;
+    return true;
+  });
+
+  // Coming Up
+  const comEl=document.getElementById('comingSection');
+  if(!activeCat&&activeMonth===null){
+    const first=filtered.slice(0,8);
+    comEl.innerHTML=`<div class="sec-head"><h2>⚡ Demnächst</h2><span class="sec-count">${first.length} Events</span></div><div class="coming-grid">${first.map(e=>cardHTML(e,true)).join('')}</div>`;
+  }else{comEl.innerHTML='';}
+
+  // Month Sections
+  const msEl=document.getElementById('monthSections');
+  const noRes=document.getElementById('noResults');
+  let html='';
+  const byMonth={};
+  filtered.forEach(e=>{const m=new Date(e.date).getMonth();if(!byMonth[m])byMonth[m]=[];byMonth[m].push(e)});
+  MONTHS.forEach(m=>{
+    const evs=byMonth[m.i];
+    if(!evs||!evs.length)return;
+    html+=`<div id="month-${m.i}"><div class="sec-head"><h2>${m.emoji} ${m.full} 2026</h2><span class="sec-count">${evs.length}</span></div><div class="ev-grid">${evs.map(e=>cardHTML(e,false)).join('')}</div></div>`;
+  });
+  msEl.innerHTML=html;
+  noRes.style.display=filtered.length?'none':'block';
+}
+
+// ── Init ──
+function init(){
+  renderPulse();renderCats();renderMonthNav();renderAll();
+  document.getElementById('splash').classList.add('done');
+  document.getElementById('app').style.display='';
+  setTimeout(()=>{const s=document.getElementById('splash');if(s)s.remove()},600);
+}
+
+// ── Back to Top ──
+window.addEventListener('scroll',()=>{document.getElementById('btt').classList.toggle('show',window.scrollY>400)},{passive:true});
+
+init();
+</script>
+</body>
+</html>

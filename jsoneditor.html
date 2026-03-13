@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON Daten-Editor</title>
+<style>
+:root {
+  --bg: #0f1117;
+  --bg2: #161822;
+  --bg3: #1e2030;
+  --bg4: #272a3a;
+  --border: #2e3148;
+  --text: #e2e4f0;
+  --text2: #9498b3;
+  --accent: #6c8aff;
+  --accent2: #4a6aff;
+  --green: #4ade80;
+  --green2: #166534;
+  --red: #f87171;
+  --red2: #7f1d1d;
+  --orange: #fbbf24;
+  --orange2: #78350f;
+  --radius: 8px;
+  --shadow: 0 4px 24px rgba(0,0,0,.4);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background:var(--bg); color:var(--text); height:100vh; overflow:hidden; }
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
+::-webkit-scrollbar-thumb:hover { background:var(--text2); }
+button { cursor:pointer; font-family:inherit; }
+input, select, textarea { font-family:inherit; }
+
+/* UPLOAD SCREEN */
+#upload-screen { display:flex; align-items:center; justify-content:center; height:100vh; flex-direction:column; gap:20px; }
+#upload-screen h1 { font-size:28px; font-weight:700; color:var(--text); }
+#upload-screen p { color:var(--text2); font-size:14px; max-width:500px; text-align:center; line-height:1.6; }
+.drop-zone { width:500px; height:220px; border:2px dashed var(--border); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; transition:all .2s; cursor:pointer; background:var(--bg2); }
+.drop-zone:hover, .drop-zone.drag-over { border-color:var(--accent); background:var(--bg3); }
+.drop-zone svg { width:48px; height:48px; color:var(--text2); }
+.drop-zone span { color:var(--text2); font-size:14px; }
+.drop-zone .btn-browse { background:var(--accent); color:#fff; border:none; padding:8px 20px; border-radius:var(--radius); font-size:13px; font-weight:600; }
+#file-input { display:none; }
+
+/* EDITOR LAYOUT */
+#editor-screen { display:none; height:100vh; }
+.top-bar { height:52px; background:var(--bg2); border-bottom:1px solid var(--border); display:flex; align-items:center; padding:0 16px; gap:12px; flex-shrink:0; }
+.top-bar .file-name { font-weight:600; font-size:14px; color:var(--accent); }
+.top-bar .file-meta { font-size:12px; color:var(--text2); margin-left:4px; }
+.top-bar .spacer { flex:1; }
+.top-bar button { background:var(--bg3); color:var(--text); border:1px solid var(--border); padding:6px 14px; border-radius:var(--radius); font-size:12px; font-weight:600; display:flex; align-items:center; gap:6px; transition:all .15s; }
+.top-bar button:hover { background:var(--bg4); border-color:var(--accent); }
+.top-bar .btn-save { background:var(--accent); border-color:var(--accent); color:#fff; }
+.top-bar .btn-save:hover { background:var(--accent2); }
+.top-bar .btn-danger { color:var(--red); }
+.top-bar .btn-danger:hover { border-color:var(--red); }
+
+.main-layout { display:flex; height:calc(100vh - 52px); }
+
+/* SIDEBAR */
+.sidebar { width:280px; min-width:280px; background:var(--bg2); border-right:1px solid var(--border); display:flex; flex-direction:column; overflow:hidden; }
+.sidebar-section { padding:12px 14px; border-bottom:1px solid var(--border); }
+.sidebar-section h3 { font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--text2); margin-bottom:8px; font-weight:700; }
+.sidebar-section .meta-field { display:flex; justify-content:space-between; font-size:12px; padding:3px 0; }
+.sidebar-section .meta-field .label { color:var(--text2); }
+.sidebar-section .meta-field .value { color:var(--text); font-weight:500; }
+.cat-tree { flex:1; overflow-y:auto; padding:8px 0; }
+.cat-item { display:flex; align-items:center; padding:7px 14px; font-size:13px; cursor:pointer; transition:all .1s; gap:8px; user-select:none; }
+.cat-item:hover { background:var(--bg3); }
+.cat-item.active { background:var(--bg4); color:var(--accent); font-weight:600; }
+.cat-item .count { margin-left:auto; background:var(--bg4); color:var(--text2); padding:1px 7px; border-radius:10px; font-size:11px; font-weight:600; }
+.cat-item.active .count { background:rgba(108,138,255,.2); color:var(--accent); }
+.cat-item .dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.sidebar-actions { padding:10px 14px; border-top:1px solid var(--border); }
+.sidebar-actions button { width:100%; background:var(--bg3); color:var(--text); border:1px solid var(--border); padding:7px; border-radius:var(--radius); font-size:12px; font-weight:600; transition:all .15s; margin-bottom:6px; }
+.sidebar-actions button:hover { border-color:var(--accent); color:var(--accent); }
+.sidebar-actions button:last-child { margin-bottom:0; }
+
+/* TAG BAR */
+.tag-bar { background:var(--bg2); border-bottom:1px solid var(--border); padding:8px 16px; display:flex; gap:6px; flex-wrap:wrap; align-items:center; min-height:40px; }
+.tag-bar .tag-label { font-size:11px; color:var(--text2); text-transform:uppercase; letter-spacing:.5px; font-weight:700; margin-right:4px; }
+.tag-chip { padding:3px 10px; border-radius:12px; font-size:11px; font-weight:600; cursor:pointer; border:1px solid var(--border); background:var(--bg3); color:var(--text2); transition:all .15s; user-select:none; display:inline-flex; align-items:center; gap:4px; }
+.tag-chip:hover { border-color:var(--accent); color:var(--text); }
+.tag-chip.active { background:rgba(108,138,255,.15); border-color:var(--accent); color:var(--accent); }
+.tag-chip.add-tag { border-style:dashed; }
+.tag-chip .tag-del { background:none; border:none; color:var(--text2); font-size:14px; padding:0; cursor:pointer; line-height:1; display:inline-flex; align-items:center; }
+.tag-chip .tag-del:hover { color:var(--red); }
+.tag-chip.delete-all { border-color:rgba(248,113,113,.3); color:var(--red); }
+.tag-chip.delete-all:hover { border-color:var(--red); background:rgba(248,113,113,.1); }
+
+/* CONTENT */
+.content { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+.content-header { padding:12px 16px; display:flex; align-items:center; gap:10px; border-bottom:1px solid var(--border); background:var(--bg); flex-shrink:0; }
+.content-header h2 { font-size:16px; font-weight:700; }
+.content-header .result-count { font-size:12px; color:var(--text2); }
+.search-box { margin-left:auto; position:relative; }
+.search-box input { background:var(--bg3); border:1px solid var(--border); color:var(--text); padding:6px 12px 6px 32px; border-radius:var(--radius); font-size:12px; width:220px; outline:none; }
+.search-box input:focus { border-color:var(--accent); }
+.search-box svg { position:absolute; left:9px; top:50%; transform:translateY(-50%); width:14px; height:14px; color:var(--text2); }
+.profile-list { flex:1; overflow-y:auto; padding:8px 16px; }
+.profile-card { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:12px 14px; margin-bottom:8px; transition:all .15s; cursor:pointer; }
+.profile-card:hover { border-color:var(--accent); transform:translateY(-1px); box-shadow:var(--shadow); }
+.profile-card .card-top { display:flex; align-items:flex-start; gap:10px; }
+.profile-card .card-name { font-size:14px; font-weight:600; flex:1; }
+.profile-card .card-sub { font-size:11px; color:var(--accent); background:rgba(108,138,255,.1); padding:2px 8px; border-radius:10px; white-space:nowrap; margin-left:2px; }
+.profile-card .card-address { font-size:12px; color:var(--text2); margin-top:4px; }
+.profile-card .card-bottom { display:flex; align-items:center; gap:12px; margin-top:8px; font-size:11px; color:var(--text2); flex-wrap:wrap; }
+.profile-card .card-rating { color:var(--orange); font-weight:600; }
+.profile-card .card-tags { display:flex; gap:4px; flex-wrap:wrap; }
+.profile-card .card-tags span { background:var(--bg4); padding:1px 6px; border-radius:8px; font-size:10px; }
+.profile-card .card-links { margin-left:auto; display:flex; gap:6px; }
+.profile-card .card-links a { font-size:16px; text-decoration:none; transition:transform .15s; display:inline-block; }
+.profile-card .card-links a:hover { transform:scale(1.2); }
+.profile-card .card-status { font-size:10px; padding:2px 6px; border-radius:8px; font-weight:600; }
+.profile-card .card-status.operational { background:rgba(74,222,128,.1); color:var(--green); }
+.profile-card .card-status.closed { background:rgba(248,113,113,.1); color:var(--red); }
+
+/* MODAL */
+.modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; align-items:center; justify-content:center; z-index:1000; backdrop-filter:blur(4px); }
+.modal-overlay.show { display:flex; }
+.modal { background:var(--bg2); border:1px solid var(--border); border-radius:12px; width:680px; max-height:85vh; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 8px 40px rgba(0,0,0,.5); }
+.modal-header { padding:16px 20px; border-bottom:1px solid var(--border); display:flex; align-items:center; }
+.modal-header h3 { font-size:16px; font-weight:700; flex:1; }
+.modal-close { background:none; border:none; color:var(--text2); font-size:20px; padding:4px 8px; border-radius:4px; }
+.modal-close:hover { color:var(--text); background:var(--bg4); }
+.modal-body { padding:20px; overflow-y:auto; flex:1; }
+.modal-footer { padding:12px 20px; border-top:1px solid var(--border); display:flex; justify-content:flex-end; gap:8px; }
+.modal-footer button { padding:8px 18px; border-radius:var(--radius); font-size:13px; font-weight:600; border:1px solid var(--border); }
+.modal-footer .btn-cancel { background:var(--bg3); color:var(--text); }
+.modal-footer .btn-cancel:hover { background:var(--bg4); }
+.modal-footer .btn-confirm { background:var(--accent); color:#fff; border-color:var(--accent); }
+.modal-footer .btn-confirm:hover { background:var(--accent2); }
+.modal-footer .btn-delete { background:var(--red2); color:var(--red); border-color:transparent; }
+.modal-footer .btn-delete:hover { background:#991b1b; }
+
+.form-group { margin-bottom:14px; }
+.form-group label { display:block; font-size:12px; font-weight:600; color:var(--text2); margin-bottom:4px; text-transform:uppercase; letter-spacing:.5px; }
+.form-group input, .form-group select, .form-group textarea { width:100%; background:var(--bg3); border:1px solid var(--border); color:var(--text); padding:8px 10px; border-radius:var(--radius); font-size:13px; outline:none; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--accent); }
+.form-group textarea { resize:vertical; min-height:60px; }
+.form-row { display:flex; gap:12px; }
+.form-row .form-group { flex:1; }
+
+/* MULTI-SELECT CHIPS */
+.multi-select { display:flex; flex-wrap:wrap; gap:6px; padding:8px 10px; background:var(--bg3); border:1px solid var(--border); border-radius:var(--radius); min-height:40px; align-items:center; }
+.multi-select .ms-chip { padding:4px 12px; border-radius:12px; font-size:11px; font-weight:600; cursor:pointer; border:1px solid var(--border); background:var(--bg4); color:var(--text2); transition:all .15s; user-select:none; }
+.multi-select .ms-chip:hover { border-color:var(--accent); color:var(--text); }
+.multi-select .ms-chip.selected { background:rgba(108,138,255,.15); border-color:var(--accent); color:var(--accent); }
+.multi-select .ms-empty { color:var(--text2); font-size:11px; font-style:italic; }
+
+/* TOAST */
+.toast-container { position:fixed; bottom:20px; right:20px; z-index:2000; display:flex; flex-direction:column; gap:8px; }
+.toast { padding:10px 16px; border-radius:var(--radius); font-size:13px; font-weight:600; box-shadow:var(--shadow); animation:slideIn .2s ease; display:flex; align-items:center; gap:8px; }
+.toast.success { background:var(--green2); color:var(--green); border:1px solid rgba(74,222,128,.2); }
+.toast.error { background:var(--red2); color:var(--red); border:1px solid rgba(248,113,113,.2); }
+.toast.info { background:rgba(108,138,255,.15); color:var(--accent); border:1px solid rgba(108,138,255,.2); }
+@keyframes slideIn { from { transform:translateX(100px); opacity:0; } to { transform:translateX(0); opacity:1; } }
+
+/* BULK ACTIONS */
+.bulk-bar { background:var(--bg3); border:1px solid var(--accent); border-radius:var(--radius); margin:8px 16px; padding:8px 12px; display:none; align-items:center; gap:8px; font-size:12px; }
+.bulk-bar.show { display:flex; }
+.bulk-bar .bulk-count { font-weight:700; color:var(--accent); }
+.bulk-bar select { background:var(--bg4); border:1px solid var(--border); color:var(--text); padding:4px 8px; border-radius:6px; font-size:11px; }
+.bulk-bar button { background:var(--accent); color:#fff; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; }
+.bulk-bar button.bulk-cancel { background:var(--bg4); color:var(--text2); }
+
+.profile-card .card-check { width:16px; height:16px; border:2px solid var(--border); border-radius:4px; flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:all .15s; }
+.profile-card .card-check.checked { background:var(--accent); border-color:var(--accent); }
+.profile-card .card-check.checked::after { content:'✓'; color:#fff; font-size:10px; font-weight:800; }
+
+.empty-state { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; color:var(--text2); gap:8px; }
+.empty-state svg { width:48px; height:48px; opacity:.4; }
+.empty-state p { font-size:14px; }
+
+/* CONFIRM DIALOG */
+.confirm-overlay { position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; align-items:center; justify-content:center; z-index:1100; backdrop-filter:blur(4px); }
+.confirm-overlay.show { display:flex; }
+.confirm-box { background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:24px; width:400px; text-align:center; box-shadow:0 8px 40px rgba(0,0,0,.5); }
+.confirm-box h3 { font-size:16px; margin-bottom:8px; }
+.confirm-box p { font-size:13px; color:var(--text2); margin-bottom:20px; line-height:1.5; }
+.confirm-box .confirm-actions { display:flex; gap:8px; justify-content:center; }
+.confirm-box .confirm-actions button { padding:8px 20px; border-radius:var(--radius); font-size:13px; font-weight:600; border:none; }
+
+/* Meta Editor */
+.meta-edit-btn { background:none; border:none; color:var(--text2); font-size:10px; cursor:pointer; padding:2px 4px; }
+.meta-edit-btn:hover { color:var(--accent); }
+
+/* TAXONOMY MANAGER */
+.tax-section { margin-bottom:20px; }
+.tax-section h4 { font-size:13px; font-weight:700; color:var(--text); margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+.tax-section h4 .tax-count { font-size:11px; color:var(--text2); font-weight:400; }
+.tax-list { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; }
+.tax-item { display:flex; align-items:center; gap:4px; background:var(--bg4); border:1px solid var(--border); padding:4px 8px 4px 12px; border-radius:12px; font-size:12px; font-weight:500; }
+.tax-item .tax-del { background:none; border:none; color:var(--text2); font-size:14px; padding:0 2px; cursor:pointer; line-height:1; display:flex; align-items:center; }
+.tax-item .tax-del:hover { color:var(--red); }
+.tax-add-row { display:flex; gap:6px; align-items:center; }
+.tax-add-row input { background:var(--bg3); border:1px solid var(--border); color:var(--text); padding:5px 10px; border-radius:var(--radius); font-size:12px; outline:none; flex:1; }
+.tax-add-row input:focus { border-color:var(--accent); }
+.tax-add-row button { background:var(--accent); color:#fff; border:none; padding:5px 14px; border-radius:var(--radius); font-size:12px; font-weight:600; white-space:nowrap; }
+.tax-add-row button:hover { background:var(--accent2); }
+</style>
+</head>
+<body>
+
+<!-- UPLOAD SCREEN -->
+<div id="upload-screen">
+  <h1>JSON Daten-Editor</h1>
+  <p>Lade eine JSON-Datei hoch, um Kategorien, Unterkategorien und Profile zu bearbeiten. Die Original-Struktur bleibt immer erhalten.</p>
+  <div class="drop-zone" id="drop-zone">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+    <span>JSON-Datei hierher ziehen</span>
+    <button class="btn-browse" onclick="document.getElementById('file-input').click()">Datei auswählen</button>
+  </div>
+  <input type="file" id="file-input" accept=".json">
+</div>
+
+<!-- EDITOR SCREEN -->
+<div id="editor-screen">
+  <div class="top-bar">
+    <span class="file-name" id="top-filename"></span>
+    <span class="file-meta" id="top-meta"></span>
+    <div class="spacer"></div>
+    <button onclick="loadNewFile()" class="btn-danger">&#x21BB; Andere Datei</button>
+    <button onclick="undoLast()">&#x238C; Rückgängig</button>
+    <button onclick="validateAndSave()" class="btn-save">&#x2B73; JSON speichern</button>
+  </div>
+  <div class="main-layout">
+    <div class="sidebar">
+      <div class="sidebar-section" id="sidebar-meta"></div>
+      <div class="sidebar-section">
+        <h3>Unterkategorien / Keywords</h3>
+      </div>
+      <div class="cat-tree" id="cat-tree"></div>
+      <div class="sidebar-actions">
+        <button onclick="showAddCategory()">+ Neue Unterkategorie</button>
+        <button onclick="showTaxonomyManager()">&#x2699; Taxonomie verwalten</button>
+        <button onclick="showMetaEditor()">&#x2699; Meta bearbeiten</button>
+      </div>
+    </div>
+    <div class="content">
+      <div id="tag-bar" class="tag-bar" style="display:none;"></div>
+      <div class="content-header">
+        <h2 id="content-title">Alle Profile</h2>
+        <span class="result-count" id="result-count"></span>
+        <button onclick="selectAllVisible()" style="background:var(--bg3);color:var(--text2);border:1px solid var(--border);padding:5px 12px;border-radius:var(--radius);font-size:11px;font-weight:600;white-space:nowrap;" title="Alle angezeigten Profile auswählen">&#9745; Alle auswählen</button>
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="search-input" placeholder="Profile durchsuchen..." oninput="renderProfiles()">
+        </div>
+      </div>
+      <div class="bulk-bar" id="bulk-bar">
+        <span class="bulk-count" id="bulk-count">0</span> ausgewählt
+        <button onclick="selectAllVisible()" id="btn-select-all" style="background:var(--bg4);color:var(--accent);border:1px solid var(--accent);">Alle auswählen</button>
+        <select id="bulk-target"></select>
+        <button onclick="bulkMove()">Verschieben</button>
+        <button onclick="bulkDelete()" style="background:var(--red2);color:var(--red);">Löschen</button>
+        <div class="spacer" style="flex:1"></div>
+        <button class="bulk-cancel" onclick="clearSelection()">Abbrechen</button>
+      </div>
+      <div class="profile-list" id="profile-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE EDIT MODAL -->
+<div class="modal-overlay" id="profile-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-title">Profil bearbeiten</h3>
+      <button class="modal-close" onclick="closeModal('profile-modal')">&times;</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+    <div class="modal-footer">
+      <button class="btn-delete" id="modal-delete-btn" onclick="deleteCurrentProfile()">Löschen</button>
+      <div style="flex:1"></div>
+      <button class="btn-cancel" onclick="closeModal('profile-modal')">Abbrechen</button>
+      <button class="btn-confirm" onclick="saveProfile()">Speichern</button>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORY MODAL -->
+<div class="modal-overlay" id="cat-modal">
+  <div class="modal" style="width:420px;">
+    <div class="modal-header">
+      <h3 id="cat-modal-title">Neue Unterkategorie</h3>
+      <button class="modal-close" onclick="closeModal('cat-modal')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" id="cat-name-input" placeholder="z.B. Schuhe & Accessoires">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal('cat-modal')">Abbrechen</button>
+      <button class="btn-confirm" onclick="saveCategory()">Erstellen</button>
+    </div>
+  </div>
+</div>
+
+<!-- META EDITOR MODAL -->
+<div class="modal-overlay" id="meta-modal">
+  <div class="modal" style="width:560px;">
+    <div class="modal-header">
+      <h3>Meta-Daten bearbeiten</h3>
+      <button class="modal-close" onclick="closeModal('meta-modal')">&times;</button>
+    </div>
+    <div class="modal-body" id="meta-modal-body"></div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal('meta-modal')">Abbrechen</button>
+      <button class="btn-confirm" onclick="saveMeta()">Speichern</button>
+    </div>
+  </div>
+</div>
+
+<!-- TAXONOMY MANAGER MODAL -->
+<div class="modal-overlay" id="taxonomy-modal">
+  <div class="modal" style="width:640px;">
+    <div class="modal-header">
+      <h3>Taxonomie verwalten</h3>
+      <button class="modal-close" onclick="closeModal('taxonomy-modal')">&times;</button>
+    </div>
+    <div class="modal-body" id="taxonomy-modal-body"></div>
+    <div class="modal-footer">
+      <button class="btn-confirm" onclick="closeModal('taxonomy-modal')">Schliessen</button>
+    </div>
+  </div>
+</div>
+
+<!-- CONFIRM DIALOG -->
+<div class="confirm-overlay" id="confirm-dialog">
+  <div class="confirm-box">
+    <h3 id="confirm-title">Bestätigung</h3>
+    <p id="confirm-message"></p>
+    <div class="confirm-actions">
+      <button style="background:var(--bg4);color:var(--text);" onclick="closeConfirm(false)">Abbrechen</button>
+      <button style="background:var(--red);color:#fff;" id="confirm-ok-btn" onclick="closeConfirm(true)">Bestätigen</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toast-container"></div>
+
+<script>
+// ===================== STATE =====================
+let fileData = null;
+let fileName = '';
+let fileType = ''; // 'shopping' | 'gastro' | 'structured'
+let selectedCategory = null; // null = all
+let selectedTags = new Set();
+let selectedProfiles = new Set();
+let editingIndex = -1;
+let undoStack = [];
+let confirmResolve = null;
+let categoryField = 'unterkategorie';
+let categoriesKey = 'unterkategorien';
+let mapsUrlField = 'google_maps_url';
+let nameField = 'name';
+
+// Predefined options for select-only fields
+let predefinedOptions = {
+  hauptkategorien: [],
+  kategorien: [],
+  typen: [],  // primary_type / trade values
+  tags: []    // managed via getTags()/setTags()
+};
+
+// ===================== UTILS =====================
+function esc(str) {
+  if (str === null || str === undefined) return '';
+  const div = document.createElement('div');
+  div.textContent = String(str);
+  return div.innerHTML.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+function ensureArray(val) {
+  if (Array.isArray(val)) return val;
+  if (val && typeof val === 'string') return [val];
+  return [];
+}
+
+// ===================== FILE LOADING =====================
+const dropZone = document.getElementById('drop-zone');
+const fileInput = document.getElementById('file-input');
+
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+dropZone.addEventListener('drop', e => { e.preventDefault(); dropZone.classList.remove('drag-over'); handleFile(e.dataTransfer.files[0]); });
+fileInput.addEventListener('change', e => { if (e.target.files[0]) handleFile(e.target.files[0]); });
+
+function handleFile(file) {
+  if (!file || !file.name.endsWith('.json')) { toast('Bitte eine .json Datei auswählen', 'error'); return; }
+  fileName = file.name;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      fileData = JSON.parse(e.target.result);
+      detectFileType();
+      initPredefinedOptions();
+      pushUndo();
+      initEditor();
+    } catch (err) {
+      toast('JSON Parse-Fehler: ' + err.message, 'error');
+    }
+  };
+  reader.readAsText(file);
+}
+
+function detectFileType() {
+  // Legacy support: convert flat arrays (old gastro format) on-the-fly
+  if (Array.isArray(fileData)) {
+    // Old-format gastro file (flat array) - treat as legacy
+    fileType = 'gastro';
+    mapsUrlField = 'gmapsUrl';
+    nameField = 'name';
+    categoryField = 'trade';
+    return;
+  }
+  // Unified standard: all files use taxonomie with unterkategorien
+  if (fileData.meta && fileData.meta.taxonomie && fileData.meta.taxonomie.unterkategorien) {
+    fileType = 'shopping';
+    categoryField = 'unterkategorie';
+    categoriesKey = 'unterkategorien';
+    mapsUrlField = 'google_maps_url';
+    return;
+  }
+  // Legacy fallback: structured files with keywords
+  if (fileData.meta && fileData.meta.keywords) {
+    fileType = 'structured';
+    categoryField = 'gefunden_via_keyword';
+    categoriesKey = 'keywords';
+    mapsUrlField = 'google_maps_url';
+    return;
+  }
+  // Default: treat as shopping/unified
+  fileType = 'shopping';
+  categoryField = 'unterkategorie';
+  categoriesKey = 'unterkategorien';
+  mapsUrlField = 'google_maps_url';
+}
+
+function initPredefinedOptions() {
+  const orte = getOrte();
+
+  if (fileType === 'shopping') {
+    // Hauptkategorien: from meta + unique values in profiles
+    const hkSet = new Set();
+    if (fileData.meta.hauptkategorie) hkSet.add(fileData.meta.hauptkategorie);
+    orte.forEach(o => { if (o.hauptkategorie) hkSet.add(o.hauptkategorie); });
+    predefinedOptions.hauptkategorien = [...hkSet];
+
+    // Kategorien: from meta + unique values
+    const katSet = new Set();
+    if (fileData.meta.kategorie) katSet.add(fileData.meta.kategorie);
+    orte.forEach(o => { if (o.kategorie) katSet.add(o.kategorie); });
+    predefinedOptions.kategorien = [...katSet];
+
+    // Typen (primary_type): unique values from profiles
+    const typSet = new Set();
+    orte.forEach(o => { if (o.primary_type) typSet.add(o.primary_type); });
+    predefinedOptions.typen = [...typSet].sort();
+
+  } else if (fileType === 'gastro') {
+    // Trades: unique values
+    const tradeSet = new Set();
+    orte.forEach(o => { if (o.trade) tradeSet.add(o.trade); });
+    predefinedOptions.typen = [...tradeSet].sort();
+
+    predefinedOptions.hauptkategorien = [];
+    predefinedOptions.kategorien = [];
+
+  } else {
+    // Structured: keywords from meta
+    predefinedOptions.hauptkategorien = [];
+    predefinedOptions.kategorien = [];
+    const typSet = new Set();
+    orte.forEach(o => {
+      const types = o.types || [];
+      types.forEach(t => typSet.add(t));
+    });
+    predefinedOptions.typen = [...typSet].sort();
+  }
+}
+
+function getOrte() {
+  if (fileType === 'gastro') return fileData;
+  return fileData.orte || [];
+}
+
+function setOrte(arr) {
+  if (fileType === 'gastro') { fileData = arr; return; }
+  fileData.orte = arr;
+}
+
+function getCategories() {
+  if (fileType === 'shopping') return fileData.meta.taxonomie.unterkategorien || [];
+  if (fileType === 'structured') return fileData.meta.keywords || [];
+  // gastro: extract unique trades
+  const trades = new Set();
+  fileData.forEach(o => { if (o[categoryField]) trades.add(o[categoryField]); });
+  return [...trades].sort();
+}
+
+function setCategories(arr) {
+  if (fileType === 'shopping') { fileData.meta.taxonomie.unterkategorien = arr; return; }
+  if (fileType === 'structured') { fileData.meta.keywords = arr; return; }
+}
+
+function getTags() {
+  if (fileType === 'shopping') return fileData.meta.taxonomie.tags || [];
+  return [];
+}
+
+function setTags(arr) {
+  if (fileType === 'shopping') fileData.meta.taxonomie.tags = arr;
+}
+
+function getGMapsUrl(profile) {
+  return profile[mapsUrlField] || profile.google_maps_url || profile.gmapsUrl || '';
+}
+
+function getAddress(profile) {
+  return profile.adresse || profile.address || '';
+}
+
+function getRating(profile) {
+  return profile.rating_durchschnitt || profile.rating || 0;
+}
+
+function getRatingCount(profile) {
+  return profile.rating_anzahl || profile.reviewCount || 0;
+}
+
+function getProfileTags(profile) {
+  return profile.tags || profile.types || [];
+}
+
+function getProfileCategories(profile) {
+  return ensureArray(profile[categoryField]);
+}
+
+function getWebsite(profile) {
+  return profile.website || '';
+}
+
+function getPhone(profile) {
+  return profile.telefon || profile.phone || '';
+}
+
+function getStatus(profile) {
+  return profile.business_status || profile.businessStatus || '';
+}
+
+// ===================== UNDO =====================
+function pushUndo() {
+  undoStack.push(JSON.stringify(fileData));
+  if (undoStack.length > 50) undoStack.shift();
+}
+
+function undoLast() {
+  if (undoStack.length <= 1) { toast('Nichts zum Rückgängig machen', 'info'); return; }
+  undoStack.pop();
+  fileData = JSON.parse(undoStack[undoStack.length - 1]);
+  initPredefinedOptions();
+  renderAll();
+  toast('Rückgängig gemacht', 'info');
+}
+
+// ===================== EDITOR INIT =====================
+function initEditor() {
+  document.getElementById('upload-screen').style.display = 'none';
+  document.getElementById('editor-screen').style.display = 'block';
+  document.getElementById('top-filename').textContent = fileName;
+  selectedCategory = null;
+  selectedTags.clear();
+  selectedProfiles.clear();
+  renderAll();
+}
+
+function loadNewFile() {
+  document.getElementById('editor-screen').style.display = 'none';
+  document.getElementById('upload-screen').style.display = 'flex';
+  fileData = null;
+  undoStack = [];
+  fileInput.value = '';
+}
+
+function renderAll() {
+  renderMeta();
+  renderCategoryTree();
+  renderTagBar();
+  renderProfiles();
+  updateBulkBar();
+}
+
+// ===================== META =====================
+function renderMeta() {
+  const el = document.getElementById('sidebar-meta');
+  let html = '<h3>Datei-Info</h3>';
+  if (fileType === 'gastro') {
+    html += metaRow('Einträge', fileData.length);
+    document.getElementById('top-meta').textContent = `${fileData.length} Einträge`;
+  } else {
+    const m = fileData.meta;
+    if (m.region) html += metaRow('Region', m.region);
+    if (m.hauptkategorie) html += metaRow('Hauptkategorie', m.hauptkategorie);
+    if (m.kategorie) html += metaRow('Kategorie', m.kategorie);
+    const total = getOrte().length;
+    html += metaRow('Einträge', total);
+    if (m.erstellt_am) html += metaRow('Erstellt', m.erstellt_am);
+    document.getElementById('top-meta').textContent = `${m.region || ''} — ${total} Einträge`;
+  }
+  el.innerHTML = html;
+}
+
+function metaRow(label, value) {
+  return `<div class="meta-field"><span class="label">${label}</span><span class="value">${value}</span></div>`;
+}
+
+// ===================== CATEGORY TREE =====================
+const catColors = ['#6c8aff','#4ade80','#fbbf24','#f87171','#a78bfa','#fb923c','#2dd4bf','#f472b6','#818cf8','#34d399','#facc15','#c084fc'];
+
+function renderCategoryTree() {
+  const cats = getCategories();
+  const orte = getOrte();
+  const el = document.getElementById('cat-tree');
+
+  const allCount = orte.length;
+  let html = `<div class="cat-item ${selectedCategory === null ? 'active' : ''}" onclick="selectCategory(null)">
+    <div class="dot" style="background:var(--text2)"></div>Alle Profile<span class="count">${allCount}</span></div>`;
+
+  // Uncategorized
+  const uncatCount = orte.filter(o => getProfileCategories(o).length === 0).length;
+  if (uncatCount > 0) {
+    html += `<div class="cat-item ${selectedCategory === '__none__' ? 'active' : ''}" onclick="selectCategory('__none__')">
+      <div class="dot" style="background:var(--red)"></div>Ohne Kategorie<span class="count">${uncatCount}</span></div>`;
+  }
+
+  cats.forEach((cat, i) => {
+    const count = orte.filter(o => getProfileCategories(o).includes(cat)).length;
+    const color = catColors[i % catColors.length];
+    html += `<div class="cat-item ${selectedCategory === cat ? 'active' : ''}" onclick="selectCategory('${esc(cat)}')" oncontextmenu="catContextMenu(event, '${esc(cat)}')">
+      <div class="dot" style="background:${color}"></div>${esc(cat)}<span class="count">${count}</span></div>`;
+  });
+
+  el.innerHTML = html;
+
+  // Update bulk target
+  const sel = document.getElementById('bulk-target');
+  sel.innerHTML = cats.map(c => `<option value="${esc(c)}">→ ${esc(c)}</option>`).join('');
+}
+
+function selectCategory(cat) {
+  selectedCategory = cat;
+  selectedProfiles.clear();
+  renderCategoryTree();
+  renderProfiles();
+  updateBulkBar();
+}
+
+function catContextMenu(e, cat) {
+  e.preventDefault();
+  const matchCount = getOrte().filter(o => getProfileCategories(o).includes(cat)).length;
+  showConfirm(`Unterkategorie "${cat}" löschen?`, `Alle ${matchCount} Profile dieser Kategorie werden auf "Ohne Kategorie" gesetzt.`).then(ok => {
+    if (!ok) return;
+    pushUndo();
+    getOrte().forEach(o => {
+      const cats = getProfileCategories(o);
+      if (cats.includes(cat)) {
+        const filtered = cats.filter(c => c !== cat);
+        o[categoryField] = filtered.length === 1 ? filtered[0] : (filtered.length > 1 ? filtered : '');
+      }
+    });
+    const allCats = getCategories().filter(c => c !== cat);
+    setCategories(allCats);
+    if (selectedCategory === cat) selectedCategory = null;
+    updateTotalCount();
+    renderAll();
+    toast(`"${cat}" gelöscht`, 'success');
+  });
+}
+
+// ===================== TAGS =====================
+function renderTagBar() {
+  const tags = getTags();
+  const el = document.getElementById('tag-bar');
+  if (tags.length === 0 && fileType !== 'shopping') { el.style.display = 'none'; return; }
+  el.style.display = 'flex';
+  let html = '<span class="tag-label">Tags</span>';
+  tags.forEach(t => {
+    html += `<span class="tag-chip ${selectedTags.has(t) ? 'active' : ''}" onclick="toggleTag('${esc(t)}')">
+      ${esc(t)}
+      <button class="tag-del" onclick="event.stopPropagation(); deleteTag('${esc(t)}')" title="Tag löschen">&times;</button>
+    </span>`;
+  });
+  html += `<span class="tag-chip add-tag" onclick="showAddTagInTaxonomy()">+ Tag</span>`;
+  if (tags.length > 0) {
+    html += `<span class="tag-chip add-tag delete-all" onclick="deleteAllTags()">Alle löschen</span>`;
+  }
+  el.innerHTML = html;
+}
+
+function toggleTag(tag) {
+  if (selectedTags.has(tag)) selectedTags.delete(tag);
+  else selectedTags.add(tag);
+  renderTagBar();
+  renderProfiles();
+}
+
+function showAddTagInTaxonomy() {
+  showTaxonomyManager();
+}
+
+function deleteTag(tag) {
+  showConfirm('Tag löschen?', `"${tag}" wird aus der Tag-Liste und von allen Profilen entfernt.`).then(ok => {
+    if (!ok) return;
+    pushUndo();
+    const tags = getTags().filter(t => t !== tag);
+    setTags(tags);
+    getOrte().forEach(o => {
+      if (o.tags && Array.isArray(o.tags)) {
+        o.tags = o.tags.filter(t => t !== tag);
+      }
+    });
+    selectedTags.delete(tag);
+    renderAll();
+    toast(`Tag "${tag}" gelöscht`, 'success');
+  });
+}
+
+function deleteAllTags() {
+  showConfirm('Alle Tags löschen?', 'Alle Tags werden aus der Liste und von allen Profilen entfernt. Diese Aktion kann rückgängig gemacht werden.').then(ok => {
+    if (!ok) return;
+    pushUndo();
+    setTags([]);
+    getOrte().forEach(o => {
+      if (o.tags && Array.isArray(o.tags)) {
+        o.tags = [];
+      }
+    });
+    selectedTags.clear();
+    renderAll();
+    toast('Alle Tags gelöscht', 'success');
+  });
+}
+
+// ===================== PROFILES RENDERING =====================
+function getFilteredProfiles() {
+  let orte = getOrte();
+  let results = [];
+
+  orte.forEach((o, i) => {
+    let show = true;
+    if (selectedCategory === '__none__') {
+      if (getProfileCategories(o).length > 0) show = false;
+    } else if (selectedCategory !== null) {
+      if (!getProfileCategories(o).includes(selectedCategory)) show = false;
+    }
+    if (selectedTags.size > 0) {
+      const pt = getProfileTags(o);
+      for (const t of selectedTags) {
+        if (!pt.includes(t)) { show = false; break; }
+      }
+    }
+    const search = document.getElementById('search-input').value.toLowerCase().trim();
+    if (search) {
+      const str = `${o[nameField] || ''} ${getAddress(o)} ${getProfileCategories(o).join(' ')} ${getProfileTags(o).join(' ')}`.toLowerCase();
+      if (!str.includes(search)) show = false;
+    }
+    if (show) results.push({ profile: o, index: i });
+  });
+
+  return results;
+}
+
+function renderProfiles() {
+  const filtered = getFilteredProfiles();
+  const el = document.getElementById('profile-list');
+
+  document.getElementById('content-title').textContent = selectedCategory === null ? 'Alle Profile' : selectedCategory === '__none__' ? 'Ohne Kategorie' : selectedCategory;
+  document.getElementById('result-count').textContent = `${filtered.length} Profile`;
+
+  if (filtered.length === 0) {
+    el.innerHTML = `<div class="empty-state">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15h8M9 9h.01M15 9h.01"/></svg>
+      <p>Keine Profile gefunden</p>
+      <button style="background:var(--accent);color:#fff;border:none;padding:6px 16px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;" onclick="showAddProfile()">+ Neues Profil erstellen</button>
+    </div>`;
+    return;
+  }
+
+  let html = '';
+  filtered.forEach(({ profile, index }) => {
+    const name = profile[nameField] || 'Unbenannt';
+    const addr = getAddress(profile);
+    const cats = getProfileCategories(profile);
+    const rating = getRating(profile);
+    const rCount = getRatingCount(profile);
+    const tags = getProfileTags(profile);
+    const gurl = getGMapsUrl(profile);
+    const web = getWebsite(profile);
+    const status = getStatus(profile);
+    const checked = selectedProfiles.has(index);
+
+    const catBadges = cats.map(c => `<span class="card-sub">${esc(c)}</span>`).join('');
+
+    html += `<div class="profile-card" data-idx="${index}">
+      <div class="card-top">
+        <div class="card-check ${checked ? 'checked' : ''}" onclick="event.stopPropagation(); toggleSelect(${index})"></div>
+        <div style="flex:1;min-width:0;" onclick="openProfile(${index})">
+          <div class="card-name">${esc(name)}</div>
+          <div class="card-address">${esc(addr)}</div>
+        </div>
+        ${catBadges}
+      </div>
+      <div class="card-bottom" onclick="openProfile(${index})">
+        ${rating ? `<span class="card-rating">&#9733; ${rating} (${rCount.toLocaleString()})</span>` : ''}
+        ${status ? `<span class="card-status ${status === 'OPERATIONAL' ? 'operational' : 'closed'}">${status === 'OPERATIONAL' ? 'Aktiv' : status}</span>` : ''}
+        <div class="card-tags">${tags.slice(0, 5).map(t => `<span>${esc(t)}</span>`).join('')}${tags.length > 5 ? `<span>+${tags.length - 5}</span>` : ''}</div>
+        <div class="card-links">
+          ${gurl ? `<a href="${esc(gurl)}" target="_blank" rel="noopener" onclick="event.stopPropagation();" title="Google Maps">📍</a>` : ''}
+          ${web ? `<a href="${esc(web)}" target="_blank" rel="noopener" onclick="event.stopPropagation();" title="Website">🌐</a>` : ''}
+        </div>
+      </div>
+    </div>`;
+  });
+
+  // Add new profile button at bottom
+  html += `<div style="text-align:center;padding:16px;">
+    <button style="background:var(--bg3);color:var(--text2);border:1px dashed var(--border);padding:8px 20px;border-radius:var(--radius);font-size:12px;font-weight:600;cursor:pointer;" onclick="showAddProfile()">+ Neues Profil erstellen</button>
+  </div>`;
+
+  el.innerHTML = html;
+}
+
+// ===================== PROFILE SELECTION =====================
+function toggleSelect(idx) {
+  if (selectedProfiles.has(idx)) selectedProfiles.delete(idx);
+  else selectedProfiles.add(idx);
+  renderProfiles();
+  updateBulkBar();
+}
+
+function clearSelection() {
+  selectedProfiles.clear();
+  renderProfiles();
+  updateBulkBar();
+}
+
+function selectAllVisible() {
+  const filtered = getFilteredProfiles();
+  const allSelected = filtered.length > 0 && filtered.every(({ index }) => selectedProfiles.has(index));
+  if (allSelected) {
+    // Deselect all visible
+    filtered.forEach(({ index }) => selectedProfiles.delete(index));
+  } else {
+    // Select all visible
+    filtered.forEach(({ index }) => selectedProfiles.add(index));
+  }
+  renderProfiles();
+  updateBulkBar();
+}
+
+function updateBulkBar() {
+  const bar = document.getElementById('bulk-bar');
+  if (selectedProfiles.size > 0) {
+    bar.classList.add('show');
+    document.getElementById('bulk-count').textContent = selectedProfiles.size;
+    // Update select all button text in bulk bar
+    const filtered = getFilteredProfiles();
+    const allSelected = filtered.length > 0 && filtered.every(({ index }) => selectedProfiles.has(index));
+    const btnSelectAll = document.getElementById('btn-select-all');
+    if (btnSelectAll) btnSelectAll.textContent = allSelected ? 'Alle abwählen' : 'Alle auswählen';
+  } else {
+    bar.classList.remove('show');
+  }
+}
+
+function bulkMove() {
+  const target = document.getElementById('bulk-target').value;
+  if (!target) return;
+  pushUndo();
+  const orte = getOrte();
+  selectedProfiles.forEach(idx => { orte[idx][categoryField] = target; });
+  toast(`${selectedProfiles.size} Profile nach "${target}" verschoben`, 'success');
+  selectedProfiles.clear();
+  updateTotalCount();
+  renderAll();
+}
+
+function bulkDelete() {
+  showConfirm('Profile löschen?', `${selectedProfiles.size} ausgewählte Profile werden unwiderruflich gelöscht.`).then(ok => {
+    if (!ok) return;
+    pushUndo();
+    const indices = [...selectedProfiles].sort((a, b) => b - a);
+    const orte = getOrte();
+    indices.forEach(i => orte.splice(i, 1));
+    setOrte(orte);
+    selectedProfiles.clear();
+    updateTotalCount();
+    renderAll();
+    toast(`${indices.length} Profile gelöscht`, 'success');
+  });
+}
+
+// ===================== PROFILE EDIT =====================
+function openProfile(idx) {
+  editingIndex = idx;
+  const p = getOrte()[idx];
+  document.getElementById('modal-title').textContent = 'Profil bearbeiten';
+  document.getElementById('modal-delete-btn').style.display = '';
+  renderProfileForm(p);
+  openModal('profile-modal');
+}
+
+function showAddProfile() {
+  editingIndex = -1;
+  const template = {};
+  if (fileType === 'shopping') {
+    Object.assign(template, { place_id: '', name: '', adresse: '', koordinaten: { lat: 0, lng: 0 }, rating_durchschnitt: 0, rating_anzahl: 0, google_maps_url: '', website: '', telefon: '', primary_type: '', business_status: 'OPERATIONAL', hauptkategorie: fileData.meta.hauptkategorie || '', kategorie: fileData.meta.kategorie || '', unterkategorie: selectedCategory && selectedCategory !== '__none__' ? [selectedCategory] : [], tags: [] });
+  } else if (fileType === 'gastro') {
+    Object.assign(template, { id: '', name: '', address: '', lat: 0, lng: 0, rating: 0, reviewCount: 0, gmapsUrl: '', website: '', phone: '', photoCount: 0, trade: selectedCategory && selectedCategory !== '__none__' ? selectedCategory : '', types: [], businessStatus: 'OPERATIONAL' });
+  } else {
+    Object.assign(template, { name: '', adresse: '', rating_durchschnitt: 0, rating_anzahl: 0, place_id: '', gefunden_via_keyword: selectedCategory && selectedCategory !== '__none__' ? selectedCategory : '', types: [], koordinaten: { lat: 0, lng: 0 } });
+  }
+  document.getElementById('modal-title').textContent = 'Neues Profil erstellen';
+  document.getElementById('modal-delete-btn').style.display = 'none';
+  renderProfileForm(template);
+  openModal('profile-modal');
+}
+
+function renderProfileForm(p) {
+  const cats = getCategories();
+  const allTags = getTags();
+  const body = document.getElementById('modal-body');
+
+  let html = '';
+
+  if (fileType === 'shopping') {
+    html += formInput('name', 'Name', p.name);
+    html += formInput('adresse', 'Adresse', p.adresse);
+    html += formRow(
+      formInput('rating_durchschnitt', 'Rating', p.rating_durchschnitt, 'number'),
+      formInput('rating_anzahl', 'Anzahl Bewertungen', p.rating_anzahl, 'number')
+    );
+    html += formInput('google_maps_url', 'Google Maps URL', p.google_maps_url || '');
+    if (p.google_maps_url) {
+      html += `<div style="margin:-8px 0 14px;"><a href="${esc(p.google_maps_url)}" target="_blank" rel="noopener" style="color:var(--accent);font-size:12px;text-decoration:none;">📍 Auf Google Maps ansehen</a></div>`;
+    }
+    html += formRow(
+      formInput('website', 'Website', p.website || ''),
+      formInput('telefon', 'Telefon', p.telefon || '')
+    );
+    html += formRow(
+      formSelect('primary_type', 'Typ', predefinedOptions.typen, p.primary_type || ''),
+      formSelect('business_status', 'Status', ['OPERATIONAL', 'CLOSED_TEMPORARILY', 'CLOSED_PERMANENTLY'], p.business_status || 'OPERATIONAL')
+    );
+    html += formRow(
+      formSelect('hauptkategorie', 'Hauptkategorie', predefinedOptions.hauptkategorien, p.hauptkategorie || ''),
+      formSelect('kategorie', 'Kategorie', predefinedOptions.kategorien, p.kategorie || '')
+    );
+    html += formInput('place_id', 'Place ID', p.place_id || '');
+    html += formMultiSelect('unterkategorie', 'Unterkategorie', cats, ensureArray(p.unterkategorie));
+    html += formMultiSelect('tags', 'Tags', allTags, p.tags || []);
+  } else if (fileType === 'gastro') {
+    html += formInput('name', 'Name', p.name);
+    html += formSelect('trade', 'Trade / Kategorie', predefinedOptions.typen, p.trade || '');
+    html += formInput('address', 'Adresse', p.address || '');
+    html += formRow(
+      formInput('rating', 'Rating', p.rating, 'number'),
+      formInput('reviewCount', 'Bewertungen', p.reviewCount, 'number')
+    );
+    html += formInput('gmapsUrl', 'Google Maps URL', p.gmapsUrl || '');
+    if (p.gmapsUrl) {
+      html += `<div style="margin:-8px 0 14px;"><a href="${esc(p.gmapsUrl)}" target="_blank" rel="noopener" style="color:var(--accent);font-size:12px;text-decoration:none;">📍 Auf Google Maps ansehen</a></div>`;
+    }
+    html += formRow(
+      formInput('website', 'Website', p.website || ''),
+      formInput('phone', 'Telefon', p.phone || '')
+    );
+    html += formRow(
+      formInput('id', 'Place ID', p.id || ''),
+      formInput('photoCount', 'Fotos', p.photoCount || 0, 'number')
+    );
+    html += formSelect('businessStatus', 'Status', ['OPERATIONAL', 'CLOSED_TEMPORARILY', 'CLOSED_PERMANENTLY'], p.businessStatus || 'OPERATIONAL');
+  } else {
+    // structured (attraktionen, unterhaltung)
+    html += formInput('name', 'Name', p.name);
+    html += formSelect('gefunden_via_keyword', 'Keyword / Kategorie', getCategories(), p.gefunden_via_keyword || '');
+    html += formInput('adresse', 'Adresse', p.adresse || '');
+    html += formRow(
+      formInput('rating_durchschnitt', 'Rating', p.rating_durchschnitt, 'number'),
+      formInput('rating_anzahl', 'Bewertungen', p.rating_anzahl, 'number')
+    );
+    html += formInput('place_id', 'Place ID', p.place_id || '');
+    if (p.google_maps_url) {
+      html += formInput('google_maps_url', 'Google Maps URL', p.google_maps_url || '');
+      html += `<div style="margin:-8px 0 14px;"><a href="${esc(p.google_maps_url)}" target="_blank" rel="noopener" style="color:var(--accent);font-size:12px;text-decoration:none;">📍 Auf Google Maps ansehen</a></div>`;
+    }
+    html += formMultiSelect('types', 'Types', predefinedOptions.typen, p.types || []);
+
+    // Render any extra fields not covered above
+    const knownFields = new Set(['name','adresse','rating_durchschnitt','rating_anzahl','koordinaten','place_id','gefunden_via_keyword','types','google_maps_url']);
+    Object.keys(p).forEach(k => {
+      if (knownFields.has(k)) return;
+      const v = p[k];
+      if (typeof v === 'object' && !Array.isArray(v)) return;
+      if (Array.isArray(v)) return;
+      html += formInput(k, k, v, typeof v === 'number' ? 'number' : 'text');
+    });
+  }
+
+  body.innerHTML = html;
+}
+
+function formInput(name, label, value, type = 'text') {
+  return `<div class="form-group"><label>${esc(label)}</label><input type="${type}" data-field="${esc(name)}" value="${esc(String(value ?? ''))}" ${type === 'number' ? 'step="any"' : ''}></div>`;
+}
+
+function formSelect(name, label, options, selected) {
+  let html = `<div class="form-group"><label>${esc(label)}</label><select data-field="${esc(name)}">`;
+  html += `<option value="">— Keine —</option>`;
+  options.forEach(o => { html += `<option value="${esc(o)}" ${o === selected ? 'selected' : ''}>${esc(o)}</option>`; });
+  html += `</select></div>`;
+  return html;
+}
+
+function formRow(...fields) {
+  return `<div class="form-row">${fields.join('')}</div>`;
+}
+
+function formMultiSelect(name, label, options, selectedValues) {
+  const selected = ensureArray(selectedValues);
+  let html = `<div class="form-group"><label>${esc(label)}</label><div class="multi-select" data-field="${esc(name)}">`;
+  if (options.length === 0) {
+    html += `<span class="ms-empty">Keine Optionen verfügbar. Erstelle welche unter "Taxonomie verwalten".</span>`;
+  } else {
+    options.forEach(opt => {
+      const isSelected = selected.includes(opt);
+      html += `<div class="ms-chip ${isSelected ? 'selected' : ''}" data-value="${esc(opt)}" onclick="this.classList.toggle('selected')">${esc(opt)}</div>`;
+    });
+  }
+  html += `</div></div>`;
+  return html;
+}
+
+function saveProfile() {
+  pushUndo();
+  const body = document.getElementById('modal-body');
+  const orte = getOrte();
+  let profile = editingIndex >= 0 ? orte[editingIndex] : {};
+
+  // Collect all standard fields
+  body.querySelectorAll('input[data-field], select[data-field]').forEach(el => {
+    const field = el.dataset.field;
+    let val = el.value;
+    if (el.type === 'number') val = parseFloat(val) || 0;
+
+    if (field.includes('.')) {
+      const parts = field.split('.');
+      if (!profile[parts[0]]) profile[parts[0]] = {};
+      profile[parts[0]][parts[1]] = val;
+    } else {
+      profile[field] = val;
+    }
+  });
+
+  // Collect multi-select fields
+  body.querySelectorAll('.multi-select[data-field]').forEach(container => {
+    const field = container.dataset.field;
+    const values = [];
+    container.querySelectorAll('.ms-chip.selected').forEach(chip => {
+      values.push(chip.dataset.value);
+    });
+    // For unterkategorie in shopping: store as single string if only one, array if multiple, empty string if none
+    if (field === 'unterkategorie' && fileType === 'shopping') {
+      if (values.length === 0) profile[field] = '';
+      else if (values.length === 1) profile[field] = values[0];
+      else profile[field] = values;
+    } else {
+      profile[field] = values;
+    }
+  });
+
+  // Preserve koordinaten from original profile (hidden from form but keep the data)
+  if (editingIndex >= 0) {
+    const orig = orte[editingIndex];
+    if (fileType === 'shopping' || fileType === 'structured') {
+      if (orig.koordinaten && !profile.koordinaten) {
+        profile.koordinaten = orig.koordinaten;
+      }
+    }
+    if (fileType === 'gastro') {
+      if (orig.lat !== undefined && profile.lat === undefined) profile.lat = orig.lat;
+      if (orig.lng !== undefined && profile.lng === undefined) profile.lng = orig.lng;
+    }
+  }
+
+  if (editingIndex < 0) {
+    // For new profiles, set default koordinaten if not present
+    if ((fileType === 'shopping' || fileType === 'structured') && !profile.koordinaten) {
+      profile.koordinaten = { lat: 0, lng: 0 };
+    }
+    if (fileType === 'gastro') {
+      if (profile.lat === undefined) profile.lat = 0;
+      if (profile.lng === undefined) profile.lng = 0;
+    }
+    orte.push(profile);
+    setOrte(orte);
+  }
+
+  updateTotalCount();
+  closeModal('profile-modal');
+  renderAll();
+  toast(editingIndex >= 0 ? 'Profil aktualisiert' : 'Neues Profil erstellt', 'success');
+}
+
+function deleteCurrentProfile() {
+  if (editingIndex < 0) return;
+  const name = getOrte()[editingIndex][nameField] || 'Unbenannt';
+  showConfirm('Profil löschen?', `"${name}" wird unwiderruflich gelöscht.`).then(ok => {
+    if (!ok) return;
+    pushUndo();
+    const orte = getOrte();
+    orte.splice(editingIndex, 1);
+    setOrte(orte);
+    selectedProfiles.clear();
+    updateTotalCount();
+    closeModal('profile-modal');
+    renderAll();
+    toast(`"${name}" gelöscht`, 'success');
+  });
+}
+
+// ===================== CATEGORY MANAGEMENT =====================
+function showAddCategory() {
+  document.getElementById('cat-modal-title').textContent = 'Neue Unterkategorie';
+  document.getElementById('cat-name-input').value = '';
+  openModal('cat-modal');
+  setTimeout(() => document.getElementById('cat-name-input').focus(), 100);
+}
+
+function saveCategory() {
+  const name = document.getElementById('cat-name-input').value.trim();
+  if (!name) { toast('Bitte einen Namen eingeben', 'error'); return; }
+  const cats = getCategories();
+  if (cats.includes(name)) { toast('Diese Kategorie existiert bereits', 'error'); return; }
+  pushUndo();
+  cats.push(name);
+  setCategories(cats);
+  closeModal('cat-modal');
+  renderAll();
+  toast(`"${name}" erstellt`, 'success');
+}
+
+// ===================== TAXONOMY MANAGER =====================
+function showTaxonomyManager() {
+  const body = document.getElementById('taxonomy-modal-body');
+  let html = '';
+
+  if (fileType === 'shopping') {
+    // Hauptkategorien
+    html += renderTaxSection('hauptkategorien', 'Hauptkategorien', predefinedOptions.hauptkategorien);
+    // Kategorien
+    html += renderTaxSection('kategorien', 'Kategorien', predefinedOptions.kategorien);
+    // Typen (primary_type)
+    html += renderTaxSection('typen', 'Typen (Primary Type)', predefinedOptions.typen);
+    // Tags
+    html += renderTaxSection('tags', 'Tags', getTags());
+    // Unterkategorien
+    html += renderTaxSection('unterkategorien', 'Unterkategorien', getCategories());
+  } else if (fileType === 'gastro') {
+    // Trades
+    html += renderTaxSection('typen', 'Trades / Kategorien', predefinedOptions.typen);
+  } else {
+    // Keywords
+    html += renderTaxSection('unterkategorien', 'Keywords / Kategorien', getCategories());
+    // Types
+    html += renderTaxSection('typen', 'Types', predefinedOptions.typen);
+  }
+
+  body.innerHTML = html;
+  openModal('taxonomy-modal');
+}
+
+function renderTaxSection(key, title, items) {
+  let html = `<div class="tax-section">`;
+  html += `<h4>${esc(title)} <span class="tax-count">(${items.length})</span></h4>`;
+  html += `<div class="tax-list">`;
+  if (items.length === 0) {
+    html += `<span style="color:var(--text2);font-size:12px;font-style:italic;">Noch keine Einträge</span>`;
+  } else {
+    items.forEach(item => {
+      html += `<div class="tax-item">${esc(item)}<button class="tax-del" onclick="removeTaxOption('${esc(key)}', '${esc(item)}')" title="Löschen">&times;</button></div>`;
+    });
+  }
+  html += `</div>`;
+  html += `<div class="tax-add-row">`;
+  html += `<input type="text" id="tax-input-${esc(key)}" placeholder="Neuen Eintrag eingeben..." onkeydown="if(event.key==='Enter'){addTaxOption('${esc(key)}')}">`;
+  html += `<button onclick="addTaxOption('${esc(key)}')">Hinzufügen</button>`;
+  html += `</div>`;
+  html += `</div>`;
+  return html;
+}
+
+function addTaxOption(key) {
+  const input = document.getElementById('tax-input-' + key);
+  if (!input) return;
+  const name = input.value.trim();
+  if (!name) { toast('Bitte einen Namen eingeben', 'error'); return; }
+
+  pushUndo();
+  let list;
+  if (key === 'tags') {
+    list = getTags();
+    if (list.includes(name)) { toast('Existiert bereits', 'error'); return; }
+    list.push(name);
+    setTags(list);
+  } else if (key === 'unterkategorien') {
+    list = getCategories();
+    if (list.includes(name)) { toast('Existiert bereits', 'error'); return; }
+    list.push(name);
+    setCategories(list);
+  } else {
+    list = predefinedOptions[key];
+    if (list.includes(name)) { toast('Existiert bereits', 'error'); return; }
+    list.push(name);
+  }
+
+  input.value = '';
+  // Re-render the taxonomy modal content
+  showTaxonomyManager();
+  renderAll();
+  toast(`"${name}" hinzugefügt`, 'success');
+}
+
+function removeTaxOption(key, item) {
+  showConfirm('Eintrag löschen?', `"${item}" wird aus der Liste entfernt.`).then(ok => {
+    if (!ok) return;
+    pushUndo();
+
+    if (key === 'tags') {
+      const tags = getTags().filter(t => t !== item);
+      setTags(tags);
+      // Also remove from all profiles
+      getOrte().forEach(o => {
+        if (o.tags && Array.isArray(o.tags)) {
+          o.tags = o.tags.filter(t => t !== item);
+        }
+      });
+      selectedTags.delete(item);
+    } else if (key === 'unterkategorien') {
+      const cats = getCategories().filter(c => c !== item);
+      setCategories(cats);
+      // Remove from profiles
+      getOrte().forEach(o => {
+        const profileCats = getProfileCategories(o);
+        if (profileCats.includes(item)) {
+          const filtered = profileCats.filter(c => c !== item);
+          o[categoryField] = filtered.length === 1 ? filtered[0] : (filtered.length > 1 ? filtered : '');
+        }
+      });
+      if (selectedCategory === item) selectedCategory = null;
+    } else {
+      predefinedOptions[key] = predefinedOptions[key].filter(v => v !== item);
+      // Remove from profiles that use this value
+      const orte = getOrte();
+      if (key === 'hauptkategorien') {
+        orte.forEach(o => { if (o.hauptkategorie === item) o.hauptkategorie = ''; });
+      } else if (key === 'kategorien') {
+        orte.forEach(o => { if (o.kategorie === item) o.kategorie = ''; });
+      } else if (key === 'typen') {
+        orte.forEach(o => {
+          if (o.primary_type === item) o.primary_type = '';
+          if (o.trade === item) o.trade = '';
+        });
+      }
+    }
+
+    // Re-render
+    showTaxonomyManager();
+    renderAll();
+    toast(`"${item}" gelöscht`, 'success');
+  });
+}
+
+// ===================== META EDITOR =====================
+function showMetaEditor() {
+  const body = document.getElementById('meta-modal-body');
+  let html = '';
+
+  if (fileType === 'gastro') {
+    html = '<p style="color:var(--text2);font-size:13px;">Diese Datei hat keine Meta-Daten (flaches Array).</p>';
+  } else {
+    const m = fileData.meta;
+    html += formInput('meta-region', 'Region', m.region || '');
+    if (m.hauptkategorie !== undefined) html += formSelect('meta-hauptkategorie', 'Hauptkategorie', predefinedOptions.hauptkategorien, m.hauptkategorie || '');
+    if (m.kategorie !== undefined) html += formSelect('meta-kategorie', 'Kategorie', predefinedOptions.kategorien, m.kategorie || '');
+    if (m.erstellt_am !== undefined) html += formInput('meta-erstellt_am', 'Erstellt am', m.erstellt_am || '');
+    if (m.aktualisiert_am !== undefined) html += formInput('meta-aktualisiert_am', 'Aktualisiert am', m.aktualisiert_am || '');
+    if (m.min_bewertungen !== undefined) html += formInput('meta-min_bewertungen', 'Min. Bewertungen', m.min_bewertungen, 'number');
+    if (m.methode !== undefined) html += formInput('meta-methode', 'Methode', m.methode || '');
+  }
+
+  body.innerHTML = html;
+  openModal('meta-modal');
+}
+
+function saveMeta() {
+  if (fileType === 'gastro') { closeModal('meta-modal'); return; }
+  pushUndo();
+  const body = document.getElementById('meta-modal-body');
+  body.querySelectorAll('input[data-field], select[data-field]').forEach(el => {
+    const key = el.dataset.field.replace('meta-', '');
+    let val = el.value;
+    if (el.type === 'number') val = parseFloat(val) || 0;
+    fileData.meta[key] = val;
+  });
+  closeModal('meta-modal');
+  renderAll();
+  toast('Meta-Daten aktualisiert', 'success');
+}
+
+// ===================== SAVE / VALIDATE =====================
+function updateTotalCount() {
+  if (fileType === 'gastro') return;
+  const total = getOrte().length;
+  if (fileData.meta.total_eintraege !== undefined) fileData.meta.total_eintraege = total;
+  if (fileData.meta.statistik) {
+    if (fileData.meta.statistik.finale_eintraege !== undefined) fileData.meta.statistik.finale_eintraege = total;
+  }
+  if (fileData.meta.aktualisiert_am !== undefined) {
+    fileData.meta.aktualisiert_am = new Date().toISOString().split('T')[0];
+  }
+}
+
+function validateAndSave() {
+  try {
+    const orte = getOrte();
+    if (fileType !== 'gastro') {
+      if (!fileData.meta) throw new Error('Meta-Objekt fehlt');
+      if (!Array.isArray(orte)) throw new Error('Orte muss ein Array sein');
+    }
+
+    for (let i = 0; i < orte.length; i++) {
+      if (!orte[i][nameField]) {
+        throw new Error(`Profil #${i + 1} hat keinen Namen`);
+      }
+    }
+
+    updateTotalCount();
+
+    const jsonStr = JSON.stringify(fileData, null, 2);
+    JSON.parse(jsonStr);
+
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    toast('JSON validiert und gespeichert!', 'success');
+  } catch (err) {
+    toast('Validierungsfehler: ' + err.message, 'error');
+  }
+}
+
+// ===================== MODALS =====================
+function openModal(id) {
+  document.getElementById(id).classList.add('show');
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove('show');
+}
+
+// Close modals on overlay click
+document.querySelectorAll('.modal-overlay').forEach(el => {
+  el.addEventListener('click', e => {
+    if (e.target === el) el.classList.remove('show');
+  });
+});
+
+// Close modals on Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.show').forEach(el => el.classList.remove('show'));
+    document.querySelectorAll('.confirm-overlay.show').forEach(el => closeConfirm(false));
+  }
+});
+
+// ===================== CONFIRM DIALOG =====================
+function showConfirm(title, message) {
+  return new Promise(resolve => {
+    confirmResolve = resolve;
+    document.getElementById('confirm-title').textContent = title;
+    document.getElementById('confirm-message').textContent = message;
+    document.getElementById('confirm-dialog').classList.add('show');
+  });
+}
+
+function closeConfirm(result) {
+  document.getElementById('confirm-dialog').classList.remove('show');
+  if (confirmResolve) { confirmResolve(result); confirmResolve = null; }
+}
+
+// ===================== TOAST =====================
+function toast(msg, type = 'info') {
+  const container = document.getElementById('toast-container');
+  const el = document.createElement('div');
+  el.className = `toast ${type}`;
+  el.textContent = msg;
+  container.appendChild(el);
+  setTimeout(() => { el.style.opacity = '0'; el.style.transition = 'opacity .3s'; setTimeout(() => el.remove(), 300); }, 3000);
+}
+</script>
+</body>
+</html>
