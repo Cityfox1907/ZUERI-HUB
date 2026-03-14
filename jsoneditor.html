@@ -200,6 +200,44 @@ input, select, textarea { font-family:inherit; }
 .tax-add-row input:focus { border-color:var(--accent); }
 .tax-add-row button { background:var(--accent); color:#fff; border:none; padding:5px 14px; border-radius:var(--radius); font-size:12px; font-weight:600; white-space:nowrap; }
 .tax-add-row button:hover { background:var(--accent2); }
+
+/* EMOJI PICKER */
+.emoji-picker-overlay { position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; align-items:center; justify-content:center; z-index:1200; backdrop-filter:blur(4px); }
+.emoji-picker-overlay.show { display:flex; }
+.emoji-picker { background:var(--bg2); border:1px solid var(--border); border-radius:12px; width:420px; max-height:520px; display:flex; flex-direction:column; box-shadow:0 8px 40px rgba(0,0,0,.5); }
+.emoji-picker-header { padding:12px 16px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:10px; }
+.emoji-picker-header h3 { font-size:14px; font-weight:700; flex:1; }
+.emoji-picker-header .emoji-search { background:var(--bg3); border:1px solid var(--border); color:var(--text); padding:6px 10px; border-radius:var(--radius); font-size:12px; width:160px; outline:none; }
+.emoji-picker-header .emoji-search:focus { border-color:var(--accent); }
+.emoji-categories { display:flex; gap:2px; padding:8px 12px; border-bottom:1px solid var(--border); overflow-x:auto; flex-shrink:0; }
+.emoji-categories button { background:none; border:none; font-size:18px; padding:4px 8px; border-radius:6px; cursor:pointer; transition:all .1s; flex-shrink:0; }
+.emoji-categories button:hover { background:var(--bg4); }
+.emoji-categories button.active { background:var(--accent); border-radius:6px; }
+.emoji-grid { display:grid; grid-template-columns:repeat(10, 1fr); gap:2px; padding:12px; overflow-y:auto; flex:1; max-height:340px; }
+.emoji-grid span { font-size:22px; text-align:center; padding:6px; cursor:pointer; border-radius:6px; transition:all .1s; line-height:1.2; }
+.emoji-grid span:hover { background:var(--bg4); transform:scale(1.2); }
+.emoji-current { display:flex; align-items:center; gap:8px; padding:8px 16px; border-top:1px solid var(--border); font-size:12px; color:var(--text2); }
+.emoji-current .preview { font-size:28px; }
+.emoji-current button { background:var(--red2); color:var(--red); border:none; padding:4px 10px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer; margin-left:auto; }
+.emoji-current button:hover { background:#991b1b; }
+
+/* CARD MAPS LINK */
+.profile-card .card-maps-link { font-size:18px; text-decoration:none; flex-shrink:0; transition:transform .15s; display:inline-flex; align-items:center; cursor:pointer; }
+.profile-card .card-maps-link:hover { transform:scale(1.25); }
+
+/* CATEGORY EMOJI */
+.cat-item .cat-emoji { font-size:16px; flex-shrink:0; cursor:pointer; line-height:1; }
+.cat-item .cat-emoji:hover { transform:scale(1.2); }
+
+/* TAX ITEM EMOJI */
+.tax-item .tax-emoji { cursor:pointer; font-size:14px; margin-right:2px; }
+.tax-item .tax-emoji:hover { transform:scale(1.2); }
+
+/* QUICK ADD PROFILE */
+.quick-add-section { background:var(--bg3); border:1px solid var(--border); border-radius:var(--radius); padding:12px; margin-bottom:14px; }
+.quick-add-section h4 { font-size:12px; color:var(--text2); margin-bottom:8px; text-transform:uppercase; letter-spacing:.5px; font-weight:700; }
+.quick-add-row { display:flex; gap:8px; align-items:flex-end; }
+.quick-add-row .form-group { margin-bottom:0; }
 </style>
 </head>
 <body>
@@ -342,6 +380,24 @@ input, select, textarea { font-family:inherit; }
   </div>
 </div>
 
+<!-- EMOJI PICKER -->
+<div class="emoji-picker-overlay" id="emoji-picker-overlay">
+  <div class="emoji-picker">
+    <div class="emoji-picker-header">
+      <h3>Emoji auswählen</h3>
+      <input type="text" class="emoji-search" id="emoji-search" placeholder="Suchen..." oninput="filterEmojis()">
+      <button class="modal-close" onclick="closeEmojiPicker()">&times;</button>
+    </div>
+    <div class="emoji-categories" id="emoji-categories"></div>
+    <div class="emoji-grid" id="emoji-grid"></div>
+    <div class="emoji-current">
+      <span>Aktuell:</span>
+      <span class="preview" id="emoji-current-preview">📍</span>
+      <button onclick="removeCurrentEmoji()">Entfernen</button>
+    </div>
+  </div>
+</div>
+
 <!-- TOAST CONTAINER -->
 <div class="toast-container" id="toast-container"></div>
 
@@ -368,6 +424,11 @@ let predefinedOptions = {
   typen: [],  // primary_type / trade values
   tags: []    // managed via getTags()/setTags()
 };
+
+// Custom emojis for categories and taxonomy items
+let customEmojis = {}; // key: 'cat:Name' or 'tag:Name' or 'type:Name' => emoji string
+let emojiPickerCallback = null; // function(emoji) called when emoji selected
+let emojiPickerTarget = ''; // current target key for emoji picker
 
 // ===================== UTILS =====================
 function esc(str) {
@@ -643,8 +704,10 @@ function renderCategoryTree() {
   cats.forEach((cat, i) => {
     const count = orte.filter(o => getProfileCategories(o).includes(cat)).length;
     const color = catColors[i % catColors.length];
+    const emoji = customEmojis['cat:' + cat] || '';
     html += `<div class="cat-item ${selectedCategory === cat ? 'active' : ''}" onclick="selectCategory('${esc(cat)}')" oncontextmenu="catContextMenu(event, '${esc(cat)}')">
-      <div class="dot" style="background:${color}"></div>${esc(cat)}<span class="count">${count}</span></div>`;
+      ${emoji ? `<span class="cat-emoji" onclick="event.stopPropagation(); openEmojiPicker('cat:${esc(cat)}')" title="Emoji ändern">${emoji}</span>` : `<div class="dot" style="background:${color}" onclick="event.stopPropagation(); openEmojiPicker('cat:${esc(cat)}')" title="Emoji setzen"></div>`}
+      ${esc(cat)}<span class="count">${count}</span></div>`;
   });
 
   el.innerHTML = html;
@@ -678,6 +741,7 @@ function catContextMenu(e, cat) {
     const allCats = getCategories().filter(c => c !== cat);
     setCategories(allCats);
     if (selectedCategory === cat) selectedCategory = null;
+    delete customEmojis['cat:' + cat];
     updateTotalCount();
     renderAll();
     toast(`"${cat}" gelöscht`, 'success');
@@ -727,6 +791,7 @@ function deleteTag(tag) {
       }
     });
     selectedTags.delete(tag);
+    delete customEmojis['tag:' + tag];
     renderAll();
     toast(`Tag "${tag}" gelöscht`, 'success');
   });
@@ -743,6 +808,8 @@ function deleteAllTags() {
       }
     });
     selectedTags.clear();
+    // Clean up all tag emojis
+    Object.keys(customEmojis).forEach(k => { if (k.startsWith('tag:')) delete customEmojis[k]; });
     renderAll();
     toast('Alle Tags gelöscht', 'success');
   });
@@ -811,6 +878,7 @@ function renderProfiles() {
     html += `<div class="profile-card" data-idx="${index}">
       <div class="card-top">
         <div class="card-check ${checked ? 'checked' : ''}" onclick="event.stopPropagation(); toggleSelect(${index})"></div>
+        ${gurl ? `<a class="card-maps-link" href="${esc(gurl)}" target="_blank" rel="noopener" onclick="event.stopPropagation();" title="Auf Google Maps öffnen">📍</a>` : `<span style="width:18px;flex-shrink:0;text-align:center;font-size:18px;opacity:.25;" title="Kein Maps-Link">📍</span>`}
         <div style="flex:1;min-width:0;" onclick="openProfile(${index})">
           <div class="card-name">${esc(name)}</div>
           <div class="card-address">${esc(addr)}</div>
@@ -1035,13 +1103,17 @@ function formRow(...fields) {
 
 function formMultiSelect(name, label, options, selectedValues) {
   const selected = ensureArray(selectedValues);
+  // Filter out any selected values that no longer exist in options (deleted subcategories/tags)
+  const validSelected = selected.filter(v => options.includes(v));
   let html = `<div class="form-group"><label>${esc(label)}</label><div class="multi-select" data-field="${esc(name)}">`;
   if (options.length === 0) {
     html += `<span class="ms-empty">Keine Optionen verfügbar. Erstelle welche unter "Taxonomie verwalten".</span>`;
   } else {
     options.forEach(opt => {
-      const isSelected = selected.includes(opt);
-      html += `<div class="ms-chip ${isSelected ? 'selected' : ''}" data-value="${esc(opt)}" onclick="this.classList.toggle('selected')">${esc(opt)}</div>`;
+      const isSelected = validSelected.includes(opt);
+      const emojiKey = name === 'unterkategorie' ? 'cat:' + opt : name === 'tags' ? 'tag:' + opt : name + ':' + opt;
+      const emoji = customEmojis[emojiKey] || '';
+      html += `<div class="ms-chip ${isSelected ? 'selected' : ''}" data-value="${esc(opt)}" onclick="this.classList.toggle('selected')">${emoji ? emoji + ' ' : ''}${esc(opt)}</div>`;
     });
   }
   html += `</div></div>`;
@@ -1195,7 +1267,9 @@ function renderTaxSection(key, title, items) {
     html += `<span style="color:var(--text2);font-size:12px;font-style:italic;">Noch keine Einträge</span>`;
   } else {
     items.forEach(item => {
-      html += `<div class="tax-item">${esc(item)}<button class="tax-del" onclick="removeTaxOption('${esc(key)}', '${esc(item)}')" title="Löschen">&times;</button></div>`;
+      const emojiKey = key === 'unterkategorien' ? 'cat:' + item : key === 'tags' ? 'tag:' + item : key + ':' + item;
+      const emoji = customEmojis[emojiKey] || '';
+      html += `<div class="tax-item"><span class="tax-emoji" onclick="event.stopPropagation(); openEmojiPicker('${esc(emojiKey)}')" title="Emoji setzen/ändern">${emoji || '🏷️'}</span>${esc(item)}<button class="tax-del" onclick="removeTaxOption('${esc(key)}', '${esc(item)}')" title="Löschen">&times;</button></div>`;
     });
   }
   html += `</div>`;
@@ -1253,6 +1327,7 @@ function removeTaxOption(key, item) {
         }
       });
       selectedTags.delete(item);
+      delete customEmojis['tag:' + item];
     } else if (key === 'unterkategorien') {
       const cats = getCategories().filter(c => c !== item);
       setCategories(cats);
@@ -1265,6 +1340,7 @@ function removeTaxOption(key, item) {
         }
       });
       if (selectedCategory === item) selectedCategory = null;
+      delete customEmojis['cat:' + item];
     } else {
       predefinedOptions[key] = predefinedOptions[key].filter(v => v !== item);
       // Remove from profiles that use this value
@@ -1279,6 +1355,7 @@ function removeTaxOption(key, item) {
           if (o.trade === item) o.trade = '';
         });
       }
+      delete customEmojis[key + ':' + item];
     }
 
     // Re-render
@@ -1420,6 +1497,187 @@ function toast(msg, type = 'info') {
   el.textContent = msg;
   container.appendChild(el);
   setTimeout(() => { el.style.opacity = '0'; el.style.transition = 'opacity .3s'; setTimeout(() => el.remove(), 300); }, 3000);
+}
+
+// ===================== EMOJI PICKER =====================
+const emojiData = {
+  'Smileys': ['😀','😃','😄','😁','😆','😅','🤣','😂','🙂','🙃','😉','😊','😇','🥰','😍','🤩','😘','😗','😚','😙','🥲','😋','😛','😜','🤪','😝','🤑','🤗','🤭','🤫','🤔','🫡','🤐','🤨','😐','😑','😶','🫠','😏','😒','🙄','😬','🤥','😌','😔','😪','🤤','😴','😷','🤒','🤕','🤢','🤮','🥵','🥶','🥴','😵','🤯','🤠','🥳','🥸','😎','🤓','🧐','😕','🫤','😟','🙁','😮','😯','😲','😳','🥺','🥹','😦','😧','😨','😰','😥','😢','😭','😱','😖','😣','😞','😓','😩','😫','🥱','😤','😡','😠','🤬','😈','👿','💀','☠️','💩','🤡','👹','👺','👻','👽','👾','🤖'],
+  'Gesten': ['👋','🤚','🖐️','✋','🖖','🫱','🫲','🫳','🫴','👌','🤌','🤏','✌️','🤞','🫰','🤟','🤘','🤙','👈','👉','👆','🖕','👇','☝️','🫵','👍','👎','✊','👊','🤛','🤜','👏','🙌','🫶','👐','🤲','🤝','🙏','✍️','💅','🤳','💪','🦾','🦿','🦵','🦶','👂','🦻','👃','🧠','🫀','🫁','🦷','🦴','👀','👁️','👅','👄'],
+  'Personen': ['👶','🧒','👦','👧','🧑','👱','👨','🧔','👩','🧓','👴','👵','🙍','🙎','🙅','🙆','💁','🙋','🧏','🙇','🤦','🤷','👮','🕵️','💂','🥷','👷','🫅','🤴','👸','👳','👲','🧕','🤵','👰','🤰','🫃','🤱','👼','🎅','🤶','🦸','🦹','🧙','🧚','🧛','🧜','🧝','🧞','🧟','🧌','💆','💇','🚶','🧍','🧎','🏃','💃','🕺','🕴️','👯','🧖','🧗','🏇','⛷️','🏂','🏌️','🏄','🚣','🏊','⛹️','🏋️','🚴','🚵','🤸','🤼','🤽','🤾','🤺','🏆'],
+  'Tiere': ['🐶','🐱','🐭','🐹','🐰','🦊','🐻','🐼','🐻‍❄️','🐨','🐯','🦁','🐮','🐷','🐸','🐵','🙈','🙉','🙊','🐒','🐔','🐧','🐦','🐤','🐣','🐥','🦆','🦅','🦉','🦇','🐺','🐗','🐴','🦄','🐝','🪱','🐛','🦋','🐌','🐞','🐜','🪰','🪲','🪳','🦟','🦗','🕷️','🕸️','🦂','🐢','🐍','🦎','🦖','🦕','🐙','🦑','🦐','🦞','🦀','🐡','🐠','🐟','🐬','🐳','🐋','🦈','🦭','🐊','🐅','🐆','🦓','🦍','🦧','🐘','🦛','🦏','🐪','🐫','🦒','🦘','🦬','🐃','🐂','🐄','🐎','🐖','🐏','🐑','🦙','🐐','🦌','🐕','🐩','🦮','🐈','🐈‍⬛','🪶','🐓','🦃','🦤','🦚','🦜','🦢','🦩','🕊️','🐇','🦝','🦨','🦡','🦫','🦦','🦥','🐁','🐀','🐿️','🦔'],
+  'Essen': ['🍏','🍎','🍐','🍊','🍋','🍌','🍉','🍇','🍓','🫐','🍈','🍒','🍑','🥭','🍍','🥥','🥝','🍅','🍆','🥑','🥦','🥬','🥒','🌶️','🫑','🌽','🥕','🫒','🧄','🧅','🥔','🍠','🫘','🥐','🍞','🥖','🥨','🧀','🥚','🍳','🧈','🥞','🧇','🥓','🥩','🍗','🍖','🌭','🍔','🍟','🍕','🫓','🥪','🥙','🧆','🌮','🌯','🫔','🥗','🥘','🫕','🥫','🍝','🍜','🍲','🍛','🍣','🍱','🥟','🦪','🍤','🍙','🍚','🍘','🍥','🥠','🥮','🍢','🍡','🍧','🍨','🍦','🥧','🧁','🍰','🎂','🍮','🍭','🍬','🍫','🍿','🍩','🍪','🌰','🥜','🍯','🥛','🍼','🫖','☕','🍵','🧃','🥤','🧋','🍶','🍺','🍻','🥂','🍷','🥃','🍸','🍹','🧉','🍾','🧊','🥄','🍴','🍽️','🥣','🥡','🥢','🧂'],
+  'Reisen': ['🌍','🌎','🌏','🌐','🗺️','🧭','🏔️','⛰️','🌋','🗻','🏕️','🏖️','🏜️','🏝️','🏞️','🏟️','🏛️','🏗️','🧱','🪨','🪵','🛖','🏘️','🏚️','🏠','🏡','🏢','🏣','🏤','🏥','🏦','🏨','🏩','🏪','🏫','🏬','🏭','🏯','🏰','💒','🗼','🗽','⛪','🕌','🛕','🕍','⛩️','🕋','⛲','⛺','🌁','🌃','🏙️','🌄','🌅','🌆','🌇','🌉','♨️','🎠','🛝','🎡','🎢','💈','🎪','🚂','🚃','🚄','🚅','🚆','🚇','🚈','🚉','🚊','🚝','🚞','🚋','🚌','🚍','🚎','🚐','🚑','🚒','🚓','🚔','🚕','🚖','🚗','🚘','🚙','🛻','🚚','🚛','🚜','🏎️','🏍️','🛵','🦽','🦼','🛺','🚲','🛴','🛹','🛼','🚏','🛣️','🛤️','🛞','⛽','🛞','🚨','🚥','🚦','🛑','🚧','⚓','🛟','⛵','🛶','🚤','🛳️','⛴️','🛥️','🚢','✈️','🛩️','🛫','🛬','🪂','💺','🚁','🚟','🚠','🚡','🛰️','🚀','🛸'],
+  'Objekte': ['⌚','📱','📲','💻','⌨️','🖥️','🖨️','🖱️','🖲️','🕹️','🗜️','💽','💾','💿','📀','📼','📷','📸','📹','🎥','📽️','🎞️','📞','☎️','📟','📠','📺','📻','🎙️','🎚️','🎛️','🧭','⏱️','⏲️','⏰','🕰️','⌛','⏳','📡','🔋','🪫','🔌','💡','🔦','🕯️','🪔','🧯','🛢️','💸','💵','💴','💶','💷','🪙','💰','💳','💎','⚖️','🪜','🧰','🪛','🔧','🔨','⚒️','🛠️','⛏️','🪚','🔩','⚙️','🪤','🧱','⛓️','🧲','🔫','💣','🧨','🪓','🔪','🗡️','⚔️','🛡️','🚬','⚰️','🪦','⚱️','🏺','🔮','📿','🧿','🪬','💈','⚗️','🔭','🔬','🕳️','🩹','🩺','🩻','🩼','💊','💉','🩸','🧬','🦠','🧫','🧪','🌡️','🧹','🪠','🧺','🧻','🚽','🚰','🚿','🛁','🛀','🧼','🪥','🪒','🧽','🪣','🧴','🛎️','🔑','🗝️','🚪','🪑','🛋️','🛏️','🛌','🧸','🪆','🖼️','🪞','🪟','🛍️','🛒','🎁','🎈','🎏','🎀','🪄','🪅','🎊','🎉','🎎','🏮','🎐','🧧','✉️','📩','📨','📧','💌','📥','📤','📦','🏷️','🪧','📪','📫','📬','📭','📮','📯','📜','📃','📄','📑','🧾','📊','📈','📉','🗒️','🗓️','📆','📅','🗑️','📇','🗃️','🗳️','🗄️','📋','📁','📂','🗂️','🗞️','📰','📓','📔','📒','📕','📗','📘','📙','📚','📖','🔖','🧷','🔗','📎','🖇️','📐','📏','🧮','📌','📍','✂️','🖊️','🖋️','✒️','🖌️','🖍️','📝','✏️','🔍','🔎','🔏','🔐','🔒','🔓'],
+  'Symbole': ['❤️','🧡','💛','💚','💙','💜','🖤','🤍','🤎','💔','❤️‍🔥','❤️‍🩹','❣️','💕','💞','💓','💗','💖','💘','💝','💟','☮️','✝️','☪️','🕉️','☸️','✡️','🔯','🕎','☯️','☦️','🛐','⛎','♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓','🆔','⚛️','🉑','☢️','☣️','📴','📳','🈶','🈚','🈸','🈺','🈷️','✴️','🆚','💮','🉐','㊙️','㊗️','🈴','🈵','🈹','🈲','🅰️','🅱️','🆎','🆑','🅾️','🆘','❌','⭕','🛑','⛔','📛','🚫','💯','💢','♨️','🚷','🚯','🚳','🚱','🔞','📵','🚭','❗','❕','❓','❔','‼️','⁉️','🔅','🔆','〽️','⚠️','🚸','🔱','⚜️','🔰','♻️','✅','🈯','💹','❇️','✳️','❎','🌐','💠','Ⓜ️','🌀','💤','🏧','🚾','♿','🅿️','🛗','🈳','🈂️','🛂','🛃','🛄','🛅','🚹','🚺','🚻','🚮','🎦','📶','🈁','🔣','ℹ️','🔤','🔡','🔠','🆖','🆗','🆙','🆒','🆕','🆓','0️⃣','1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟','🔢','#️⃣','*️⃣','⏏️','▶️','⏸️','⏯️','⏹️','⏺️','⏭️','⏮️','⏩','⏪','⏫','⏬','◀️','🔼','🔽','➡️','⬅️','⬆️','⬇️','↗️','↘️','↙️','↖️','↕️','↔️','↪️','↩️','⤴️','⤵️','🔀','🔁','🔂','🔄','🔃','🎵','🎶','➕','➖','➗','✖️','🟰','♾️','💲','💱','™️','©️','®️','〰️','➰','➿','🔚','🔙','🔛','🔝','🔜','✔️','☑️','🔘','🔴','🟠','🟡','🟢','🔵','🟣','⚫','⚪','🟤','🔺','🔻','🔸','🔹','🔶','🔷','🔳','🔲','▪️','▫️','◾','◽','◼️','◻️','🟥','🟧','🟨','🟩','🟦','🟪','⬛','⬜','🟫','🔈','🔇','🔉','🔊','🔔','🔕','📣','📢','💬','💭','🗯️','♠️','♣️','♥️','♦️','🃏','🎴','🀄','🕐','🕑','🕒','🕓','🕔','🕕','🕖','🕗','🕘','🕙','🕚','🕛'],
+  'Flaggen': ['🏁','🚩','🎌','🏴','🏳️','🏳️‍🌈','🏳️‍⚧️','🏴‍☠️','🇦🇹','🇨🇭','🇩🇪','🇪🇸','🇫🇷','🇬🇧','🇮🇹','🇯🇵','🇰🇷','🇳🇱','🇵🇹','🇷🇺','🇸🇪','🇹🇷','🇺🇸','🇧🇷','🇨🇳','🇮🇳','🇲🇽','🇦🇺','🇨🇦','🇿🇦','🇳🇴','🇩🇰','🇫🇮','🇧🇪','🇵🇱','🇬🇷','🇭🇺','🇨🇿','🇷🇴','🇭🇷','🇸🇰','🇸🇮','🇧🇬','🇱🇹','🇱🇻','🇪🇪','🇮🇪','🇮🇸','🇱🇺','🇲🇹','🇨🇾','🇦🇷','🇨🇱','🇨🇴','🇵🇪','🇻🇪','🇪🇨','🇧🇴','🇺🇾','🇵🇾','🇨🇷','🇵🇦','🇨🇺','🇩🇴','🇭🇳','🇸🇻','🇬🇹','🇳🇮','🇪🇬','🇲🇦','🇹🇳','🇩🇿','🇱🇾','🇸🇦','🇦🇪','🇶🇦','🇰🇼','🇧🇭','🇴🇲','🇾🇪','🇮🇶','🇮🇷','🇮🇱','🇯🇴','🇱🇧','🇸🇾','🇹🇭','🇻🇳','🇵🇭','🇮🇩','🇲🇾','🇸🇬','🇲🇲','🇰🇭','🇱🇦','🇧🇩','🇱🇰','🇳🇵','🇵🇰','🇦🇫','🇳🇬','🇰🇪','🇬🇭','🇪🇹','🇹🇿','🇺🇬','🇷🇼','🇨🇩','🇨🇲','🇨🇮','🇸🇳','🇲🇱','🇳🇪','🇧🇫','🇹🇬','🇧🇯','🇲🇬','🇿🇼','🇧🇼','🇳🇦','🇲🇿','🇿🇲','🇲🇼','🇲🇺','🇸🇨','🇳🇿','🇫🇯','🇵🇬','🇼🇸','🇹🇴']
+};
+const emojiCategoryIcons = {'Smileys':'😀','Gesten':'👋','Personen':'🧑','Tiere':'🐶','Essen':'🍔','Reisen':'✈️','Objekte':'💡','Symbole':'❤️','Flaggen':'🏁'};
+
+let currentEmojiCategory = 'Smileys';
+
+function openEmojiPicker(targetKey) {
+  emojiPickerTarget = targetKey;
+  const currentEmoji = customEmojis[targetKey] || '';
+  document.getElementById('emoji-current-preview').textContent = currentEmoji || '—';
+  document.getElementById('emoji-search').value = '';
+  currentEmojiCategory = 'Smileys';
+  renderEmojiCategories();
+  renderEmojiGrid();
+  document.getElementById('emoji-picker-overlay').classList.add('show');
+}
+
+function closeEmojiPicker() {
+  document.getElementById('emoji-picker-overlay').classList.remove('show');
+  emojiPickerTarget = '';
+}
+
+function renderEmojiCategories() {
+  const el = document.getElementById('emoji-categories');
+  let html = '';
+  Object.keys(emojiData).forEach(cat => {
+    html += `<button class="${currentEmojiCategory === cat ? 'active' : ''}" onclick="currentEmojiCategory='${cat}';renderEmojiCategories();renderEmojiGrid();" title="${cat}">${emojiCategoryIcons[cat]}</button>`;
+  });
+  el.innerHTML = html;
+}
+
+function renderEmojiGrid() {
+  const el = document.getElementById('emoji-grid');
+  const search = document.getElementById('emoji-search').value.toLowerCase().trim();
+  let emojis;
+  if (search) {
+    emojis = [];
+    Object.values(emojiData).forEach(arr => {
+      arr.forEach(e => { if (!emojis.includes(e)) emojis.push(e); });
+    });
+  } else {
+    emojis = emojiData[currentEmojiCategory] || [];
+  }
+  el.innerHTML = emojis.map(e => `<span onclick="selectEmoji('${e}')">${e}</span>`).join('');
+}
+
+function filterEmojis() {
+  renderEmojiGrid();
+}
+
+function selectEmoji(emoji) {
+  customEmojis[emojiPickerTarget] = emoji;
+  document.getElementById('emoji-current-preview').textContent = emoji;
+  closeEmojiPicker();
+  renderAll();
+  toast('Emoji gesetzt: ' + emoji, 'success');
+}
+
+function removeCurrentEmoji() {
+  delete customEmojis[emojiPickerTarget];
+  closeEmojiPicker();
+  renderAll();
+  toast('Emoji entfernt', 'info');
+}
+
+// Close emoji picker on overlay click
+document.addEventListener('click', e => {
+  const overlay = document.getElementById('emoji-picker-overlay');
+  if (e.target === overlay) closeEmojiPicker();
+});
+
+// ===================== ENHANCED PROFILE CREATION =====================
+// Override showAddProfile for a streamlined quick-create experience
+const _originalShowAddProfile = showAddProfile;
+showAddProfile = function() {
+  editingIndex = -1;
+  const template = {};
+
+  if (fileType === 'shopping') {
+    Object.assign(template, { place_id: '', name: '', adresse: '', koordinaten: { lat: 0, lng: 0 }, rating_durchschnitt: 0, rating_anzahl: 0, google_maps_url: '', website: '', telefon: '', primary_type: '', business_status: 'OPERATIONAL', hauptkategorie: fileData.meta.hauptkategorie || '', kategorie: fileData.meta.kategorie || '', unterkategorie: selectedCategory && selectedCategory !== '__none__' ? [selectedCategory] : [], tags: [] });
+  } else if (fileType === 'gastro') {
+    Object.assign(template, { id: '', name: '', address: '', lat: 0, lng: 0, rating: 0, reviewCount: 0, gmapsUrl: '', website: '', phone: '', photoCount: 0, trade: selectedCategory && selectedCategory !== '__none__' ? selectedCategory : '', types: [], businessStatus: 'OPERATIONAL' });
+  } else {
+    Object.assign(template, { name: '', adresse: '', rating_durchschnitt: 0, rating_anzahl: 0, place_id: '', gefunden_via_keyword: selectedCategory && selectedCategory !== '__none__' ? selectedCategory : '', types: [], koordinaten: { lat: 0, lng: 0 } });
+  }
+
+  document.getElementById('modal-title').textContent = 'Neues Profil erstellen';
+  document.getElementById('modal-delete-btn').style.display = 'none';
+  renderQuickProfileForm(template);
+  openModal('profile-modal');
+  setTimeout(() => {
+    const nameInput = document.querySelector('#modal-body input[data-field="name"]');
+    if (nameInput) nameInput.focus();
+  }, 100);
+};
+
+function renderQuickProfileForm(p) {
+  const cats = getCategories();
+  const allTags = getTags();
+  const body = document.getElementById('modal-body');
+
+  let html = '';
+
+  // Quick-add section with essential fields highlighted
+  html += `<div class="quick-add-section"><h4>Pflichtfelder</h4>`;
+  html += formInput('name', 'Name *', p[nameField] || '');
+
+  if (fileType === 'shopping') {
+    html += formInput('adresse', 'Adresse', p.adresse || '');
+    html += formInput('google_maps_url', 'Google Maps URL', p.google_maps_url || '');
+  } else if (fileType === 'gastro') {
+    html += formInput('address', 'Adresse', p.address || '');
+    html += formInput('gmapsUrl', 'Google Maps URL', p.gmapsUrl || '');
+  } else {
+    html += formInput('adresse', 'Adresse', p.adresse || '');
+  }
+  html += `</div>`;
+
+  // Optional details (collapsed-style)
+  html += `<details style="margin-bottom:14px;"><summary style="cursor:pointer;font-size:12px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;padding:8px 0;">Weitere Details anzeigen</summary><div style="padding-top:8px;">`;
+
+  if (fileType === 'shopping') {
+    html += formRow(
+      formInput('rating_durchschnitt', 'Rating', p.rating_durchschnitt, 'number'),
+      formInput('rating_anzahl', 'Anzahl Bewertungen', p.rating_anzahl, 'number')
+    );
+    html += formRow(
+      formInput('website', 'Website', p.website || ''),
+      formInput('telefon', 'Telefon', p.telefon || '')
+    );
+    html += formRow(
+      formSelect('primary_type', 'Typ', predefinedOptions.typen, p.primary_type || ''),
+      formSelect('business_status', 'Status', ['OPERATIONAL', 'CLOSED_TEMPORARILY', 'CLOSED_PERMANENTLY'], p.business_status || 'OPERATIONAL')
+    );
+    html += formRow(
+      formSelect('hauptkategorie', 'Hauptkategorie', predefinedOptions.hauptkategorien, p.hauptkategorie || ''),
+      formSelect('kategorie', 'Kategorie', predefinedOptions.kategorien, p.kategorie || '')
+    );
+    html += formInput('place_id', 'Place ID', p.place_id || '');
+    html += formMultiSelect('unterkategorie', 'Unterkategorie', cats, ensureArray(p.unterkategorie));
+    html += formMultiSelect('tags', 'Tags', allTags, p.tags || []);
+  } else if (fileType === 'gastro') {
+    html += formSelect('trade', 'Trade / Kategorie', predefinedOptions.typen, p.trade || '');
+    html += formRow(
+      formInput('rating', 'Rating', p.rating, 'number'),
+      formInput('reviewCount', 'Bewertungen', p.reviewCount, 'number')
+    );
+    html += formRow(
+      formInput('website', 'Website', p.website || ''),
+      formInput('phone', 'Telefon', p.phone || '')
+    );
+    html += formRow(
+      formInput('id', 'Place ID', p.id || ''),
+      formInput('photoCount', 'Fotos', p.photoCount || 0, 'number')
+    );
+    html += formSelect('businessStatus', 'Status', ['OPERATIONAL', 'CLOSED_TEMPORARILY', 'CLOSED_PERMANENTLY'], p.businessStatus || 'OPERATIONAL');
+  } else {
+    html += formSelect('gefunden_via_keyword', 'Keyword / Kategorie', getCategories(), p.gefunden_via_keyword || '');
+    html += formRow(
+      formInput('rating_durchschnitt', 'Rating', p.rating_durchschnitt, 'number'),
+      formInput('rating_anzahl', 'Bewertungen', p.rating_anzahl, 'number')
+    );
+    html += formInput('place_id', 'Place ID', p.place_id || '');
+    html += formMultiSelect('types', 'Types', predefinedOptions.typen, p.types || []);
+  }
+
+  html += `</div></details>`;
+
+  body.innerHTML = html;
 }
 </script>
 </body>
