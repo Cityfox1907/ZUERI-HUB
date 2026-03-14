@@ -425,10 +425,10 @@ let predefinedOptions = {
   tags: []    // managed via getTags()/setTags()
 };
 
-// Custom emojis for categories and taxonomy items
-let customEmojis = {}; // key: 'cat:Name' or 'tag:Name' or 'type:Name' => emoji string
-let emojiPickerCallback = null; // function(emoji) called when emoji selected
-let emojiPickerTarget = ''; // current target key for emoji picker
+// Custom emojis stored in JSON meta.taxonomie.emojis
+// key: 'cat:Name' or 'tag:Name' or 'type:Name' => emoji string
+let emojiPickerCallback = null;
+let emojiPickerTarget = '';
 
 // ===================== UTILS =====================
 function esc(str) {
@@ -580,8 +580,45 @@ function setTags(arr) {
   if (fileType === 'shopping') fileData.meta.taxonomie.tags = arr;
 }
 
+// Emoji storage in JSON (persistent)
+function getCustomEmojis() {
+  if (fileType === 'gastro') return {};
+  if (!fileData.meta) return {};
+  if (!fileData.meta.taxonomie) return {};
+  if (!fileData.meta.taxonomie.emojis) fileData.meta.taxonomie.emojis = {};
+  return fileData.meta.taxonomie.emojis;
+}
+
+function setCustomEmoji(key, emoji) {
+  if (fileType === 'gastro') return;
+  if (!fileData.meta) return;
+  if (!fileData.meta.taxonomie) return;
+  if (!fileData.meta.taxonomie.emojis) fileData.meta.taxonomie.emojis = {};
+  fileData.meta.taxonomie.emojis[key] = emoji;
+}
+
+function removeCustomEmoji(key) {
+  if (fileType === 'gastro') return;
+  if (!fileData.meta || !fileData.meta.taxonomie || !fileData.meta.taxonomie.emojis) return;
+  delete fileData.meta.taxonomie.emojis[key];
+}
+
 function getGMapsUrl(profile) {
-  return profile[mapsUrlField] || profile.google_maps_url || profile.gmapsUrl || '';
+  const url = profile[mapsUrlField] || profile.google_maps_url || profile.gmapsUrl || '';
+  if (url) return url;
+  // Fallback: generate from place_id
+  if (profile.place_id) {
+    return 'https://www.google.com/maps/place/?q=place_id:' + encodeURIComponent(profile.place_id);
+  }
+  // Fallback: generate from coordinates
+  const coords = profile.koordinaten;
+  if (coords && coords.lat && coords.lng) {
+    return 'https://www.google.com/maps/@' + coords.lat + ',' + coords.lng + ',17z';
+  }
+  if (profile.lat && profile.lng) {
+    return 'https://www.google.com/maps/@' + profile.lat + ',' + profile.lng + ',17z';
+  }
+  return '';
 }
 
 function getAddress(profile) {
@@ -704,7 +741,7 @@ function renderCategoryTree() {
   cats.forEach((cat, i) => {
     const count = orte.filter(o => getProfileCategories(o).includes(cat)).length;
     const color = catColors[i % catColors.length];
-    const emoji = customEmojis['cat:' + cat] || '';
+    const emoji = getCustomEmojis()['cat:' + cat] || '';
     html += `<div class="cat-item ${selectedCategory === cat ? 'active' : ''}" onclick="selectCategory('${esc(cat)}')" oncontextmenu="catContextMenu(event, '${esc(cat)}')">
       ${emoji ? `<span class="cat-emoji" onclick="event.stopPropagation(); openEmojiPicker('cat:${esc(cat)}')" title="Emoji ändern">${emoji}</span>` : `<div class="dot" style="background:${color}" onclick="event.stopPropagation(); openEmojiPicker('cat:${esc(cat)}')" title="Emoji setzen"></div>`}
       ${esc(cat)}<span class="count">${count}</span></div>`;
@@ -741,7 +778,7 @@ function catContextMenu(e, cat) {
     const allCats = getCategories().filter(c => c !== cat);
     setCategories(allCats);
     if (selectedCategory === cat) selectedCategory = null;
-    delete customEmojis['cat:' + cat];
+    removeCustomEmoji('cat:' + cat);
     updateTotalCount();
     renderAll();
     toast(`"${cat}" gelöscht`, 'success');
@@ -754,10 +791,12 @@ function renderTagBar() {
   const el = document.getElementById('tag-bar');
   if (tags.length === 0 && fileType !== 'shopping') { el.style.display = 'none'; return; }
   el.style.display = 'flex';
+  const emojis = getCustomEmojis();
   let html = '<span class="tag-label">Tags</span>';
   tags.forEach(t => {
+    const tagEmoji = emojis['tag:' + t] || '';
     html += `<span class="tag-chip ${selectedTags.has(t) ? 'active' : ''}" onclick="toggleTag('${esc(t)}')">
-      ${esc(t)}
+      ${tagEmoji ? tagEmoji + ' ' : ''}${esc(t)}
       <button class="tag-del" onclick="event.stopPropagation(); deleteTag('${esc(t)}')" title="Tag löschen">&times;</button>
     </span>`;
   });
@@ -791,7 +830,7 @@ function deleteTag(tag) {
       }
     });
     selectedTags.delete(tag);
-    delete customEmojis['tag:' + tag];
+    removeCustomEmoji('tag:' + tag);
     renderAll();
     toast(`Tag "${tag}" gelöscht`, 'success');
   });
@@ -809,7 +848,8 @@ function deleteAllTags() {
     });
     selectedTags.clear();
     // Clean up all tag emojis
-    Object.keys(customEmojis).forEach(k => { if (k.startsWith('tag:')) delete customEmojis[k]; });
+    const allEmojis = getCustomEmojis();
+    Object.keys(allEmojis).forEach(k => { if (k.startsWith('tag:')) removeCustomEmoji(k); });
     renderAll();
     toast('Alle Tags gelöscht', 'success');
   });
@@ -873,7 +913,11 @@ function renderProfiles() {
     const status = getStatus(profile);
     const checked = selectedProfiles.has(index);
 
-    const catBadges = cats.map(c => `<span class="card-sub">${esc(c)}</span>`).join('');
+    const emojis = getCustomEmojis();
+    const catBadges = cats.map(c => {
+      const catEmoji = emojis['cat:' + c] || '';
+      return `<span class="card-sub">${catEmoji ? catEmoji + ' ' : ''}${esc(c)}</span>`;
+    }).join('');
 
     html += `<div class="profile-card" data-idx="${index}">
       <div class="card-top">
@@ -888,7 +932,7 @@ function renderProfiles() {
       <div class="card-bottom" onclick="openProfile(${index})">
         ${rating ? `<span class="card-rating">&#9733; ${rating} (${rCount.toLocaleString()})</span>` : ''}
         ${status ? `<span class="card-status ${status === 'OPERATIONAL' ? 'operational' : 'closed'}">${status === 'OPERATIONAL' ? 'Aktiv' : status}</span>` : ''}
-        <div class="card-tags">${tags.slice(0, 5).map(t => `<span>${esc(t)}</span>`).join('')}${tags.length > 5 ? `<span>+${tags.length - 5}</span>` : ''}</div>
+        <div class="card-tags">${tags.slice(0, 5).map(t => { const te = emojis['tag:' + t] || ''; return `<span>${te ? te + ' ' : ''}${esc(t)}</span>`; }).join('')}${tags.length > 5 ? `<span>+${tags.length - 5}</span>` : ''}</div>
         <div class="card-links">
           ${gurl ? `<a href="${esc(gurl)}" target="_blank" rel="noopener" onclick="event.stopPropagation();" title="Google Maps">📍</a>` : ''}
           ${web ? `<a href="${esc(web)}" target="_blank" rel="noopener" onclick="event.stopPropagation();" title="Website">🌐</a>` : ''}
@@ -1112,7 +1156,7 @@ function formMultiSelect(name, label, options, selectedValues) {
     options.forEach(opt => {
       const isSelected = validSelected.includes(opt);
       const emojiKey = name === 'unterkategorie' ? 'cat:' + opt : name === 'tags' ? 'tag:' + opt : name + ':' + opt;
-      const emoji = customEmojis[emojiKey] || '';
+      const emoji = getCustomEmojis()[emojiKey] || '';
       html += `<div class="ms-chip ${isSelected ? 'selected' : ''}" data-value="${esc(opt)}" onclick="this.classList.toggle('selected')">${emoji ? emoji + ' ' : ''}${esc(opt)}</div>`;
     });
   }
@@ -1268,7 +1312,7 @@ function renderTaxSection(key, title, items) {
   } else {
     items.forEach(item => {
       const emojiKey = key === 'unterkategorien' ? 'cat:' + item : key === 'tags' ? 'tag:' + item : key + ':' + item;
-      const emoji = customEmojis[emojiKey] || '';
+      const emoji = getCustomEmojis()[emojiKey] || '';
       html += `<div class="tax-item"><span class="tax-emoji" onclick="event.stopPropagation(); openEmojiPicker('${esc(emojiKey)}')" title="Emoji setzen/ändern">${emoji || '🏷️'}</span>${esc(item)}<button class="tax-del" onclick="removeTaxOption('${esc(key)}', '${esc(item)}')" title="Löschen">&times;</button></div>`;
     });
   }
@@ -1327,7 +1371,7 @@ function removeTaxOption(key, item) {
         }
       });
       selectedTags.delete(item);
-      delete customEmojis['tag:' + item];
+      removeCustomEmoji('tag:' + item);
     } else if (key === 'unterkategorien') {
       const cats = getCategories().filter(c => c !== item);
       setCategories(cats);
@@ -1340,7 +1384,7 @@ function removeTaxOption(key, item) {
         }
       });
       if (selectedCategory === item) selectedCategory = null;
-      delete customEmojis['cat:' + item];
+      removeCustomEmoji('cat:' + item);
     } else {
       predefinedOptions[key] = predefinedOptions[key].filter(v => v !== item);
       // Remove from profiles that use this value
@@ -1355,7 +1399,7 @@ function removeTaxOption(key, item) {
           if (o.trade === item) o.trade = '';
         });
       }
-      delete customEmojis[key + ':' + item];
+      removeCustomEmoji(key + ':' + item);
     }
 
     // Re-render
@@ -1517,7 +1561,7 @@ let currentEmojiCategory = 'Smileys';
 
 function openEmojiPicker(targetKey) {
   emojiPickerTarget = targetKey;
-  const currentEmoji = customEmojis[targetKey] || '';
+  const currentEmoji = getCustomEmojis()[targetKey] || '';
   document.getElementById('emoji-current-preview').textContent = currentEmoji || '—';
   document.getElementById('emoji-search').value = '';
   currentEmojiCategory = 'Smileys';
@@ -1560,7 +1604,8 @@ function filterEmojis() {
 }
 
 function selectEmoji(emoji) {
-  customEmojis[emojiPickerTarget] = emoji;
+  pushUndo();
+  setCustomEmoji(emojiPickerTarget, emoji);
   document.getElementById('emoji-current-preview').textContent = emoji;
   closeEmojiPicker();
   renderAll();
@@ -1568,7 +1613,8 @@ function selectEmoji(emoji) {
 }
 
 function removeCurrentEmoji() {
-  delete customEmojis[emojiPickerTarget];
+  pushUndo();
+  removeCustomEmoji(emojiPickerTarget);
   closeEmojiPicker();
   renderAll();
   toast('Emoji entfernt', 'info');
