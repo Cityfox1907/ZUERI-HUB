@@ -129,7 +129,7 @@ html.dark .dice-tier-label.src-museum{background:rgba(245,158,11,.22);color:#fbb
 
   <div class="hero">
     <h1 class="hero-title">Entdecke deinen <span class="accent">Zürich Playground</span></h1>
-    <p class="hero-sub">Dein Guide für den Kanton Zürich – von Restaurants und Shops über Museen und Kultur bis hin zu Events und Entertainment. Finde die besten Spots, filtere nach Kategorien und entdecke versteckte Perlen in deiner Nähe.</p>
+    <p class="hero-sub">Dein Guide für den Kanton Zürich – von Restaurants und Shops über Museen und Kultur bis hin zu Events und Entertainment.</p>
   </div>
 
   <div class="cat-cards" id="catCards"></div>
@@ -181,8 +181,6 @@ function buildPage(){
   var sorted=ALL.slice().sort(function(a,b){return(b.rv*b.r)-(a.rv*a.r)});
   var html='';
 
-  html+=buildRow('🔥','Beliebt in Zürich',sorted.slice(0,10));
-
   // ── 🎲 Geheimtipp-Würfel ──
   var neverRolled=getDiceSeen().length===0;
   html+='<div class="dice-wrap"><div class="dice-inner">';
@@ -193,6 +191,8 @@ function buildPage(){
   html+='<div class="dice-scroll-dots" id="diceDots"></div>';
   html+='<div class="dice-empty" id="diceEmpty" style="display:none">Drücke den Würfel, um deine ersten Geheimtipps zu entdecken!</div>';
   html+='</div></div>';
+
+  html+=buildRow('🔥','Beliebt in Zürich',sorted.slice(0,10));
 
   // Gastro section
   html+='<div class="section-divider"><span>🍽️ Gastronomie</span></div>';
@@ -222,15 +222,9 @@ function buildPage(){
   if(SHOPS.length>=3){
     html+='<div class="section-divider"><span>🛍️ Shops</span></div>';
     var shopsSorted=SHOPS.slice().sort(function(a,b){return(b.rv*b.r)-(a.rv*a.r)});
-    html+=buildRow('🛍️','Top Shops & Einkaufszentren',shopsSorted.slice(0,10),'shops.html');
+    html+=buildRow('🛍️','Einkaufszentren',shopsSorted.slice(0,10),'shops.html');
   }
 
-  // Geheimtipps
-  var hidden=ALL.filter(function(p){return p.r>=4.5&&p.rv>=20&&p.rv<=80}).sort(function(a,b){return b.r-a.r}).slice(0,10);
-  if(hidden.length>=3){
-    html+='<div class="section-divider"><span>💎 Entdecken</span></div>';
-    html+=buildRow('💎','Geheimtipps',hidden);
-  }
 
   document.getElementById('sections').innerHTML=html;
   initRowArrows();
@@ -458,7 +452,7 @@ function handleDiceRoll(){
     btn.querySelector('.dice-btn-text').textContent='Entdeckt!';
     setTimeout(function(){
       btn.classList.remove('success');
-      btn.querySelector('.dice-btn-text').textContent='Nochmal würfeln!';
+      btn.querySelector('.dice-btn-text').textContent='';
       diceRolling=false;
     },900);
 
