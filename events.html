@@ -65,6 +65,8 @@ html.dark .cat-card-count{background:rgba(90,156,245,.15)}
 .month-pill{padding:.35rem .7rem;border-radius:10px;font-size:.75rem;font-weight:600;color:var(--text3);background:transparent;border:1.5px solid transparent;cursor:pointer;transition:all .18s;white-space:nowrap;flex-shrink:0}
 .month-pill:hover{color:var(--text);background:var(--surface2)}
 .month-pill.active{color:var(--primary);background:var(--primary-lighter);border-color:var(--primary);font-weight:700}
+.month-pill.past{opacity:.45;color:var(--text3)}
+.month-pill.past:hover{opacity:.7}
 html.dark .month-pill.active{background:var(--primary-light);color:var(--primary)}
 
 /* Feed Container */
@@ -261,10 +263,10 @@ const EVENTS=[
 ];
 
 // ── Constants ──
-const CATS=[{key:"konzerte",emoji:"🎵",label:"Konzerte"},{key:"sport",emoji:"⚽",label:"Sport"},{key:"festivals",emoji:"🎪",label:"Festivals"},{key:"tradition",emoji:"🏛️",label:"Tradition"},{key:"kulinarik",emoji:"🍷",label:"Kulinarik"},{key:"community",emoji:"🌍",label:"Community"}];
-const MONTHS=[{i:2,label:"Mär",emoji:"🌸",full:"März"},{i:3,label:"Apr",emoji:"🌷",full:"April"},{i:4,label:"Mai",emoji:"🌿",full:"Mai"},{i:5,label:"Jun",emoji:"☀️",full:"Juni"},{i:6,label:"Jul",emoji:"🌞",full:"Juli"},{i:7,label:"Aug",emoji:"🏖️",full:"August"},{i:8,label:"Sep",emoji:"🍂",full:"September"},{i:9,label:"Okt",emoji:"🎃",full:"Oktober"},{i:10,label:"Nov",emoji:"🍁",full:"November"},{i:11,label:"Dez",emoji:"❄️",full:"Dezember"}];
+const CATS=[{key:"tradition",emoji:"🏛️",label:"Züri Tradition"},{key:"konzerte",emoji:"🎵",label:"Konzerte"},{key:"festivals",emoji:"🎪",label:"Festivals"},{key:"kulinarik",emoji:"🍷",label:"Essen & Trinken"},{key:"sport",emoji:"⚽",label:"Sport"},{key:"community",emoji:"🌍",label:"Community"}];
+const MONTHS=[{i:0,label:"Jan",emoji:"❄️",full:"Januar"},{i:1,label:"Feb",emoji:"💨",full:"Februar"},{i:2,label:"Mär",emoji:"🌸",full:"März"},{i:3,label:"Apr",emoji:"🌷",full:"April"},{i:4,label:"Mai",emoji:"🌿",full:"Mai"},{i:5,label:"Jun",emoji:"☀️",full:"Juni"},{i:6,label:"Jul",emoji:"🌞",full:"Juli"},{i:7,label:"Aug",emoji:"🏖️",full:"August"},{i:8,label:"Sep",emoji:"🍂",full:"September"},{i:9,label:"Okt",emoji:"🎃",full:"Oktober"},{i:10,label:"Nov",emoji:"🍁",full:"November"},{i:11,label:"Dez",emoji:"🎄",full:"Dezember"}];
 const STATUS_MAP={confirmed:"✅ Bestätigt",expected:"📅 Erwartet",soldout:"🔥 Ausverkauft"};
-const CAT_LABELS={konzerte:"Konzerte",sport:"Sport",festivals:"Festivals",tradition:"Tradition",kulinarik:"Kulinarik",community:"Community"};
+const CAT_LABELS={konzerte:"Konzerte",sport:"Sport",festivals:"Festivals",tradition:"Züri Tradition",kulinarik:"Essen & Trinken",community:"Community"};
 
 // ── State ──
 let activeCat=null,activeMonth=null;
@@ -273,11 +275,19 @@ const sorted=EVENTS.sort((a,b)=>new Date(a.date)-new Date(b.date));
 const upcoming=sorted.filter(e=>e.date>=today||(e.dateEnd&&e.dateEnd>=today));
 
 // ── Pulse Hero ──
+var pulseInterval=null;
+function getNextHighlight(){
+  var now=new Date().toISOString().split('T')[0];
+  return sorted.filter(function(e){return e.highlight}).find(function(e){
+    return e.date>=now||(e.dateEnd&&e.dateEnd>=now);
+  })||null;
+}
 function renderPulse(){
-  const hl=upcoming.find(e=>e.highlight);
-  if(!hl)return;
-  const el=document.getElementById('pulseHero');
-  const link=hl.websiteUrl||hl.ticketUrl||'#';
+  var hl=getNextHighlight();
+  var el=document.getElementById('pulseHero');
+  if(!hl){el.style.display='none';return}
+  el.style.display='';
+  var link=hl.websiteUrl||hl.ticketUrl||'#';
   el.innerHTML=`<div class="pulse-label"><span class="pulse-dot"></span> ZüriPulse – Nächstes Highlight</div>
     <div class="pulse-content">
       <span class="pulse-emoji">${hl.emoji}</span>
@@ -293,15 +303,24 @@ function renderPulse(){
         <div class="cd-box"><div class="cd-num" id="cdS">--</div><div class="cd-label">Sek</div></div>
       </div>
     </div>`;
-  function tick(){
-    const diff=new Date(hl.date)-new Date();
-    if(diff<=0)return;
+  if(pulseInterval)clearInterval(pulseInterval);
+  pulseInterval=setInterval(function(){
+    var diff=new Date(hl.date)-new Date();
+    if(diff<=0){renderPulse();return}
+    var dD=document.getElementById('cdD'),dH=document.getElementById('cdH'),dM=document.getElementById('cdM'),dS=document.getElementById('cdS');
+    if(dD)dD.textContent=Math.floor(diff/864e5);
+    if(dH)dH.textContent=Math.floor((diff%864e5)/36e5);
+    if(dM)dM.textContent=Math.floor((diff%36e5)/6e4);
+    if(dS)dS.textContent=Math.floor((diff%6e4)/1e3);
+  },1000);
+  // Initial tick
+  var diff=new Date(hl.date)-new Date();
+  if(diff>0){
     document.getElementById('cdD').textContent=Math.floor(diff/864e5);
     document.getElementById('cdH').textContent=Math.floor((diff%864e5)/36e5);
     document.getElementById('cdM').textContent=Math.floor((diff%36e5)/6e4);
     document.getElementById('cdS').textContent=Math.floor((diff%6e4)/1e3);
   }
-  tick();setInterval(tick,1000);
 }
 
 // ── Category Cards ──
@@ -321,7 +340,12 @@ function renderCats(){
 function renderMonthNav(){
   const el=document.getElementById('monthNav');
   const curMonth=new Date().getMonth();
-  el.innerHTML=MONTHS.map(m=>`<button class="month-pill${(activeMonth===m.i||(activeMonth===null&&m.i===curMonth))?' active':''}" onclick="toggleMonth(${m.i})">${m.label}</button>`).join('');
+  el.innerHTML=MONTHS.map(m=>{
+    var cls='month-pill';
+    if(activeMonth===m.i||(activeMonth===null&&m.i===curMonth))cls+=' active';
+    else if(m.i<curMonth)cls+=' past';
+    return`<button class="${cls}" onclick="toggleMonth(${m.i})">${m.label}</button>`;
+  }).join('');
 }
 
 // ── Filters ──

@@ -53,6 +53,19 @@ html.dark .src-gastro{background:rgba(59,130,246,0.2);color:#60a5fa}html.dark .s
 @media(max-width:767px){.spot-card{flex:0 0 calc((100% - .65rem)/2);min-width:calc((100% - .65rem)/2)}.spot-card-img{height:90px}.feed{padding:0 .75rem 1.5rem}.hero{padding:1.5rem .75rem 1rem}.section-divider{padding:0 .75rem}}
 @media(max-width:640px){.header-inner{gap:.35rem}.nav-tab{font-size:.72rem;padding:.45rem .4rem;gap:.2rem}.nav-tab .nav-label{display:none}.hero-title{font-size:1.3rem}.hero-sub{font-size:.82rem}.theme-toggle{width:48px;height:28px}}
 
+/* ── Event Cards (Discovery) ── */
+.ev-disc-card{flex:0 0 calc((100% - 2.6rem)/5);min-width:calc((100% - 2.6rem)/5);scroll-snap-align:start;background:var(--glass-bg,var(--card-bg));backdrop-filter:var(--glass-blur,none);border:1px solid var(--glass-border,var(--border-light));border-radius:14px;padding:.75rem .8rem;cursor:pointer;transition:transform .22s var(--ease),box-shadow .22s var(--ease);box-shadow:var(--shadow-soft,var(--shadow));position:relative;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:.3rem}
+.ev-disc-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover,var(--shadow-md))}
+.ev-disc-emoji{font-size:1.8rem;display:block;margin-bottom:.1rem}
+.ev-disc-name{font-weight:700;font-size:.82rem;line-height:1.25;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ev-disc-date{font-size:.7rem;font-weight:600;color:var(--primary)}
+.ev-disc-loc{font-size:.66rem;color:var(--text3);display:flex;align-items:center;gap:.2rem}
+.ev-disc-tag{display:inline-block;font-size:.58rem;font-weight:600;padding:.1rem .3rem;border-radius:5px;background:rgba(168,85,247,.1);color:#7c3aed}
+html.dark .ev-disc-card{background:var(--glass-bg,var(--card-bg));border-color:var(--glass-border,var(--border))}
+html.dark .ev-disc-tag{background:rgba(168,85,247,.2);color:#a78bfa}
+@media(max-width:1023px){.ev-disc-card{flex:0 0 calc((100% - 1.3rem)/3);min-width:calc((100% - 1.3rem)/3)}}
+@media(max-width:767px){.ev-disc-card{flex:0 0 calc((100% - .65rem)/2);min-width:calc((100% - .65rem)/2)}}
+
 /* ── Dice Geheimtipp ── */
 @keyframes diceGradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 @keyframes dicePulseRing{0%{box-shadow:0 0 0 0 rgba(139,92,246,.45)}70%{box-shadow:0 0 0 14px rgba(139,92,246,0)}100%{box-shadow:0 0 0 0 rgba(139,92,246,0)}}
@@ -168,6 +181,30 @@ function getSpotTag(p){if(p.source==='gastro'){if(p.cuisines&&p.cuisines.length>
 function getPhoto(p){return"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' fill='%23E8EEFB' rx='12'/%3E%3Ctext x='40' y='44' text-anchor='middle' dominant-baseline='middle' font-family='system-ui,sans-serif' font-size='28'%3E"+encodeURIComponent(getEmoji(p))+"%3C/text%3E%3C/svg%3E"}
 function getMapsUrl(p){if(p.gmaps)return p.gmaps.replace(/^https?:\/\/maps\.google\.com/,'https://www.google.com/maps').replace(/[&?]g_mp=[^&]*/g,'');if(p.id&&p.id.startsWith('ChI'))return'https://www.google.com/maps/place/?q=place_id:'+p.id;if(p.lat&&p.lng)return'https://www.google.com/maps/search/?api=1&query='+p.lat+','+p.lng;return'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent((p.name||'')+' '+(p.addr||''))}
 
+// ── Top Events for Discovery ──
+var DISC_EVENTS=[
+{name:"Swiss Music Awards 2026",emoji:"🏆",dateLabel:"19. März",location:"Hallenstadion",category:"Festivals",url:"events.html"},
+{name:"Sechseläuten",emoji:"🔥",dateLabel:"20. April",location:"Sechseläutenplatz",category:"Züri Tradition",url:"events.html"},
+{name:"Metallica – M72 World Tour",emoji:"🤘",dateLabel:"27. Mai",location:"Letzigrund",category:"Konzerte",url:"events.html"},
+{name:"Linkin Park – From Zero",emoji:"🎤",dateLabel:"30. Juni",location:"Letzigrund",category:"Konzerte",url:"events.html"},
+{name:"Street Parade",emoji:"🎉",dateLabel:"8. August",location:"Zürich Seebecken",category:"Festivals",url:"events.html"}
+];
+function getUpcomingDiscEvents(){
+  var today=new Date().toISOString().split('T')[0];
+  var dateMap={"19. März":"2026-03-19","20. April":"2026-04-20","27. Mai":"2026-05-27","30. Juni":"2026-06-30","8. August":"2026-08-08"};
+  return DISC_EVENTS.filter(function(e){var d=dateMap[e.dateLabel];return!d||d>=today}).slice(0,5);
+}
+function buildEventRow(){
+  var events=getUpcomingDiscEvents();
+  if(events.length<2)return'';
+  var h='<section class="disco-section fade-up"><div class="disco-header"><h2><span class="dh-icon">🎪</span> Top Events</h2><a href="events.html" class="disco-more">Alle anzeigen ›</a></div><div class="disco-scroll">';
+  events.forEach(function(e){
+    h+='<a href="'+e.url+'" class="ev-disc-card"><span class="ev-disc-emoji">'+e.emoji+'</span><div class="ev-disc-name">'+esc(e.name)+'</div><div class="ev-disc-date">📅 '+e.dateLabel+'</div><div class="ev-disc-loc">📍 '+esc(e.location)+'</div><span class="ev-disc-tag">'+esc(e.category)+'</span></a>';
+  });
+  h+='</div></section>';
+  return h;
+}
+
 function buildPage(){
   // Category Cards
   document.getElementById('catCards').innerHTML=
@@ -193,6 +230,9 @@ function buildPage(){
   html+='</div></div>';
 
   html+=buildRow('🔥','Beliebt in Zürich',sorted.slice(0,10));
+
+  // Events section
+  html+=buildEventRow();
 
   // Gastro section
   html+='<div class="section-divider"><span>🍽️ Gastronomie</span></div>';
