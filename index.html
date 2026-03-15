@@ -71,10 +71,6 @@ html.dark .dice-inner::before{background:linear-gradient(90deg,transparent 0%,rg
 .dice-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.4rem;gap:.5rem;flex-wrap:wrap}
 .dice-title{font-family:var(--font-display);font-size:1.15rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:.4rem;margin:0}
 .dice-sub{font-size:.78rem;color:var(--text2);margin-bottom:.75rem}
-.dice-progress{width:100%;height:5px;background:var(--surface2);border-radius:3px;overflow:hidden;margin-bottom:1rem}
-.dice-progress-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,#8b5cf6,#6366f1,#06b6d4);transition:width .5s var(--ease);width:0%}
-.dice-progress-label{font-size:.7rem;font-weight:600;color:var(--text3);margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem}
-.dice-progress-label span{color:var(--primary);font-weight:700}
 .dice-center{display:flex;align-items:center;justify-content:center;margin-bottom:1rem;gap:.75rem;flex-wrap:wrap}
 .dice-btn{position:relative;display:inline-flex;align-items:center;gap:.45rem;padding:.7rem 1.6rem;border-radius:14px;font-size:.95rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#8b5cf6,#6366f1);border:none;cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s var(--ease);box-shadow:0 4px 16px rgba(99,102,241,.3);touch-action:manipulation;min-width:48px;min-height:48px;z-position:1}
 @media(hover:hover){.dice-btn:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 6px 24px rgba(99,102,241,.45)}.dice-btn:hover .dice-btn-icon{transform:rotate(15deg)}}
@@ -91,12 +87,16 @@ html.dark .dice-inner::before{background:linear-gradient(90deg,transparent 0%,rg
 .dice-card-slot.fly-out{animation:diceFlyOut .35s var(--ease) forwards}
 .dice-card-slot.drop-in{animation:diceDropIn .5s var(--ease-spring) forwards}
 .dice-tier-label{position:absolute;top:6px;right:6px;z-index:3;font-size:.6rem;font-weight:700;padding:.15rem .4rem;border-radius:8px;white-space:nowrap;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.tier-ultra{background:rgba(139,92,246,.15);color:#8b5cf6;border:1px solid rgba(139,92,246,.25)}
-.tier-hidden{background:rgba(6,182,212,.15);color:#0891b2;border:1px solid rgba(6,182,212,.25)}
-.tier-champion{background:rgba(245,158,11,.15);color:#d97706;border:1px solid rgba(245,158,11,.25)}
-html.dark .tier-ultra{background:rgba(139,92,246,.25);color:#a78bfa}
-html.dark .tier-hidden{background:rgba(6,182,212,.25);color:#22d3ee}
-html.dark .tier-champion{background:rgba(245,158,11,.25);color:#fbbf24}
+.dice-tier-label.src-gastro{background:rgba(59,130,246,.12);color:#2563eb;border:1px solid rgba(59,130,246,.2)}
+.dice-tier-label.src-attr{background:rgba(168,85,247,.12);color:#7c3aed;border:1px solid rgba(168,85,247,.2)}
+.dice-tier-label.src-fun{background:rgba(236,72,153,.12);color:#db2777;border:1px solid rgba(236,72,153,.2)}
+.dice-tier-label.src-shop{background:rgba(34,197,94,.12);color:#16a34a;border:1px solid rgba(34,197,94,.2)}
+.dice-tier-label.src-museum{background:rgba(245,158,11,.12);color:#d97706;border:1px solid rgba(245,158,11,.2)}
+html.dark .dice-tier-label.src-gastro{background:rgba(59,130,246,.22);color:#60a5fa}
+html.dark .dice-tier-label.src-attr{background:rgba(168,85,247,.22);color:#a78bfa}
+html.dark .dice-tier-label.src-fun{background:rgba(236,72,153,.22);color:#f472b6}
+html.dark .dice-tier-label.src-shop{background:rgba(34,197,94,.22);color:#4ade80}
+html.dark .dice-tier-label.src-museum{background:rgba(245,158,11,.22);color:#fbbf24}
 .dice-empty{text-align:center;padding:2rem 1rem;color:var(--text3);font-size:.85rem}
 .dice-scroll-dots{display:none;justify-content:center;gap:5px;margin-top:.5rem}
 .dice-scroll-dot{width:6px;height:6px;border-radius:50%;background:var(--border);transition:background .2s}
@@ -164,6 +164,7 @@ function kreisTag(a){var k=getKreis(a);return k?'<span class="kreis">K'+k+'</spa
 function stars(r,sz){sz=sz||12;var h='',fu=Math.floor(r),ha=r-fu>=.25;for(var i=0;i<5;i++){if(i<fu)h+='<svg width="'+sz+'" height="'+sz+'" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';else if(i===fu&&ha)h+='<svg width="'+sz+'" height="'+sz+'" viewBox="0 0 24 24"><defs><linearGradient id="hg'+sz+'"><stop offset="50%" stop-color="currentColor"/><stop offset="50%" stop-color="#D4DCE8"/></linearGradient></defs><path fill="url(#hg'+sz+')" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';else h+='<svg class="e" width="'+sz+'" height="'+sz+'" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'}return h}
 var SHOP_SUBCAT_I={'Mode & Fashion':'👗','Sportbekleidung':'🏃','Schuhe':'👟','Second-Hand & Vintage':'♻️','Einkaufszentren':'🏬','Spezialgeschäfte':'🎁'};
 function getEmoji(p){if(p.source==='gastro'){var icon=TRADE_I[p.trade]||'🍽️';if(p.cuisines&&p.cuisines.length>0&&CMAP[p.cuisines[0]])icon=CMAP[p.cuisines[0]].i;return icon}if(p.source==='shop')return SHOP_SUBCAT_I[p.subcat]||'🛍️';if(p.source==='museum')return KEYWORD_MAP[p.keyword]||'🖼️';return KEYWORD_MAP[p.keyword]||'📍'}
+function getSpotTag(p){if(p.source==='gastro'){if(p.cuisines&&p.cuisines.length>0&&CMAP[p.cuisines[0]])return CMAP[p.cuisines[0]].l;return p.trade||'Restaurant'}if(p.source==='shop')return p.subcat||'Shop';if(p.source==='museum')return p.keyword||'Museum';return p.keyword||'Sehenswürdigkeit'}
 function getPhoto(p){return"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' fill='%23E8EEFB' rx='12'/%3E%3Ctext x='40' y='44' text-anchor='middle' dominant-baseline='middle' font-family='system-ui,sans-serif' font-size='28'%3E"+encodeURIComponent(getEmoji(p))+"%3C/text%3E%3C/svg%3E"}
 function getMapsUrl(p){if(p.gmaps)return p.gmaps.replace(/^https?:\/\/maps\.google\.com/,'https://www.google.com/maps').replace(/[&?]g_mp=[^&]*/g,'');if(p.id&&p.id.startsWith('ChI'))return'https://www.google.com/maps/place/?q=place_id:'+p.id;if(p.lat&&p.lng)return'https://www.google.com/maps/search/?api=1&query='+p.lat+','+p.lng;return'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent((p.name||'')+' '+(p.addr||''))}
 
@@ -180,20 +181,13 @@ function buildPage(){
   var sorted=ALL.slice().sort(function(a,b){return(b.rv*b.r)-(a.rv*a.r)});
   var html='';
 
-  html+=buildRow('🔥','Trending in Zürich',sorted.slice(0,10));
+  html+=buildRow('🔥','Beliebt in Zürich',sorted.slice(0,10));
 
   // ── 🎲 Geheimtipp-Würfel ──
-  var diceQualified=ALL.filter(function(p){return p.r>=4.8&&p.rv>=42});
-  var diceSeen=getDiceSeen();
-  var diceTotal=diceQualified.length;
-  var diceSeenCount=diceSeen.filter(function(id){return diceQualified.some(function(p){return p.id===id})}).length;
-  var dicePct=diceTotal>0?Math.round(diceSeenCount/diceTotal*100):0;
-  var neverRolled=diceSeenCount===0;
+  var neverRolled=getDiceSeen().length===0;
   html+='<div class="dice-wrap"><div class="dice-inner">';
   html+='<div class="dice-header"><h2 class="dice-title"><span>🎲</span> Geheimtipp-Würfel</h2></div>';
   html+='<div class="dice-sub">Entdecke handverlesene Zürich-Perlen – jeder Wurf bringt 5 neue Überraschungen aus allen Kategorien.</div>';
-  html+='<div class="dice-progress-label">📊 <span id="diceSeenN">'+diceSeenCount+'</span> von <span>'+diceTotal+'</span> entdeckt (<span id="dicePct">'+dicePct+'</span>%)</div>';
-  html+='<div class="dice-progress"><div class="dice-progress-fill" id="diceBar" style="width:'+dicePct+'%"></div></div>';
   html+='<div class="dice-center"><button class="dice-btn'+(neverRolled?' pulse':'')+'" id="diceBtn" onclick="handleDiceRoll()"><span class="dice-btn-icon">🎲</span><span class="dice-btn-text">Würfeln!</span></button></div>';
   html+='<div class="dice-cards-wrap"><div class="dice-scroll" id="diceScroll"></div><div class="dice-fade-edge right"></div></div>';
   html+='<div class="dice-scroll-dots" id="diceDots"></div>';
@@ -374,7 +368,9 @@ function buildDiceCard(entry,idx){
   var srcLabel=p.source==='gastro'?'Gastro':p.source==='attr'?'Kultur':p.source==='museum'?'Museum':p.source==='shop'?'Shop':'Spass';
   var cls='spot-card'+(p.r>=4.8?' top-rated':'');
   var h='<div class="dice-card-slot drop-in" style="--dice-rot:'+rot+'deg;animation-delay:'+(idx*80)+'ms">';
-  h+='<div class="dice-tier-label '+tier.cls+'">'+tier.label+'</div>';
+  var tagText=getSpotTag(p);
+  var tagCls=p.source==='gastro'?'src-gastro':p.source==='attr'?'src-attr':p.source==='museum'?'src-museum':p.source==='shop'?'src-shop':'src-fun';
+  h+='<div class="dice-tier-label '+tagCls+'">'+getEmoji(p)+' '+tagText+'</div>';
   h+='<div class="'+cls+'" onclick="openModal(\''+p.id+'\',\''+p.source+'\')">';
   h+='<img class="spot-card-img" src="'+getPhoto(p)+'" alt="" loading="lazy">';
   h+='<div class="spot-card-body">';
@@ -384,25 +380,6 @@ function buildDiceCard(entry,idx){
   h+='<div class="spot-card-foot"><span class="spot-card-tag '+srcCls+'">'+getEmoji(p)+' '+srcLabel+'</span><a href="'+getMapsUrl(p)+'" target="_blank" rel="noopener" class="spot-card-maps" onclick="event.stopPropagation()">📍</a></div>';
   h+='</div></div></div>';
   return h;
-}
-
-function updateDiceProgress(){
-  var qualified=ALL.filter(function(p){return p.r>=4.8&&p.rv>=42});
-  var seen=getDiceSeen();
-  var count=seen.filter(function(id){return qualified.some(function(p){return p.id===id})}).length;
-  var total=qualified.length;
-  var pct=total>0?Math.round(count/total*100):0;
-  var bar=document.getElementById('diceBar');
-  var nEl=document.getElementById('diceSeenN');
-  var pEl=document.getElementById('dicePct');
-  if(bar)bar.style.width=pct+'%';
-  if(nEl)nEl.textContent=count;
-  if(pEl)pEl.textContent=pct;
-  // Milestone celebration
-  if(pct===25||pct===50||pct===75||pct===100){
-    var wrap=document.querySelector('.dice-wrap');
-    if(wrap){wrap.classList.add('dice-celebrate');setTimeout(function(){wrap.classList.remove('dice-celebrate')},500)}
-  }
 }
 
 function updateDiceDots(){
@@ -485,7 +462,6 @@ function handleDiceRoll(){
       diceRolling=false;
     },900);
 
-    updateDiceProgress();
     updateDiceDots();
   },flyOutTime);
 }
