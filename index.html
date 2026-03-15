@@ -52,6 +52,63 @@ html.dark .src-gastro{background:rgba(59,130,246,0.2);color:#60a5fa}html.dark .s
 @media(max-width:1023px){.spot-card{flex:0 0 calc((100% - 1.3rem)/3);min-width:calc((100% - 1.3rem)/3)}.spot-card-img{height:100px}}
 @media(max-width:767px){.spot-card{flex:0 0 calc((100% - .65rem)/2);min-width:calc((100% - .65rem)/2)}.spot-card-img{height:90px}.feed{padding:0 .75rem 1.5rem}.hero{padding:1.5rem .75rem 1rem}.section-divider{padding:0 .75rem}}
 @media(max-width:640px){.header-inner{gap:.35rem}.nav-tab{font-size:.72rem;padding:.45rem .4rem;gap:.2rem}.nav-tab .nav-label{display:none}.hero-title{font-size:1.3rem}.hero-sub{font-size:.82rem}.theme-toggle{width:48px;height:28px}}
+
+/* ── Dice Geheimtipp ── */
+@keyframes diceGradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes dicePulseRing{0%{box-shadow:0 0 0 0 rgba(139,92,246,.45)}70%{box-shadow:0 0 0 14px rgba(139,92,246,0)}100%{box-shadow:0 0 0 0 rgba(139,92,246,0)}}
+@keyframes diceRoll{0%{transform:rotate(0deg) scale(1)}20%{transform:rotate(90deg) scale(.85)}50%{transform:rotate(200deg) scale(1.1)}75%{transform:rotate(310deg) scale(.95)}100%{transform:rotate(360deg) scale(1)}}
+@keyframes diceShimmerReveal{0%{opacity:0;background-position:-200% 0}60%{opacity:1}100%{opacity:1;background-position:200% 0}}
+@keyframes diceFlyOut{0%{opacity:1;transform:translateY(0) rotate(var(--dice-rot,0deg))}100%{opacity:0;transform:translateY(-80px) rotate(calc(var(--dice-rot,0deg) + 8deg)) scale(.85)}}
+@keyframes diceDropIn{0%{opacity:0;transform:translateY(60px) rotate(0deg) scale(.9)}60%{opacity:1;transform:translateY(-6px) rotate(var(--dice-rot,0deg)) scale(1.02)}100%{opacity:1;transform:translateY(0) rotate(var(--dice-rot,0deg)) scale(1)}}
+@keyframes diceCelebrate{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+@keyframes diceContainerShimmer{0%{background-position:0% 0}100%{background-position:200% 0}}
+@keyframes diceBtnSuccess{0%{transform:scale(1)}40%{transform:scale(1.12)}100%{transform:scale(1)}}
+
+.dice-wrap{position:relative;margin:1.5rem 0 1.2rem;padding:2px;border-radius:20px;background:linear-gradient(135deg,#8b5cf6,#6366f1,#06b6d4,#8b5cf6);background-size:300% 300%;animation:diceGradientShift 6s ease infinite}
+.dice-inner{background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border-radius:18px;padding:1.5rem 1.5rem 1.25rem;position:relative;overflow:hidden}
+.dice-inner::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,rgba(139,92,246,.04) 25%,rgba(99,102,241,.06) 50%,rgba(6,182,212,.04) 75%,transparent 100%);background-size:200% 100%;animation:diceContainerShimmer 8s linear infinite;pointer-events:none}
+html.dark .dice-inner::before{background:linear-gradient(90deg,transparent 0%,rgba(139,92,246,.08) 25%,rgba(99,102,241,.1) 50%,rgba(6,182,212,.08) 75%,transparent 100%);background-size:200% 100%}
+.dice-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.4rem;gap:.5rem;flex-wrap:wrap}
+.dice-title{font-family:var(--font-display);font-size:1.15rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:.4rem;margin:0}
+.dice-sub{font-size:.78rem;color:var(--text2);margin-bottom:.75rem}
+.dice-progress{width:100%;height:5px;background:var(--surface2);border-radius:3px;overflow:hidden;margin-bottom:1rem}
+.dice-progress-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,#8b5cf6,#6366f1,#06b6d4);transition:width .5s var(--ease);width:0%}
+.dice-progress-label{font-size:.7rem;font-weight:600;color:var(--text3);margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem}
+.dice-progress-label span{color:var(--primary);font-weight:700}
+.dice-center{display:flex;align-items:center;justify-content:center;margin-bottom:1rem;gap:.75rem;flex-wrap:wrap}
+.dice-btn{position:relative;display:inline-flex;align-items:center;gap:.45rem;padding:.7rem 1.6rem;border-radius:14px;font-size:.95rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#8b5cf6,#6366f1);border:none;cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s var(--ease);box-shadow:0 4px 16px rgba(99,102,241,.3);touch-action:manipulation;min-width:48px;min-height:48px;z-position:1}
+@media(hover:hover){.dice-btn:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 6px 24px rgba(99,102,241,.45)}.dice-btn:hover .dice-btn-icon{transform:rotate(15deg)}}
+.dice-btn:active{transform:scale(.96)}
+.dice-btn.rolling .dice-btn-icon{animation:diceRoll .7s var(--ease-spring)}
+.dice-btn.success{background:linear-gradient(135deg,#10b981,#059669);animation:diceBtnSuccess .4s var(--ease)}
+.dice-btn.pulse{animation:dicePulseRing 2s ease infinite}
+.dice-btn-icon{font-size:1.3rem;transition:transform .2s var(--ease);display:inline-block;will-change:transform}
+.dice-btn-text{white-space:nowrap}
+.dice-cards-wrap{position:relative;overflow:hidden;border-radius:14px}
+.dice-scroll{display:flex;gap:.65rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:.25rem;min-height:50px}
+.dice-scroll::-webkit-scrollbar{display:none}
+.dice-card-slot{flex:0 0 calc((100% - 2.6rem)/5);min-width:calc((100% - 2.6rem)/5);scroll-snap-align:start;position:relative;will-change:transform,opacity}
+.dice-card-slot.fly-out{animation:diceFlyOut .35s var(--ease) forwards}
+.dice-card-slot.drop-in{animation:diceDropIn .5s var(--ease-spring) forwards}
+.dice-tier-label{position:absolute;top:6px;right:6px;z-index:3;font-size:.6rem;font-weight:700;padding:.15rem .4rem;border-radius:8px;white-space:nowrap;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.tier-ultra{background:rgba(139,92,246,.15);color:#8b5cf6;border:1px solid rgba(139,92,246,.25)}
+.tier-hidden{background:rgba(6,182,212,.15);color:#0891b2;border:1px solid rgba(6,182,212,.25)}
+.tier-champion{background:rgba(245,158,11,.15);color:#d97706;border:1px solid rgba(245,158,11,.25)}
+html.dark .tier-ultra{background:rgba(139,92,246,.25);color:#a78bfa}
+html.dark .tier-hidden{background:rgba(6,182,212,.25);color:#22d3ee}
+html.dark .tier-champion{background:rgba(245,158,11,.25);color:#fbbf24}
+.dice-empty{text-align:center;padding:2rem 1rem;color:var(--text3);font-size:.85rem}
+.dice-scroll-dots{display:none;justify-content:center;gap:5px;margin-top:.5rem}
+.dice-scroll-dot{width:6px;height:6px;border-radius:50%;background:var(--border);transition:background .2s}
+.dice-scroll-dot.active{background:var(--primary)}
+.dice-fade-edge{display:none;position:absolute;top:0;bottom:0;width:24px;pointer-events:none;z-index:5}
+.dice-fade-edge.right{right:0;background:linear-gradient(to right,transparent,var(--bg))}
+.dice-celebrate{animation:diceCelebrate .4s var(--ease)}
+
+@media(max-width:1023px){.dice-card-slot{flex:0 0 calc((100% - 1.3rem)/3);min-width:calc((100% - 1.3rem)/3)}.dice-scroll-dots{display:flex}.dice-fade-edge{display:block}}
+@media(max-width:767px){.dice-card-slot{flex:0 0 calc((100% - .65rem)/2);min-width:calc((100% - .65rem)/2)}.dice-inner{padding:1.25rem 1rem 1rem}.dice-title{font-size:1.05rem}}
+@media(max-width:399px){.dice-card-slot{flex:0 0 72%;min-width:72%}}
+@media(prefers-reduced-motion:reduce){.dice-wrap{animation:none}.dice-inner::before{animation:none}.dice-btn.pulse{animation:none}.dice-btn.rolling .dice-btn-icon{animation:none}.dice-card-slot.fly-out{animation:none;opacity:0}.dice-card-slot.drop-in{animation:none;opacity:1}}
 </style>
 </head>
 <body>
@@ -121,11 +178,27 @@ function buildPage(){
 
   // Discovery sections
   var sorted=ALL.slice().sort(function(a,b){return(b.rv*b.r)-(a.rv*a.r)});
-  var topRated=ALL.filter(function(p){return p.r>=4.7&&p.rv>=50}).sort(function(a,b){return b.r-a.r});
   var html='';
 
   html+=buildRow('🔥','Trending in Zürich',sorted.slice(0,10));
-  html+=buildRow('⭐','Bestbewertet',topRated.slice(0,10));
+
+  // ── 🎲 Geheimtipp-Würfel ──
+  var diceQualified=ALL.filter(function(p){return p.r>=4.8&&p.rv>=42});
+  var diceSeen=getDiceSeen();
+  var diceTotal=diceQualified.length;
+  var diceSeenCount=diceSeen.filter(function(id){return diceQualified.some(function(p){return p.id===id})}).length;
+  var dicePct=diceTotal>0?Math.round(diceSeenCount/diceTotal*100):0;
+  var neverRolled=diceSeenCount===0;
+  html+='<div class="dice-wrap"><div class="dice-inner">';
+  html+='<div class="dice-header"><h2 class="dice-title"><span>🎲</span> Geheimtipp-Würfel</h2></div>';
+  html+='<div class="dice-sub">Entdecke handverlesene Zürich-Perlen – jeder Wurf bringt 5 neue Überraschungen aus allen Kategorien.</div>';
+  html+='<div class="dice-progress-label">📊 <span id="diceSeenN">'+diceSeenCount+'</span> von <span>'+diceTotal+'</span> entdeckt (<span id="dicePct">'+dicePct+'</span>%)</div>';
+  html+='<div class="dice-progress"><div class="dice-progress-fill" id="diceBar" style="width:'+dicePct+'%"></div></div>';
+  html+='<div class="dice-center"><button class="dice-btn'+(neverRolled?' pulse':'')+'" id="diceBtn" onclick="handleDiceRoll()"><span class="dice-btn-icon">🎲</span><span class="dice-btn-text">Würfeln!</span></button></div>';
+  html+='<div class="dice-cards-wrap"><div class="dice-scroll" id="diceScroll"></div><div class="dice-fade-edge right"></div></div>';
+  html+='<div class="dice-scroll-dots" id="diceDots"></div>';
+  html+='<div class="dice-empty" id="diceEmpty" style="display:none">Drücke den Würfel, um deine ersten Geheimtipps zu entdecken!</div>';
+  html+='</div></div>';
 
   // Gastro section
   html+='<div class="section-divider"><span>🍽️ Gastronomie</span></div>';
@@ -167,6 +240,10 @@ function buildPage(){
 
   document.getElementById('sections').innerHTML=html;
   initRowArrows();
+  // Init dice empty state
+  var diceScroll=document.getElementById('diceScroll');
+  var diceEmpty=document.getElementById('diceEmpty');
+  if(diceScroll&&diceScroll.children.length===0&&diceEmpty)diceEmpty.style.display='block';
 }
 
 function buildRow(icon,title,items,link){
@@ -210,6 +287,208 @@ function openModal(id,src){
 function closeModal(){document.getElementById('modal').classList.remove('on');document.body.style.overflow='';currentModalId=null}
 
 function initRowArrows(){document.querySelectorAll('.disco-section').forEach(function(sec){var scroll=sec.querySelector('.disco-scroll');if(!scroll)return;sec.querySelectorAll('.row-arrow').forEach(function(a){a.remove()});var left=document.createElement('button');left.className='row-arrow left';left.innerHTML='‹';var right=document.createElement('button');right.className='row-arrow right';right.innerHTML='›';sec.appendChild(left);sec.appendChild(right);function update(){left.classList.toggle('show',scroll.scrollLeft>10);right.classList.toggle('show',scroll.scrollLeft<scroll.scrollWidth-scroll.clientWidth-10)}function scrollN(dir){var card=scroll.querySelector('.spot-card');if(!card)return;var n=scroll.offsetWidth>=1024?5:3;var gap=parseFloat(getComputedStyle(scroll).gap)||10;scroll.scrollBy({left:dir*(card.offsetWidth+gap)*n,behavior:'smooth'})}left.onclick=function(e){e.stopPropagation();scrollN(-1)};right.onclick=function(e){e.stopPropagation();scrollN(1)};scroll.addEventListener('scroll',update,{passive:true});setTimeout(update,100)})}
+
+// ── 🎲 Geheimtipp-Würfel Logic ──
+function getDiceSeen(){try{return JSON.parse(localStorage.getItem('zh-dice-seen'))||[]}catch(e){return[]}}
+function setDiceSeen(arr){localStorage.setItem('zh-dice-seen',JSON.stringify(arr))}
+function shuffleArr(a){var b=a.slice();for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=b[i];b[i]=b[j];b[j]=t}return b}
+
+function pickDiceSpots(){
+  var qualified=ALL.filter(function(p){return p.r>=4.8&&p.rv>=42});
+  var seen=getDiceSeen();
+  // Check if near-empty pool
+  var available=qualified.filter(function(p){return seen.indexOf(p.id)<0});
+  if(available.length<10){
+    // Reset with celebration
+    seen=[];setDiceSeen([]);available=qualified.slice();
+    showDiceCelebration();
+  }
+  var pool=available;
+  var cats=['gastro','attr','museum','shop','fun'];
+  // Tier definitions: slot1=ultra(42-80rv), slot2-3=hidden(80-250rv), slot4-5=champion(250+rv)
+  var tiers=[
+    {min:42,max:80,label:'🔮 Ultra-Geheimtipp',cls:'tier-ultra',count:1},
+    {min:80,max:250,label:'💎 Hidden Gem',cls:'tier-hidden',count:2},
+    {min:250,max:Infinity,label:'🏆 Überraschungs-Champion',cls:'tier-champion',count:2}
+  ];
+  var result=[];
+  var usedCats=[];
+  var usedIds=[];
+
+  tiers.forEach(function(tier){
+    for(var c=0;c<tier.count;c++){
+      var tierPool=pool.filter(function(p){
+        return p.rv>=tier.min&&p.rv<tier.max&&usedIds.indexOf(p.id)<0;
+      });
+      // Try category roulette: pick from unused category
+      var availCats=cats.filter(function(cat){return usedCats.indexOf(cat)<0});
+      var picked=null;
+      var shuffledCats=shuffleArr(availCats);
+      for(var i=0;i<shuffledCats.length;i++){
+        var catPool=tierPool.filter(function(p){return p.source===shuffledCats[i]});
+        if(catPool.length>0){
+          picked=catPool[Math.floor(Math.random()*catPool.length)];
+          usedCats.push(shuffledCats[i]);
+          break;
+        }
+      }
+      // Fallback: any category in tier
+      if(!picked&&tierPool.length>0){
+        var shuffled=shuffleArr(tierPool);
+        picked=shuffled[0];
+        if(usedCats.indexOf(picked.source)<0)usedCats.push(picked.source);
+      }
+      // Fallback: any category any tier
+      if(!picked){
+        var anyPool=pool.filter(function(p){return usedIds.indexOf(p.id)<0});
+        var anyCats=cats.filter(function(cat){return usedCats.indexOf(cat)<0});
+        var shuffledAny=shuffleArr(anyCats);
+        for(var j=0;j<shuffledAny.length;j++){
+          var cp=anyPool.filter(function(p){return p.source===shuffledAny[j]});
+          if(cp.length>0){picked=cp[Math.floor(Math.random()*cp.length)];usedCats.push(shuffledAny[j]);break}
+        }
+        if(!picked&&anyPool.length>0){picked=anyPool[Math.floor(Math.random()*anyPool.length)]}
+      }
+      if(picked){
+        result.push({spot:picked,tier:tier});
+        usedIds.push(picked.id);
+      }
+    }
+  });
+  return result;
+}
+
+function showDiceCelebration(){
+  var btn=document.getElementById('diceBtn');
+  if(!btn)return;
+  var origText=btn.querySelector('.dice-btn-text');
+  if(origText)origText.textContent='🎉 Alle entdeckt! Neustart…';
+  setTimeout(function(){if(origText)origText.textContent='Würfeln!'},2200);
+}
+
+function buildDiceCard(entry,idx){
+  var p=entry.spot,tier=entry.tier;
+  var rotations=[-1.2,0.8,-0.6,1.4,-0.9];
+  var rot=rotations[idx%rotations.length];
+  var srcCls=p.source==='gastro'?'src-gastro':p.source==='attr'?'src-attr':p.source==='museum'?'src-museum':p.source==='shop'?'src-shop':'src-fun';
+  var srcLabel=p.source==='gastro'?'Gastro':p.source==='attr'?'Kultur':p.source==='museum'?'Museum':p.source==='shop'?'Shop':'Spass';
+  var cls='spot-card'+(p.r>=4.8?' top-rated':'');
+  var h='<div class="dice-card-slot drop-in" style="--dice-rot:'+rot+'deg;animation-delay:'+(idx*80)+'ms">';
+  h+='<div class="dice-tier-label '+tier.cls+'">'+tier.label+'</div>';
+  h+='<div class="'+cls+'" onclick="openModal(\''+p.id+'\',\''+p.source+'\')">';
+  h+='<img class="spot-card-img" src="'+getPhoto(p)+'" alt="" loading="lazy">';
+  h+='<div class="spot-card-body">';
+  h+='<div class="spot-card-name">'+esc(p.name)+'</div>';
+  h+='<div class="spot-card-addr">'+esc(p.addr?p.addr.split(',')[0]:'')+' '+kreisTag(p.addr)+'</div>';
+  h+='<div class="spot-card-rating"><div class="stars">'+stars(p.r,11)+'</div><span class="spot-card-score">'+p.r.toFixed(1)+'</span><span class="spot-card-reviews">('+fmt(p.rv)+')</span></div>';
+  h+='<div class="spot-card-foot"><span class="spot-card-tag '+srcCls+'">'+getEmoji(p)+' '+srcLabel+'</span><a href="'+getMapsUrl(p)+'" target="_blank" rel="noopener" class="spot-card-maps" onclick="event.stopPropagation()">📍</a></div>';
+  h+='</div></div></div>';
+  return h;
+}
+
+function updateDiceProgress(){
+  var qualified=ALL.filter(function(p){return p.r>=4.8&&p.rv>=42});
+  var seen=getDiceSeen();
+  var count=seen.filter(function(id){return qualified.some(function(p){return p.id===id})}).length;
+  var total=qualified.length;
+  var pct=total>0?Math.round(count/total*100):0;
+  var bar=document.getElementById('diceBar');
+  var nEl=document.getElementById('diceSeenN');
+  var pEl=document.getElementById('dicePct');
+  if(bar)bar.style.width=pct+'%';
+  if(nEl)nEl.textContent=count;
+  if(pEl)pEl.textContent=pct;
+  // Milestone celebration
+  if(pct===25||pct===50||pct===75||pct===100){
+    var wrap=document.querySelector('.dice-wrap');
+    if(wrap){wrap.classList.add('dice-celebrate');setTimeout(function(){wrap.classList.remove('dice-celebrate')},500)}
+  }
+}
+
+function updateDiceDots(){
+  var scroll=document.getElementById('diceScroll');
+  var dots=document.getElementById('diceDots');
+  if(!scroll||!dots)return;
+  var cards=scroll.querySelectorAll('.dice-card-slot');
+  if(cards.length===0){dots.innerHTML='';return}
+  var h='';for(var i=0;i<cards.length;i++){h+='<span class="dice-scroll-dot'+(i===0?' active':'')+'"></span>'}
+  dots.innerHTML=h;
+  scroll.addEventListener('scroll',function(){
+    var sl=scroll.scrollLeft;
+    var cw=cards[0].offsetWidth+parseFloat(getComputedStyle(scroll).gap||10);
+    var active=Math.round(sl/cw);
+    var allDots=dots.querySelectorAll('.dice-scroll-dot');
+    allDots.forEach(function(d,i){d.classList.toggle('active',i===active)});
+  },{passive:true});
+}
+
+var diceRolling=false;
+function handleDiceRoll(){
+  if(diceRolling)return;
+  diceRolling=true;
+  var btn=document.getElementById('diceBtn');
+  var scroll=document.getElementById('diceScroll');
+  var empty=document.getElementById('diceEmpty');
+  if(!btn||!scroll)return;
+
+  // Remove pulse onboarding cue
+  btn.classList.remove('pulse');
+  // Roll animation on button
+  btn.classList.add('rolling');
+  btn.querySelector('.dice-btn-text').textContent='Würfle…';
+
+  // Fly out existing cards
+  var existing=scroll.querySelectorAll('.dice-card-slot');
+  if(existing.length>0){
+    existing.forEach(function(card,i){
+      card.style.animationDelay=(i*50)+'ms';
+      card.classList.remove('drop-in');
+      card.classList.add('fly-out');
+    });
+  }
+
+  var flyOutTime=existing.length>0?400:50;
+
+  setTimeout(function(){
+    // Pick new spots
+    var picks=pickDiceSpots();
+    if(picks.length===0){
+      scroll.innerHTML='';
+      if(empty)empty.style.display='block';
+      btn.classList.remove('rolling');
+      btn.querySelector('.dice-btn-text').textContent='Würfeln!';
+      diceRolling=false;
+      return;
+    }
+    if(empty)empty.style.display='none';
+
+    // Save seen IDs
+    var seen=getDiceSeen();
+    picks.forEach(function(entry){
+      if(seen.indexOf(entry.spot.id)<0)seen.push(entry.spot.id);
+    });
+    setDiceSeen(seen);
+
+    // Build new cards HTML
+    var h='';
+    picks.forEach(function(entry,i){h+=buildDiceCard(entry,i)});
+    scroll.innerHTML=h;
+    scroll.scrollLeft=0;
+
+    // Button success state
+    btn.classList.remove('rolling');
+    btn.classList.add('success');
+    btn.querySelector('.dice-btn-text').textContent='Entdeckt!';
+    setTimeout(function(){
+      btn.classList.remove('success');
+      btn.querySelector('.dice-btn-text').textContent='Nochmal würfeln!';
+      diceRolling=false;
+    },900);
+
+    updateDiceProgress();
+    updateDiceDots();
+  },flyOutTime);
+}
 
 async function init(){
   var bar=document.getElementById('pbar'),msg=document.getElementById('splashMsg');
