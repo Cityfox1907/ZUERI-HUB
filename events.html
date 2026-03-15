@@ -194,7 +194,6 @@ const EVENTS=[
 {name:"Zürich Marathon",emoji:"🏃",date:"2026-04-12",dateEnd:null,dateLabel:"12. April",location:"Innenstadt & Zürichsee",category:"sport",tags:["Laufsport","Marathon"],status:"confirmed",highlight:true,ticketUrl:"https://www.zurichmarathon.ch/",websiteUrl:"https://www.zurichmarathon.ch/"},
 {name:"Tame Impala",emoji:"🎹",date:"2026-04-14",dateEnd:null,dateLabel:"14. April",location:"Hallenstadion",category:"konzerte",tags:["Psych-Rock","Indie"],status:"confirmed",highlight:false,ticketUrl:"https://hallenstadion.ch/events/tame-impala",websiteUrl:"https://www.tameimpala.com/"},
 {name:"Johannes Oerding",emoji:"🎶",date:"2026-04-15",dateEnd:null,dateLabel:"15. April",location:"Hallenstadion",category:"konzerte",tags:["Pop"],status:"confirmed",highlight:false,ticketUrl:"https://hallenstadion.ch/events/johannes-oerding-3",websiteUrl:"https://www.johannesoerding.de/"},
-{name:"Zünftig Divers '26",emoji:"🌈",date:"2026-04-19",dateEnd:null,dateLabel:"19. April",location:"Kraftwerk Zürich",category:"community",tags:["Diversität"],status:"confirmed",highlight:false,ticketUrl:null,websiteUrl:"https://www.kraftwerkzuerich.ch/"},
 {name:"Sechseläuten – Böögg-Verbrennung",emoji:"🔥",date:"2026-04-20",dateEnd:null,dateLabel:"20. April",location:"Sechseläutenplatz",category:"tradition",tags:["Brauchtum","Zürich","Böögg"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.sechselaeuten.ch/"},
 // MAI
 {name:"Michael Patrick Kelly",emoji:"🎵",date:"2026-05-02",dateEnd:null,dateLabel:"2. Mai",location:"Hallenstadion",category:"konzerte",tags:["Pop"],status:"confirmed",highlight:false,ticketUrl:"https://www.ticketcorner.ch/artist/michael-patrick-kelly/",websiteUrl:"https://www.michaelpatrickkelly.com/"},
@@ -236,7 +235,7 @@ const EVENTS=[
 {name:"Weltklasse Zürich – Diamond League",emoji:"🏅",date:"2026-08-26",dateEnd:"2026-08-27",dateLabel:"26.–27. August",location:"Letzigrund",category:"sport",tags:["Leichtathletik"],status:"confirmed",highlight:true,ticketUrl:"https://www.weltklassezuerich.ch/",websiteUrl:"https://www.weltklassezuerich.ch/"},
 {name:"Dörflifäscht (Niederdörflifest)",emoji:"🎊",date:"2026-08-28",dateEnd:"2026-08-30",dateLabel:"28.–30. August",location:"Niederdorf / Altstadt",category:"tradition",tags:["Quartierfest","Live-Musik"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://doerflifaescht.ch/"},
 // SEPTEMBER
-{name:"Lange Nacht der Zürcher Museen",emoji:"🏛️",date:"2026-09-05",dateEnd:null,dateLabel:"5. September",location:"Diverse Museen",category:"community",tags:["Museen","Nacht","Kultur"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.langenacht.ch/"},
+{name:"Lange Nacht der Zürcher Museen",emoji:"🏛️",date:"2026-09-05",dateEnd:null,dateLabel:"5. September",location:"Diverse Museen",category:"tradition",tags:["Museen","Nacht","Kultur"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.langenacht.ch/"},
 {name:"DJ BoBo – zweite Show",emoji:"🎪",date:"2026-09-11",dateEnd:null,dateLabel:"11. Sep.",location:"Hallenstadion",category:"konzerte",tags:["Show","Dance"],status:"confirmed",highlight:false,ticketUrl:"https://www.ticketcorner.ch/artist/dj-bobo/",websiteUrl:"https://www.djbobo.ch/"},
 {name:"Knabenschiessen",emoji:"🎯",date:"2026-09-12",dateEnd:"2026-09-14",dateLabel:"12.–14. Sep.",location:"Albisgütli",category:"tradition",tags:["Volksfest","Zürich"],status:"confirmed",highlight:true,ticketUrl:null,websiteUrl:"https://www.knabenschiessen.ch/"},
 {name:"Zürich Film Festival (ZFF)",emoji:"🎬",date:"2026-09-24",dateEnd:"2026-10-04",dateLabel:"24. Sep.–4. Okt.",location:"Diverse Kinos",category:"festivals",tags:["Film","Premieren"],status:"confirmed",highlight:true,ticketUrl:"https://zff.com/de/",websiteUrl:"https://zff.com/de/"},
@@ -269,7 +268,7 @@ const STATUS_MAP={confirmed:"✅ Bestätigt",expected:"📅 Erwartet",soldout:"�
 const CAT_LABELS={konzerte:"Konzerte",sport:"Sport",festivals:"Festivals",tradition:"Züri Tradition",kulinarik:"Essen & Trinken",community:"Community"};
 
 // ── State ──
-let activeCat=null,activeMonth=null;
+let activeCat=null,activeMonths=[];
 const today=new Date().toISOString().split('T')[0];
 const sorted=EVENTS.sort((a,b)=>new Date(a.date)-new Date(b.date));
 const upcoming=sorted.filter(e=>e.date>=today||(e.dateEnd&&e.dateEnd>=today));
@@ -342,7 +341,7 @@ function renderMonthNav(){
   const curMonth=new Date().getMonth();
   el.innerHTML=MONTHS.map(m=>{
     var cls='month-pill';
-    if(activeMonth===m.i||(activeMonth===null&&m.i===curMonth))cls+=' active';
+    if(activeMonths.indexOf(m.i)>=0)cls+=' active';
     else if(m.i<curMonth)cls+=' past';
     return`<button class="${cls}" onclick="toggleMonth(${m.i})">${m.label}</button>`;
   }).join('');
@@ -354,10 +353,14 @@ function toggleCat(key){
   renderCats();renderAll();
 }
 function toggleMonth(m){
-  activeMonth=activeMonth===m?null:m;
+  var idx=activeMonths.indexOf(m);
+  if(idx>=0)activeMonths.splice(idx,1);
+  else activeMonths.push(m);
   renderMonthNav();renderAll();
-  const sec=document.getElementById('month-'+m);
-  if(sec)sec.scrollIntoView({behavior:'smooth',block:'start'});
+  if(activeMonths.indexOf(m)>=0){
+    var sec=document.getElementById('month-'+m);
+    if(sec)sec.scrollIntoView({behavior:'smooth',block:'start'});
+  }
 }
 
 // ── Card Rendering ──
@@ -394,13 +397,13 @@ function cardHTML(e,large){
 function renderAll(){
   const filtered=upcoming.filter(e=>{
     if(activeCat&&e.category!==activeCat)return false;
-    if(activeMonth!==null&&new Date(e.date).getMonth()!==activeMonth)return false;
+    if(activeMonths.length>0&&activeMonths.indexOf(new Date(e.date).getMonth())<0)return false;
     return true;
   });
 
   // Coming Up
   const comEl=document.getElementById('comingSection');
-  if(!activeCat&&activeMonth===null){
+  if(!activeCat&&activeMonths.length===0){
     const first=filtered.slice(0,8);
     comEl.innerHTML=`<div class="sec-head"><h2>⚡ Demnächst</h2><span class="sec-count">${first.length} Events</span></div><div class="coming-grid">${first.map(e=>cardHTML(e,true)).join('')}</div>`;
   }else{comEl.innerHTML='';}
