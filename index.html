@@ -114,10 +114,10 @@ function buildPage(){
   // Category Cards
   document.getElementById('catCards').innerHTML=
     '<a href="events.html" class="cat-card"><span class="cat-card-emoji">🎪</span><div><div class="cat-card-title">Events</div><div class="cat-card-sub">Konzerte, Festivals & mehr</div><span class="cat-card-count">73 Events</span></div></a>'+
+    '<a href="shops.html" class="cat-card"><span class="cat-card-emoji">🛍️</span><div><div class="cat-card-title">Shops</div><div class="cat-card-sub">Mode, Schuhe & Einkaufszentren</div><span class="cat-card-count">'+fmt(SHOPS.length)+' Spots</span></div></a>'+
     '<a href="gastronomie.html" class="cat-card"><span class="cat-card-emoji">🍽️</span><div><div class="cat-card-title">Gastronomie</div><div class="cat-card-sub">Restaurants, Bars & Cafés</div><span class="cat-card-count">'+fmt(GASTRO.length)+' Spots</span></div></a>'+
     '<a href="kultur.html" class="cat-card"><span class="cat-card-emoji">🏛️</span><div><div class="cat-card-title">Kultur & Natur</div><div class="cat-card-sub">Museen, Sehenswürdigkeiten & Parks</div><span class="cat-card-count">'+fmt(ATTR.length+MUSEEN.length)+' Spots</span></div></a>'+
-    '<a href="spiel-spass.html" class="cat-card"><span class="cat-card-emoji">🎮</span><div><div class="cat-card-title">Spiel & Spass</div><div class="cat-card-sub">Escape Rooms, Bowling & mehr</div><span class="cat-card-count">'+fmt(FUN.length)+' Spots</span></div></a>'+
-    '<a href="shops.html" class="cat-card"><span class="cat-card-emoji">🛍️</span><div><div class="cat-card-title">Shops</div><div class="cat-card-sub">Mode, Schuhe & Einkaufszentren</div><span class="cat-card-count">'+fmt(SHOPS.length)+' Spots</span></div></a>';
+    '<a href="spiel-spass.html" class="cat-card"><span class="cat-card-emoji">🎮</span><div><div class="cat-card-title">Spiel & Spass</div><div class="cat-card-sub">Escape Rooms, Bowling & mehr</div><span class="cat-card-count">'+fmt(FUN.length)+' Spots</span></div></a>';
 
   // Discovery sections
   var sorted=ALL.slice().sort(function(a,b){return(b.rv*b.r)-(a.rv*a.r)});
